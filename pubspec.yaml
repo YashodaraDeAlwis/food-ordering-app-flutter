@@ -19,7 +19,8 @@ dependencies:
   sentry_flutter: ^8.10.1
   scaled_app: ^2.3.0
   flutter_animate: ^4.5.0
-
+  material_symbols_icons: ^4.2791.1
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -49,7 +50,7 @@ flutter:
         - asset: fonts/Urbanist-ExtraLight.ttf
           weight: 100
           style: italic
-        - asset: fonts/Poppins-Medium-Italic-500.ttf
+        - asset: fonts/Urbanist-MediumItalic.ttf
           weight: 500
           style: italic
         - asset: fonts/Urbanist-ExtraLightItalic.ttf
