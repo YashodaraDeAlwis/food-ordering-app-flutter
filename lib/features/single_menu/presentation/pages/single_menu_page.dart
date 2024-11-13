@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_ordering_app/config/colors.dart';
 import 'package:food_ordering_app/config/values.dart';
 import 'package:food_ordering_app/features/single_menu/presentation/widges/ingredients_item.dart';
+import 'package:food_ordering_app/features/single_menu/presentation/widges/modifier.dart';
 import 'package:food_ordering_app/features/single_menu/presentation/widges/toppings_widget.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
@@ -97,6 +98,12 @@ class SingleMenuPage extends StatelessWidget {
                   ToppingsWidget(topping: 'Mozerella cheese'),
                   ToppingsWidget(topping: 'Mushroom'),
                   ToppingsWidget(topping: 'Paprika'),
+                  SizedBox(height: 10),
+                  ModifierWidget(),
+                  SizedBox(height: 10),
+                  ModifierWidget(),
+                  SizedBox(height: 10),
+                  ModifierWidget()
                 ],
               ),
             )
