@@ -6,7 +6,6 @@ import 'package:food_ordering_app/features/home/presentation/widgets/menu_item.d
 import 'package:food_ordering_app/features/home/presentation/widgets/menu_widget.dart';
 import 'package:food_ordering_app/features/home/presentation/widgets/tab_widget.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,19 +19,18 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
-              clipBehavior:
-                  Clip.none, // Allows TabWidget to overflow outside the Stack
+              clipBehavior: Clip.none,
               children: [
-                Container(
-                  height: 200, // Set a fixed height for the image container
+                SizedBox(
+                  height: 200,
                   width: double.infinity,
                   child: Image.asset(
                     'assets/cover-container.png',
                     fit: BoxFit.cover,
                   ),
                 ),
-                Positioned(
-                  bottom: -25, // Adjust to control the overlap
+                const Positioned(
+                  bottom: -25,
                   left: 0,
                   right: 0,
                   child: Center(
@@ -92,36 +90,36 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             Expanded(
               child: ListView(
-                padding: EdgeInsets.all(0),
+                padding: const EdgeInsets.all(0),
                 children: [
                   Text(
                     "SANWICHES",
                     style: Get.textTheme.bodyLarge!.copyWith(),
                   ),
-                  SizedBox(height: 20),
-                  MenuItem(),
-                  MenuItem(),
-                  MenuItem(),
+                  const SizedBox(height: 20),
+                  const MenuItem(),
+                  const MenuItem(),
+                  const MenuItem(),
                   Text(
                     "BURGERS",
                     style: Get.textTheme.bodyLarge!.copyWith(),
                   ),
-                  SizedBox(height: 20),
-                  MenuItem(),
-                  MenuItem(),
-                  MenuItem(),
-                  Button(
+                  const SizedBox(height: 20),
+                  const MenuItem(),
+                  const MenuItem(),
+                  const MenuItem(),
+                  const Button(
                     text: 'Basket • 3 items • £24.00',
                   ),
-                  SizedBox(height: 10),
-                  Button(
+                  const SizedBox(height: 10),
+                  const Button(
                     text: 'View Basket',
                   ),
-                  SizedBox(height: 20)
+                  const SizedBox(height: 20)
                 ],
               ),
             ),

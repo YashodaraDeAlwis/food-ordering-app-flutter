@@ -11,7 +11,7 @@ class ChooseSizeWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Choose size"),
+        const Text("Choose size"),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -23,11 +23,12 @@ class ChooseSizeWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: AppColors.dark),
                   ),
-                  padding: EdgeInsets.all(8.0), // Adjust padding as needed
-                  child: Icon(Symbols.remove),
+                  padding:
+                      const EdgeInsets.all(8.0), // Adjust padding as needed
+                  child: const Icon(Symbols.remove),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text("01"),
                 ),
                 Container(
@@ -35,8 +36,9 @@ class ChooseSizeWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: AppColors.dark),
                   ),
-                  padding: EdgeInsets.all(8.0), // Adjust padding as needed
-                  child: Icon(Symbols.add),
+                  padding:
+                      const EdgeInsets.all(8.0), // Adjust padding as needed
+                  child: const Icon(Symbols.add),
                 ),
               ],
             ),
