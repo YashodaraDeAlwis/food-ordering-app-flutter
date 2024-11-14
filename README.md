@@ -36,3 +36,6 @@ Core Components: The core directory houses reusable components and utilities tha
 Widgets: Custom widgets such as CustomButton, and CustomInput which are used throughout the app to ensure a consistent UI and reduce code duplication. 
 Theme: Shared theme configurations and styles are defined in config/theme.dart and config/colors.dart to maintain a consistent look and feel across the app. Utilities: Includes utility functions and helper classes that provide common functionalities needed across different parts of the app.
 ![image](https://github.com/user-attachments/assets/5433775c-d34a-453a-9458-4e4d45293743)
+
+
+scenario : When select a menu from the drop down, according to the current data need to populate the relevant menu items. Then in home page accoding to tha category id show it in the ui, Then using the item ids need to take the each item under category. And when going through home page to single item page need to pass the id and need to pupulate the relevant data under that id.
