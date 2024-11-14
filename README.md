@@ -20,7 +20,7 @@ Consistency: Ensures that all team members are using the same Flutter version, a
 - fvm use {version} //this will create .fvmrc file
 //(check for .getignore for .fvm)
 
-Architecture The project follows the Clean Code architecture, which is aimed at promoting code maintainability, scalability, and testability. Here’s a brief overview of the architecture:
+### Architecture The project follows the Clean Code architecture, which is aimed at promoting code maintainability, scalability, and testability. Here’s a brief overview of the architecture:
 
 Presentation Layer: Widgets: Contains UI components and screens. Widgets interact with the state management solution to reflect changes in the UI. Controllers: Manage the state and business logic for the presentation layer. They interact with use cases to perform operations and update the UI
 
