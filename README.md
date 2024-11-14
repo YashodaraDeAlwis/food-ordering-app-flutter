@@ -22,12 +22,17 @@ Consistency: Ensures that all team members are using the same Flutter version, a
 
 ### Architecture The project follows the Clean Code architecture, which is aimed at promoting code maintainability, scalability, and testability. Here’s a brief overview of the architecture:
 
-Presentation Layer: Widgets: Contains UI components and screens. Widgets interact with the state management solution to reflect changes in the UI. Controllers: Manage the state and business logic for the presentation layer. They interact with use cases to perform operations and update the UI
+- Presentation Layer:
+- Widgets: Contains UI components and screens. Widgets interact with the state management solution to reflect changes in the UI.
+- Controllers: Manage the state and business logic for the presentation layer. They interact with use cases to perform operations and update the UI
+- Domain Layer:.
+- Use Cases: Define the business logic of the application. They interact with repositories to fetch or modify data (e.g., GetMenuList).
+- Data Layer:
+- Repositories: Implement data access logic, interacting with data sources to provide data to the domain layer (e.g., CurrencyRepository).
+- Models: Represent the core data models of the application (e.g., MenuModel)
+- Data Sources: Define how data is fetched or stored. This includes remote data sources (e.g., API interactions) and local data sources (e.g., local databases).
 
-Domain Layer: Entities: Represent the core data models of the application (e.g., CurrencyDTO). Use Cases: Define the business logic of the application. They interact with repositories to fetch or modify data (e.g., GetExchangeAmount, SaveCurrency).
-
-Data Layer: Repositories: Implement data access logic, interacting with data sources to provide data to the domain layer (e.g., CurrencyRepository). Data Sources: Define how data is fetched or stored. This includes remote data sources (e.g., API interactions) and local data sources (e.g., local databases) (e.g., CurrencyRemoteDataSource, CurrencyLocalDataSource).
-
-Core Components: The core directory houses reusable components and utilities that are shared across the application: Widgets: Custom widgets such as CustomButton, and CustomInput which are used throughout the app to ensure a consistent UI and reduce code duplication. 
+Core Components: The core directory houses reusable components and utilities that are shared across the application: 
+Widgets: Custom widgets such as CustomButton, and CustomInput which are used throughout the app to ensure a consistent UI and reduce code duplication. 
 Theme: Shared theme configurations and styles are defined in config/theme.dart and config/colors.dart to maintain a consistent look and feel across the app. Utilities: Includes utility functions and helper classes that provide common functionalities needed across different parts of the app.
 ![image](https://github.com/user-attachments/assets/5433775c-d34a-453a-9458-4e4d45293743)
