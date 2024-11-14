@@ -51,8 +51,11 @@ class HomePage extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Obx(() => Row(
                   children: controller.menuList.map((menu) {
-                    return MenuButton(
-                      category: menu.title?.en ?? 'Default Title',
+                    return Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: MenuButton(
+                        category: menu.title?.en ?? 'Default Title',
+                      ),
                     );
                   }).toList(),
                 )),
