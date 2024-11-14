@@ -21,12 +21,19 @@ dependencies:
   flutter_animate: ^4.5.0
   material_symbols_icons: ^4.2791.1
   flutter_launcher_icons: ^0.14.1
+  freezed_annotation: ^2.4.4
+  freezed: ^2.5.2
+  fpdart: ^1.1.1
+  json_annotation: ^4.9.0
+  json_serializable: ^6.8.0
+  
   
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^3.0.0
+  build_runner: ^2.4.11
 
 
 flutter:
@@ -34,6 +41,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - core/mock_data.json
+
   fonts:
     - family: Urbanist
       fonts:
