@@ -8,7 +8,7 @@ Importance of FVM Managing Flutter versions can be challenging, especially when 
 
 Consistency: Ensures that all team members are using the same Flutter version, avoiding discrepancies and compatibility issues. Flexibility: Allows you to easily switch between different Flutter versions for different projects. Isolation: Prevents conflicts between Flutter versions used in different projects, ensuring a stable development environment.
 
-## Getting Started To set up and run the project, follow these steps:
+## Getting Started To set up and run the project, followed these steps:
 
 - fvm releases //check the stable flutter version
 - fvm install {stable version}
