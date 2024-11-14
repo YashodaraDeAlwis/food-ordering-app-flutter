@@ -20,18 +20,31 @@ MenuModel _$MenuModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MenuModel {
+  @JsonKey(name: 'ID')
   String get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'MenuID')
   String get menuID => throw _privateConstructorUsedError;
+  @JsonKey(name: 'VerticalID')
   String get verticalID => throw _privateConstructorUsedError;
+  @JsonKey(name: 'StoreID')
   String get storeID => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Title')
   Title? get title => throw _privateConstructorUsedError;
+  @JsonKey(name: 'SubTitle')
   String? get subTitle => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Description')
   String? get description => throw _privateConstructorUsedError;
+  @JsonKey(name: 'MenuAvailability')
   MenuAvailability get menuAvailability => throw _privateConstructorUsedError;
+  @JsonKey(name: 'MenuCategoryIDs')
   List<String> get menuCategoryIDs => throw _privateConstructorUsedError;
+  @JsonKey(name: 'CreatedDate')
   DateTime get createdDate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ModifiedDate')
   DateTime? get modifiedDate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'CreatedBy')
   String? get createdBy => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ModifiedBy')
   String? get modifiedBy => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,19 +59,19 @@ abstract class $MenuModelCopyWith<$Res> {
       _$MenuModelCopyWithImpl<$Res, MenuModel>;
   @useResult
   $Res call(
-      {String id,
-      String menuID,
-      String verticalID,
-      String storeID,
-      Title? title,
-      String? subTitle,
-      String? description,
-      MenuAvailability menuAvailability,
-      List<String> menuCategoryIDs,
-      DateTime createdDate,
-      DateTime? modifiedDate,
-      String? createdBy,
-      String? modifiedBy});
+      {@JsonKey(name: 'ID') String id,
+      @JsonKey(name: 'MenuID') String menuID,
+      @JsonKey(name: 'VerticalID') String verticalID,
+      @JsonKey(name: 'StoreID') String storeID,
+      @JsonKey(name: 'Title') Title? title,
+      @JsonKey(name: 'SubTitle') String? subTitle,
+      @JsonKey(name: 'Description') String? description,
+      @JsonKey(name: 'MenuAvailability') MenuAvailability menuAvailability,
+      @JsonKey(name: 'MenuCategoryIDs') List<String> menuCategoryIDs,
+      @JsonKey(name: 'CreatedDate') DateTime createdDate,
+      @JsonKey(name: 'ModifiedDate') DateTime? modifiedDate,
+      @JsonKey(name: 'CreatedBy') String? createdBy,
+      @JsonKey(name: 'ModifiedBy') String? modifiedBy});
 
   $TitleCopyWith<$Res>? get title;
   $MenuAvailabilityCopyWith<$Res> get menuAvailability;
@@ -177,19 +190,19 @@ abstract class _$$MenuModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String menuID,
-      String verticalID,
-      String storeID,
-      Title? title,
-      String? subTitle,
-      String? description,
-      MenuAvailability menuAvailability,
-      List<String> menuCategoryIDs,
-      DateTime createdDate,
-      DateTime? modifiedDate,
-      String? createdBy,
-      String? modifiedBy});
+      {@JsonKey(name: 'ID') String id,
+      @JsonKey(name: 'MenuID') String menuID,
+      @JsonKey(name: 'VerticalID') String verticalID,
+      @JsonKey(name: 'StoreID') String storeID,
+      @JsonKey(name: 'Title') Title? title,
+      @JsonKey(name: 'SubTitle') String? subTitle,
+      @JsonKey(name: 'Description') String? description,
+      @JsonKey(name: 'MenuAvailability') MenuAvailability menuAvailability,
+      @JsonKey(name: 'MenuCategoryIDs') List<String> menuCategoryIDs,
+      @JsonKey(name: 'CreatedDate') DateTime createdDate,
+      @JsonKey(name: 'ModifiedDate') DateTime? modifiedDate,
+      @JsonKey(name: 'CreatedBy') String? createdBy,
+      @JsonKey(name: 'ModifiedBy') String? modifiedBy});
 
   @override
   $TitleCopyWith<$Res>? get title;
@@ -283,42 +296,52 @@ class __$$MenuModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MenuModelImpl implements _MenuModel {
   _$MenuModelImpl(
-      {required this.id,
-      required this.menuID,
-      required this.verticalID,
-      required this.storeID,
-      this.title,
-      this.subTitle,
-      this.description,
-      required this.menuAvailability,
+      {@JsonKey(name: 'ID') required this.id,
+      @JsonKey(name: 'MenuID') required this.menuID,
+      @JsonKey(name: 'VerticalID') required this.verticalID,
+      @JsonKey(name: 'StoreID') required this.storeID,
+      @JsonKey(name: 'Title') this.title,
+      @JsonKey(name: 'SubTitle') this.subTitle,
+      @JsonKey(name: 'Description') this.description,
+      @JsonKey(name: 'MenuAvailability') required this.menuAvailability,
+      @JsonKey(name: 'MenuCategoryIDs')
       required final List<String> menuCategoryIDs,
-      required this.createdDate,
-      this.modifiedDate,
-      this.createdBy,
-      this.modifiedBy})
+      @JsonKey(name: 'CreatedDate') required this.createdDate,
+      @JsonKey(name: 'ModifiedDate') this.modifiedDate,
+      @JsonKey(name: 'CreatedBy') this.createdBy,
+      @JsonKey(name: 'ModifiedBy') this.modifiedBy})
       : _menuCategoryIDs = menuCategoryIDs;
 
   factory _$MenuModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$MenuModelImplFromJson(json);
 
   @override
+  @JsonKey(name: 'ID')
   final String id;
   @override
+  @JsonKey(name: 'MenuID')
   final String menuID;
   @override
+  @JsonKey(name: 'VerticalID')
   final String verticalID;
   @override
+  @JsonKey(name: 'StoreID')
   final String storeID;
   @override
+  @JsonKey(name: 'Title')
   final Title? title;
   @override
+  @JsonKey(name: 'SubTitle')
   final String? subTitle;
   @override
+  @JsonKey(name: 'Description')
   final String? description;
   @override
+  @JsonKey(name: 'MenuAvailability')
   final MenuAvailability menuAvailability;
   final List<String> _menuCategoryIDs;
   @override
+  @JsonKey(name: 'MenuCategoryIDs')
   List<String> get menuCategoryIDs {
     if (_menuCategoryIDs is EqualUnmodifiableListView) return _menuCategoryIDs;
     // ignore: implicit_dynamic_type
@@ -326,12 +349,16 @@ class _$MenuModelImpl implements _MenuModel {
   }
 
   @override
+  @JsonKey(name: 'CreatedDate')
   final DateTime createdDate;
   @override
+  @JsonKey(name: 'ModifiedDate')
   final DateTime? modifiedDate;
   @override
+  @JsonKey(name: 'CreatedBy')
   final String? createdBy;
   @override
+  @JsonKey(name: 'ModifiedBy')
   final String? modifiedBy;
 
   @override
@@ -402,48 +429,63 @@ class _$MenuModelImpl implements _MenuModel {
 
 abstract class _MenuModel implements MenuModel {
   factory _MenuModel(
-      {required final String id,
-      required final String menuID,
-      required final String verticalID,
-      required final String storeID,
-      final Title? title,
-      final String? subTitle,
-      final String? description,
+      {@JsonKey(name: 'ID') required final String id,
+      @JsonKey(name: 'MenuID') required final String menuID,
+      @JsonKey(name: 'VerticalID') required final String verticalID,
+      @JsonKey(name: 'StoreID') required final String storeID,
+      @JsonKey(name: 'Title') final Title? title,
+      @JsonKey(name: 'SubTitle') final String? subTitle,
+      @JsonKey(name: 'Description') final String? description,
+      @JsonKey(name: 'MenuAvailability')
       required final MenuAvailability menuAvailability,
+      @JsonKey(name: 'MenuCategoryIDs')
       required final List<String> menuCategoryIDs,
-      required final DateTime createdDate,
-      final DateTime? modifiedDate,
-      final String? createdBy,
-      final String? modifiedBy}) = _$MenuModelImpl;
+      @JsonKey(name: 'CreatedDate') required final DateTime createdDate,
+      @JsonKey(name: 'ModifiedDate') final DateTime? modifiedDate,
+      @JsonKey(name: 'CreatedBy') final String? createdBy,
+      @JsonKey(name: 'ModifiedBy') final String? modifiedBy}) = _$MenuModelImpl;
 
   factory _MenuModel.fromJson(Map<String, dynamic> json) =
       _$MenuModelImpl.fromJson;
 
   @override
+  @JsonKey(name: 'ID')
   String get id;
   @override
+  @JsonKey(name: 'MenuID')
   String get menuID;
   @override
+  @JsonKey(name: 'VerticalID')
   String get verticalID;
   @override
+  @JsonKey(name: 'StoreID')
   String get storeID;
   @override
+  @JsonKey(name: 'Title')
   Title? get title;
   @override
+  @JsonKey(name: 'SubTitle')
   String? get subTitle;
   @override
+  @JsonKey(name: 'Description')
   String? get description;
   @override
+  @JsonKey(name: 'MenuAvailability')
   MenuAvailability get menuAvailability;
   @override
+  @JsonKey(name: 'MenuCategoryIDs')
   List<String> get menuCategoryIDs;
   @override
+  @JsonKey(name: 'CreatedDate')
   DateTime get createdDate;
   @override
+  @JsonKey(name: 'ModifiedDate')
   DateTime? get modifiedDate;
   @override
+  @JsonKey(name: 'CreatedBy')
   String? get createdBy;
   @override
+  @JsonKey(name: 'ModifiedBy')
   String? get modifiedBy;
   @override
   @JsonKey(ignore: true)
@@ -589,12 +631,19 @@ MenuAvailability _$MenuAvailabilityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MenuAvailability {
+  @JsonKey(name: 'Sunday')
   AvailabilityTime get sunday => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Monday')
   AvailabilityTime get monday => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Tuesday')
   AvailabilityTime get tuesday => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Wednesday')
   AvailabilityTime get wednesday => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Thursday')
   AvailabilityTime get thursday => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Friday')
   AvailabilityTime get friday => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Saturday')
   AvailabilityTime get saturday => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -610,13 +659,13 @@ abstract class $MenuAvailabilityCopyWith<$Res> {
       _$MenuAvailabilityCopyWithImpl<$Res, MenuAvailability>;
   @useResult
   $Res call(
-      {AvailabilityTime sunday,
-      AvailabilityTime monday,
-      AvailabilityTime tuesday,
-      AvailabilityTime wednesday,
-      AvailabilityTime thursday,
-      AvailabilityTime friday,
-      AvailabilityTime saturday});
+      {@JsonKey(name: 'Sunday') AvailabilityTime sunday,
+      @JsonKey(name: 'Monday') AvailabilityTime monday,
+      @JsonKey(name: 'Tuesday') AvailabilityTime tuesday,
+      @JsonKey(name: 'Wednesday') AvailabilityTime wednesday,
+      @JsonKey(name: 'Thursday') AvailabilityTime thursday,
+      @JsonKey(name: 'Friday') AvailabilityTime friday,
+      @JsonKey(name: 'Saturday') AvailabilityTime saturday});
 
   $AvailabilityTimeCopyWith<$Res> get sunday;
   $AvailabilityTimeCopyWith<$Res> get monday;
@@ -746,13 +795,13 @@ abstract class _$$MenuAvailabilityImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AvailabilityTime sunday,
-      AvailabilityTime monday,
-      AvailabilityTime tuesday,
-      AvailabilityTime wednesday,
-      AvailabilityTime thursday,
-      AvailabilityTime friday,
-      AvailabilityTime saturday});
+      {@JsonKey(name: 'Sunday') AvailabilityTime sunday,
+      @JsonKey(name: 'Monday') AvailabilityTime monday,
+      @JsonKey(name: 'Tuesday') AvailabilityTime tuesday,
+      @JsonKey(name: 'Wednesday') AvailabilityTime wednesday,
+      @JsonKey(name: 'Thursday') AvailabilityTime thursday,
+      @JsonKey(name: 'Friday') AvailabilityTime friday,
+      @JsonKey(name: 'Saturday') AvailabilityTime saturday});
 
   @override
   $AvailabilityTimeCopyWith<$Res> get sunday;
@@ -826,30 +875,37 @@ class __$$MenuAvailabilityImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MenuAvailabilityImpl implements _MenuAvailability {
   _$MenuAvailabilityImpl(
-      {required this.sunday,
-      required this.monday,
-      required this.tuesday,
-      required this.wednesday,
-      required this.thursday,
-      required this.friday,
-      required this.saturday});
+      {@JsonKey(name: 'Sunday') required this.sunday,
+      @JsonKey(name: 'Monday') required this.monday,
+      @JsonKey(name: 'Tuesday') required this.tuesday,
+      @JsonKey(name: 'Wednesday') required this.wednesday,
+      @JsonKey(name: 'Thursday') required this.thursday,
+      @JsonKey(name: 'Friday') required this.friday,
+      @JsonKey(name: 'Saturday') required this.saturday});
 
   factory _$MenuAvailabilityImpl.fromJson(Map<String, dynamic> json) =>
       _$$MenuAvailabilityImplFromJson(json);
 
   @override
+  @JsonKey(name: 'Sunday')
   final AvailabilityTime sunday;
   @override
+  @JsonKey(name: 'Monday')
   final AvailabilityTime monday;
   @override
+  @JsonKey(name: 'Tuesday')
   final AvailabilityTime tuesday;
   @override
+  @JsonKey(name: 'Wednesday')
   final AvailabilityTime wednesday;
   @override
+  @JsonKey(name: 'Thursday')
   final AvailabilityTime thursday;
   @override
+  @JsonKey(name: 'Friday')
   final AvailabilityTime friday;
   @override
+  @JsonKey(name: 'Saturday')
   final AvailabilityTime saturday;
 
   @override
@@ -896,30 +952,38 @@ class _$MenuAvailabilityImpl implements _MenuAvailability {
 
 abstract class _MenuAvailability implements MenuAvailability {
   factory _MenuAvailability(
-      {required final AvailabilityTime sunday,
-      required final AvailabilityTime monday,
-      required final AvailabilityTime tuesday,
-      required final AvailabilityTime wednesday,
-      required final AvailabilityTime thursday,
-      required final AvailabilityTime friday,
+      {@JsonKey(name: 'Sunday') required final AvailabilityTime sunday,
+      @JsonKey(name: 'Monday') required final AvailabilityTime monday,
+      @JsonKey(name: 'Tuesday') required final AvailabilityTime tuesday,
+      @JsonKey(name: 'Wednesday') required final AvailabilityTime wednesday,
+      @JsonKey(name: 'Thursday') required final AvailabilityTime thursday,
+      @JsonKey(name: 'Friday') required final AvailabilityTime friday,
+      @JsonKey(name: 'Saturday')
       required final AvailabilityTime saturday}) = _$MenuAvailabilityImpl;
 
   factory _MenuAvailability.fromJson(Map<String, dynamic> json) =
       _$MenuAvailabilityImpl.fromJson;
 
   @override
+  @JsonKey(name: 'Sunday')
   AvailabilityTime get sunday;
   @override
+  @JsonKey(name: 'Monday')
   AvailabilityTime get monday;
   @override
+  @JsonKey(name: 'Tuesday')
   AvailabilityTime get tuesday;
   @override
+  @JsonKey(name: 'Wednesday')
   AvailabilityTime get wednesday;
   @override
+  @JsonKey(name: 'Thursday')
   AvailabilityTime get thursday;
   @override
+  @JsonKey(name: 'Friday')
   AvailabilityTime get friday;
   @override
+  @JsonKey(name: 'Saturday')
   AvailabilityTime get saturday;
   @override
   @JsonKey(ignore: true)
@@ -933,7 +997,9 @@ AvailabilityTime _$AvailabilityTimeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AvailabilityTime {
+  @JsonKey(name: 'StartTime')
   String get startTime => throw _privateConstructorUsedError;
+  @JsonKey(name: 'EndTime')
   String get endTime => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -948,7 +1014,9 @@ abstract class $AvailabilityTimeCopyWith<$Res> {
           AvailabilityTime value, $Res Function(AvailabilityTime) then) =
       _$AvailabilityTimeCopyWithImpl<$Res, AvailabilityTime>;
   @useResult
-  $Res call({String startTime, String endTime});
+  $Res call(
+      {@JsonKey(name: 'StartTime') String startTime,
+      @JsonKey(name: 'EndTime') String endTime});
 }
 
 /// @nodoc
@@ -988,7 +1056,9 @@ abstract class _$$AvailabilityTimeImplCopyWith<$Res>
       __$$AvailabilityTimeImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String startTime, String endTime});
+  $Res call(
+      {@JsonKey(name: 'StartTime') String startTime,
+      @JsonKey(name: 'EndTime') String endTime});
 }
 
 /// @nodoc
@@ -1021,14 +1091,18 @@ class __$$AvailabilityTimeImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AvailabilityTimeImpl implements _AvailabilityTime {
-  _$AvailabilityTimeImpl({required this.startTime, required this.endTime});
+  _$AvailabilityTimeImpl(
+      {@JsonKey(name: 'StartTime') required this.startTime,
+      @JsonKey(name: 'EndTime') required this.endTime});
 
   factory _$AvailabilityTimeImpl.fromJson(Map<String, dynamic> json) =>
       _$$AvailabilityTimeImplFromJson(json);
 
   @override
+  @JsonKey(name: 'StartTime')
   final String startTime;
   @override
+  @JsonKey(name: 'EndTime')
   final String endTime;
 
   @override
@@ -1067,15 +1141,18 @@ class _$AvailabilityTimeImpl implements _AvailabilityTime {
 
 abstract class _AvailabilityTime implements AvailabilityTime {
   factory _AvailabilityTime(
-      {required final String startTime,
-      required final String endTime}) = _$AvailabilityTimeImpl;
+          {@JsonKey(name: 'StartTime') required final String startTime,
+          @JsonKey(name: 'EndTime') required final String endTime}) =
+      _$AvailabilityTimeImpl;
 
   factory _AvailabilityTime.fromJson(Map<String, dynamic> json) =
       _$AvailabilityTimeImpl.fromJson;
 
   @override
+  @JsonKey(name: 'StartTime')
   String get startTime;
   @override
+  @JsonKey(name: 'EndTime')
   String get endTime;
   @override
   @JsonKey(ignore: true)

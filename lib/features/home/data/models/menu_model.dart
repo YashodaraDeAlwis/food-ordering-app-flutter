@@ -6,19 +6,20 @@ part 'menu_model.g.dart';
 @freezed
 class MenuModel with _$MenuModel {
   factory MenuModel({
-    required String id,
-    required String menuID,
-    required String verticalID,
-    required String storeID,
-    Title? title,
-    String? subTitle,
-    String? description,
+    @JsonKey(name: 'ID') required String id,
+    @JsonKey(name: 'MenuID') required String menuID,
+    @JsonKey(name: 'VerticalID') required String verticalID,
+    @JsonKey(name: 'StoreID') required String storeID,
+    @JsonKey(name: 'Title') Title? title,
+    @JsonKey(name: 'SubTitle') String? subTitle,
+    @JsonKey(name: 'Description') String? description,
+    @JsonKey(name: 'MenuAvailability')
     required MenuAvailability menuAvailability,
-    required List<String> menuCategoryIDs,
-    required DateTime createdDate,
-    DateTime? modifiedDate,
-    String? createdBy,
-    String? modifiedBy,
+    @JsonKey(name: 'MenuCategoryIDs') required List<String> menuCategoryIDs,
+    @JsonKey(name: 'CreatedDate') required DateTime createdDate,
+    @JsonKey(name: 'ModifiedDate') DateTime? modifiedDate,
+    @JsonKey(name: 'CreatedBy') String? createdBy,
+    @JsonKey(name: 'ModifiedBy') String? modifiedBy,
   }) = _MenuModel;
 
   factory MenuModel.fromJson(Map<String, dynamic> json) =>
@@ -37,13 +38,13 @@ class Title with _$Title {
 @freezed
 class MenuAvailability with _$MenuAvailability {
   factory MenuAvailability({
-    required AvailabilityTime sunday,
-    required AvailabilityTime monday,
-    required AvailabilityTime tuesday,
-    required AvailabilityTime wednesday,
-    required AvailabilityTime thursday,
-    required AvailabilityTime friday,
-    required AvailabilityTime saturday,
+    @JsonKey(name: 'Sunday') required AvailabilityTime sunday,
+    @JsonKey(name: 'Monday') required AvailabilityTime monday,
+    @JsonKey(name: 'Tuesday') required AvailabilityTime tuesday,
+    @JsonKey(name: 'Wednesday') required AvailabilityTime wednesday,
+    @JsonKey(name: 'Thursday') required AvailabilityTime thursday,
+    @JsonKey(name: 'Friday') required AvailabilityTime friday,
+    @JsonKey(name: 'Saturday') required AvailabilityTime saturday,
   }) = _MenuAvailability;
 
   factory MenuAvailability.fromJson(Map<String, dynamic> json) =>
@@ -53,8 +54,8 @@ class MenuAvailability with _$MenuAvailability {
 @freezed
 class AvailabilityTime with _$AvailabilityTime {
   factory AvailabilityTime({
-    required String startTime,
-    required String endTime,
+    @JsonKey(name: 'StartTime') required String startTime,
+    @JsonKey(name: 'EndTime') required String endTime,
   }) = _AvailabilityTime;
 
   factory AvailabilityTime.fromJson(Map<String, dynamic> json) =>
