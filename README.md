@@ -1,6 +1,6 @@
 # food_ordering_app
 
-
+#### please find the apk under releases 
 
 FVM (Flutter Version Management) In this project, FVM is used to manage the Flutter version to ensure consistency across development environments. By using FVM, you can easily switch to the Flutter version specified for this project, maintaining compatibility and stability.
 
