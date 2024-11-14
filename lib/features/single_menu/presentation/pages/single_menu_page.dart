@@ -32,7 +32,7 @@ class SingleMenuPage extends StatelessWidget {
                       GestureDetector(
                           onTap: () => Get.back(),
                           child: const Icon(Symbols.close_rounded)),
-                      SizedBox(
+                      const SizedBox(
                         width: 2,
                       ),
                     ],
@@ -81,7 +81,7 @@ class SingleMenuPage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 10),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IngredientsItem(ingedient: "Eggs"),

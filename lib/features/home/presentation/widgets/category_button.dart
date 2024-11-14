@@ -12,14 +12,7 @@ class CategoryButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.light,
         borderRadius: BorderRadius.circular(30),
-        border: Border.all(color: AppColors.dark),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.dark.withOpacity(0.1),
-            blurRadius: 8,
-            offset: Offset(0, 4),
-          ),
-        ],
+        border: Border.all(color: AppColors.secondary),
       ),
       child: Column(
         children: [
@@ -27,7 +20,8 @@ class CategoryButton extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
             child: Text(
               category,
-              style: Get.textTheme.bodyLarge!.copyWith(),
+              style: Get.textTheme.headlineSmall!
+                  .copyWith(fontWeight: FontWeight.w400),
             ),
           ),
         ],
