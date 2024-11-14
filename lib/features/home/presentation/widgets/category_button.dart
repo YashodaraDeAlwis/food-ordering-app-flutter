@@ -2,9 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:food_ordering_app/config/colors.dart';
 import 'package:get/get.dart';
 
-class CategoryButton extends StatelessWidget {
+class MenuButton extends StatelessWidget {
   final String category;
-  const CategoryButton({super.key, required this.category});
+  const MenuButton({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {

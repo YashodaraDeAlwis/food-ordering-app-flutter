@@ -10,7 +10,7 @@ class MenuModel with _$MenuModel {
     required String menuID,
     required String verticalID,
     required String storeID,
-    required Title title,
+    Title? title,
     String? subTitle,
     String? description,
     required MenuAvailability menuAvailability,
@@ -28,7 +28,7 @@ class MenuModel with _$MenuModel {
 @freezed
 class Title with _$Title {
   factory Title({
-    required String en,
+    required String? en,
   }) = _Title;
 
   factory Title.fromJson(Map<String, dynamic> json) => _$TitleFromJson(json);

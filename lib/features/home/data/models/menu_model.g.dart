@@ -12,7 +12,9 @@ _$MenuModelImpl _$$MenuModelImplFromJson(Map<String, dynamic> json) =>
       menuID: json['menuID'] as String,
       verticalID: json['verticalID'] as String,
       storeID: json['storeID'] as String,
-      title: Title.fromJson(json['title'] as Map<String, dynamic>),
+      title: json['title'] == null
+          ? null
+          : Title.fromJson(json['title'] as Map<String, dynamic>),
       subTitle: json['subTitle'] as String?,
       description: json['description'] as String?,
       menuAvailability: MenuAvailability.fromJson(
@@ -46,7 +48,7 @@ Map<String, dynamic> _$$MenuModelImplToJson(_$MenuModelImpl instance) =>
     };
 
 _$TitleImpl _$$TitleImplFromJson(Map<String, dynamic> json) => _$TitleImpl(
-      en: json['en'] as String,
+      en: json['en'] as String?,
     );
 
 Map<String, dynamic> _$$TitleImplToJson(_$TitleImpl instance) =>

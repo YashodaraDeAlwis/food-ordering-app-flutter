@@ -41,7 +41,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-    - core/mock_data.json
+    - assets/mock_data.json
 
   fonts:
     - family: Urbanist

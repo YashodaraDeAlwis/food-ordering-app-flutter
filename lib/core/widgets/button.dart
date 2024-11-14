@@ -4,15 +4,26 @@ import 'package:get/get.dart';
 
 class Button extends StatelessWidget {
   final String text;
-  const Button({super.key, required this.text});
+  final Color color;
+  final Color textColor;
+  final Color bgColor;
+  final double borderRadius;
+  const Button({
+    super.key,
+    required this.text,
+    this.color = const Color.fromARGB(255, 15, 11, 11),
+    this.textColor = AppColors.dark,
+    this.bgColor = AppColors.light,
+    this.borderRadius = 30,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.light,
-        borderRadius: BorderRadius.circular(30),
-        border: Border.all(color: AppColors.dark),
+        color: color,
+        borderRadius: BorderRadius.circular(borderRadius),
+        border: Border.all(color: bgColor),
         boxShadow: [
           BoxShadow(
             color: AppColors.dark.withOpacity(0.1),
@@ -24,10 +35,10 @@ class Button extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
             child: Text(
               text,
-              style: Get.textTheme.bodyLarge!.copyWith(),
+              style: Get.textTheme.bodyLarge!.copyWith(color: textColor),
             ),
           ),
         ],

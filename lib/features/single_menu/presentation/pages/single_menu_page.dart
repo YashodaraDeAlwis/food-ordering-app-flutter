@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_ordering_app/config/colors.dart';
 import 'package:food_ordering_app/config/values.dart';
+import 'package:food_ordering_app/core/widgets/button.dart';
 import 'package:food_ordering_app/features/single_menu/presentation/widges/choose_size_widget.dart';
 import 'package:food_ordering_app/features/single_menu/presentation/widges/ingredients_item.dart';
 import 'package:food_ordering_app/features/single_menu/presentation/widges/modifier.dart';
@@ -16,7 +17,7 @@ class SingleMenuPage extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: Values.horizontalPadding,
+          horizontal: 20,
           vertical: Values.verticalPadding,
         ),
         child: Column(
@@ -42,18 +43,39 @@ class SingleMenuPage extends StatelessWidget {
                     'assets/subway.png',
                     fit: BoxFit.cover,
                   ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Subway Special"),
-                      Text("euro 1200"),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Subway Special",
+                          style: Get.textTheme.bodyLarge!.copyWith(),
+                        ),
+                        Text(
+                          "euro 1200",
+                          style: Get.textTheme.bodyLarge!.copyWith(),
+                        ),
+                      ],
+                    ),
                   ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(Symbols.location_pin),
-                      Text("5.0"),
+                      Icon(
+                        Symbols.location_pin,
+                        color: AppColors.primary,
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            fill: 1,
+                            Symbols.star,
+                            color: AppColors.primary,
+                          ),
+                          Text("5.0"),
+                        ],
+                      ),
                     ],
                   ),
                   const SizedBox(height: 10),
@@ -67,73 +89,104 @@ class SingleMenuPage extends StatelessWidget {
                     color: AppColors.dark50,
                   ),
                   const SizedBox(height: 10),
-                  Text(
-                    "This product contains ingredients that may trigger allergies. Please review the ingredient list for details",
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: Text(
+                      "This product contains ingredients that may trigger allergies. Please review the ingredient list for details",
+                    ),
                   ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  const SizedBox(height: 10),
+                  const Wrap(
+                    spacing: 10,
+                    runSpacing: 10,
+                    alignment: WrapAlignment.start,
                     children: [
                       IngredientsItem(ingedient: "Eggs"),
+                      IngredientsItem(ingedient: "Milk"),
                       IngredientsItem(ingedient: "Eggs"),
-                      IngredientsItem(ingedient: "Eggs"),
-                      IngredientsItem(ingedient: "Eggs"),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IngredientsItem(ingedient: "Eggs"),
+                      IngredientsItem(ingedient: "Mollusks"),
+                      IngredientsItem(ingedient: "Gluton"),
                       IngredientsItem(ingedient: "Eggs"),
                       IngredientsItem(ingedient: "Eggs"),
                       Text("See more >"),
                     ],
                   ),
-                  SizedBox(height: 10),
-                  Divider(
+                  const SizedBox(height: 10),
+                  const Divider(
                     height: 10,
                     thickness: 0.5,
                     color: AppColors.dark50,
                   ),
-                  ToppingsWidget(topping: 'Beef'),
-                  ToppingsWidget(topping: 'Smoked Beef'),
-                  ToppingsWidget(topping: 'Mozerella cheese'),
-                  ToppingsWidget(topping: 'Mushroom'),
-                  ToppingsWidget(topping: 'Paprika'),
-                  SizedBox(height: 10),
-                  ModifierWidget(),
-                  SizedBox(height: 10),
-                  ModifierWidget(),
-                  SizedBox(height: 10),
-                  ModifierWidget(),
-                  SizedBox(height: 10),
-                  ChooseSizeWidget(size: 'Classic Thin'),
-                  Text("Add comments (Optional)"),
+                  Text(
+                    "Toppings",
+                    style: Get.textTheme.headlineSmall!.copyWith(),
+                  ),
+                  const ToppingsWidget(topping: 'Beef'),
+                  const ToppingsWidget(topping: 'Smoked Beef'),
+                  const ToppingsWidget(topping: 'Mozerella cheese'),
+                  const ToppingsWidget(topping: 'Mushroom'),
+                  const ToppingsWidget(topping: 'Paprika'),
+                  const SizedBox(height: 10),
+                  const ModifierWidget(),
+                  const SizedBox(height: 10),
+                  const ModifierWidget(),
+                  const SizedBox(height: 10),
+                  const ModifierWidget(),
+                  const SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Text(
+                      "Choose size",
+                      style: Get.textTheme.headlineSmall!.copyWith(),
+                    ),
+                  ),
+                  const ChooseSizeWidget(size: 'Classic Thin'),
+                  const ChooseSizeWidget(size: 'Classic Thin'),
+                  Text(
+                    "Add comments (Optional)",
+                    style: Get.textTheme.headlineSmall!.copyWith(),
+                  ),
+                  SizedBox(height: 15),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      border: Border.all(color: AppColors.dark),
+                      border: Border.all(color: AppColors.dark50),
                     ),
-                    child: TextFormField(
-                      decoration: InputDecoration(hintText: "Write here"),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        decoration:
+                            const InputDecoration(hintText: "Write here"),
+                      ),
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),
             // Spacer to push buttons to the bottom
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("Add to Cart"),
+                SizedBox(
+                  width: 120,
+                  child: Button(
+                    borderRadius: 10,
+                    text: '- 1 +',
+                    textColor: AppColors.primary,
+                    color: AppColors.secondary,
+                    bgColor: AppColors.primary,
+                  ),
                 ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text("Add to Cart  ₹1260"),
+                SizedBox(
+                  width: 200,
+                  child: Button(
+                    borderRadius: 10,
+                    text: 'Add to Cart  ₹1260',
+                    textColor: AppColors.light,
+                    color: AppColors.primary,
+                    bgColor: AppColors.primary,
+                  ),
                 ),
               ],
             ),

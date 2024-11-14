@@ -24,7 +24,7 @@ mixin _$MenuModel {
   String get menuID => throw _privateConstructorUsedError;
   String get verticalID => throw _privateConstructorUsedError;
   String get storeID => throw _privateConstructorUsedError;
-  Title get title => throw _privateConstructorUsedError;
+  Title? get title => throw _privateConstructorUsedError;
   String? get subTitle => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   MenuAvailability get menuAvailability => throw _privateConstructorUsedError;
@@ -50,7 +50,7 @@ abstract class $MenuModelCopyWith<$Res> {
       String menuID,
       String verticalID,
       String storeID,
-      Title title,
+      Title? title,
       String? subTitle,
       String? description,
       MenuAvailability menuAvailability,
@@ -60,7 +60,7 @@ abstract class $MenuModelCopyWith<$Res> {
       String? createdBy,
       String? modifiedBy});
 
-  $TitleCopyWith<$Res> get title;
+  $TitleCopyWith<$Res>? get title;
   $MenuAvailabilityCopyWith<$Res> get menuAvailability;
 }
 
@@ -81,7 +81,7 @@ class _$MenuModelCopyWithImpl<$Res, $Val extends MenuModel>
     Object? menuID = null,
     Object? verticalID = null,
     Object? storeID = null,
-    Object? title = null,
+    Object? title = freezed,
     Object? subTitle = freezed,
     Object? description = freezed,
     Object? menuAvailability = null,
@@ -108,10 +108,10 @@ class _$MenuModelCopyWithImpl<$Res, $Val extends MenuModel>
           ? _value.storeID
           : storeID // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as Title,
+              as Title?,
       subTitle: freezed == subTitle
           ? _value.subTitle
           : subTitle // ignore: cast_nullable_to_non_nullable
@@ -149,8 +149,12 @@ class _$MenuModelCopyWithImpl<$Res, $Val extends MenuModel>
 
   @override
   @pragma('vm:prefer-inline')
-  $TitleCopyWith<$Res> get title {
-    return $TitleCopyWith<$Res>(_value.title, (value) {
+  $TitleCopyWith<$Res>? get title {
+    if (_value.title == null) {
+      return null;
+    }
+
+    return $TitleCopyWith<$Res>(_value.title!, (value) {
       return _then(_value.copyWith(title: value) as $Val);
     });
   }
@@ -177,7 +181,7 @@ abstract class _$$MenuModelImplCopyWith<$Res>
       String menuID,
       String verticalID,
       String storeID,
-      Title title,
+      Title? title,
       String? subTitle,
       String? description,
       MenuAvailability menuAvailability,
@@ -188,7 +192,7 @@ abstract class _$$MenuModelImplCopyWith<$Res>
       String? modifiedBy});
 
   @override
-  $TitleCopyWith<$Res> get title;
+  $TitleCopyWith<$Res>? get title;
   @override
   $MenuAvailabilityCopyWith<$Res> get menuAvailability;
 }
@@ -208,7 +212,7 @@ class __$$MenuModelImplCopyWithImpl<$Res>
     Object? menuID = null,
     Object? verticalID = null,
     Object? storeID = null,
-    Object? title = null,
+    Object? title = freezed,
     Object? subTitle = freezed,
     Object? description = freezed,
     Object? menuAvailability = null,
@@ -235,10 +239,10 @@ class __$$MenuModelImplCopyWithImpl<$Res>
           ? _value.storeID
           : storeID // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as Title,
+              as Title?,
       subTitle: freezed == subTitle
           ? _value.subTitle
           : subTitle // ignore: cast_nullable_to_non_nullable
@@ -283,7 +287,7 @@ class _$MenuModelImpl implements _MenuModel {
       required this.menuID,
       required this.verticalID,
       required this.storeID,
-      required this.title,
+      this.title,
       this.subTitle,
       this.description,
       required this.menuAvailability,
@@ -306,7 +310,7 @@ class _$MenuModelImpl implements _MenuModel {
   @override
   final String storeID;
   @override
-  final Title title;
+  final Title? title;
   @override
   final String? subTitle;
   @override
@@ -402,7 +406,7 @@ abstract class _MenuModel implements MenuModel {
       required final String menuID,
       required final String verticalID,
       required final String storeID,
-      required final Title title,
+      final Title? title,
       final String? subTitle,
       final String? description,
       required final MenuAvailability menuAvailability,
@@ -424,7 +428,7 @@ abstract class _MenuModel implements MenuModel {
   @override
   String get storeID;
   @override
-  Title get title;
+  Title? get title;
   @override
   String? get subTitle;
   @override
@@ -453,7 +457,7 @@ Title _$TitleFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Title {
-  String get en => throw _privateConstructorUsedError;
+  String? get en => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -465,7 +469,7 @@ abstract class $TitleCopyWith<$Res> {
   factory $TitleCopyWith(Title value, $Res Function(Title) then) =
       _$TitleCopyWithImpl<$Res, Title>;
   @useResult
-  $Res call({String en});
+  $Res call({String? en});
 }
 
 /// @nodoc
@@ -481,13 +485,13 @@ class _$TitleCopyWithImpl<$Res, $Val extends Title>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? en = null,
+    Object? en = freezed,
   }) {
     return _then(_value.copyWith(
-      en: null == en
+      en: freezed == en
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -499,7 +503,7 @@ abstract class _$$TitleImplCopyWith<$Res> implements $TitleCopyWith<$Res> {
       __$$TitleImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String en});
+  $Res call({String? en});
 }
 
 /// @nodoc
@@ -513,13 +517,13 @@ class __$$TitleImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? en = null,
+    Object? en = freezed,
   }) {
     return _then(_$TitleImpl(
-      en: null == en
+      en: freezed == en
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -533,7 +537,7 @@ class _$TitleImpl implements _Title {
       _$$TitleImplFromJson(json);
 
   @override
-  final String en;
+  final String? en;
 
   @override
   String toString() {
@@ -567,12 +571,12 @@ class _$TitleImpl implements _Title {
 }
 
 abstract class _Title implements Title {
-  factory _Title({required final String en}) = _$TitleImpl;
+  factory _Title({required final String? en}) = _$TitleImpl;
 
   factory _Title.fromJson(Map<String, dynamic> json) = _$TitleImpl.fromJson;
 
   @override
-  String get en;
+  String? get en;
   @override
   @JsonKey(ignore: true)
   _$$TitleImplCopyWith<_$TitleImpl> get copyWith =>

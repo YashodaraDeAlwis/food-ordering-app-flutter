@@ -4,7 +4,15 @@ import 'package:food_ordering_app/routes/routes.dart';
 import 'package:get/get.dart';
 
 class MenuItem extends StatelessWidget {
-  const MenuItem({super.key});
+  final String title;
+  final String subTitle;
+  final String price;
+  const MenuItem({
+    super.key,
+    required this.title,
+    required this.subTitle,
+    required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,19 +26,31 @@ class MenuItem extends StatelessWidget {
                 'assets/menu_item.png',
                 scale: 2,
               ),
-              SizedBox(width: 20),
+              const SizedBox(width: 20),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Classic Beef Burger"),
-                  Text("Our all time BBQ favorite"),
-                  SizedBox(height: 20),
-                  Text("50.20"),
+                  Text(
+                    title,
+                    style: Get.textTheme.bodyLarge!.copyWith(),
+                  ),
+                  Text(
+                    subTitle,
+                    style: Get.textTheme.bodyLarge!
+                        .copyWith(fontWeight: FontWeight.w400),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    price,
+                    style: Get.textTheme.bodyLarge!.copyWith(
+                      color: AppColors.primary,
+                    ),
+                  )
                 ],
               ),
             ],
           ),
-          Divider(
+          const Divider(
             height: 50,
             thickness: 0.5,
             color: AppColors.dark50,

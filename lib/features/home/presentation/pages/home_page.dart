@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_ordering_app/config/colors.dart';
 import 'package:food_ordering_app/config/values.dart';
 import 'package:food_ordering_app/core/widgets/button.dart';
+import 'package:food_ordering_app/features/home/presentation/controllers/home_controller.dart';
 import 'package:food_ordering_app/features/home/presentation/widgets/category_button.dart';
 import 'package:food_ordering_app/features/home/presentation/widgets/menu_item.dart';
 import 'package:food_ordering_app/features/home/presentation/widgets/menu_widget.dart';
@@ -8,7 +10,8 @@ import 'package:food_ordering_app/features/home/presentation/widgets/tab_widget.
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final HomeController controller = Get.find();
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,52 +49,13 @@ class HomePage extends StatelessWidget {
           SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: Values.horizontalPadding),
             scrollDirection: Axis.horizontal,
-            child: const Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(5.0),
-                  child: CategoryButton(
-                    category: 'Basics',
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(5.0),
-                  child: CategoryButton(
-                    category: 'Sanwiches',
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(5.0),
-                  child: CategoryButton(
-                    category: 'Burgers',
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: CategoryButton(
-                    category: 'Pizzas',
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(5.0),
-                  child: CategoryButton(
-                    category: 'Pizzas',
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(5.0),
-                  child: CategoryButton(
-                    category: 'Rice',
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(5.0),
-                  child: CategoryButton(
-                    category: 'Noodles',
-                  ),
-                ),
-              ],
-            ),
+            child: Obx(() => Row(
+                  children: controller.menuList.map((menu) {
+                    return MenuButton(
+                      category: menu.title?.en ?? 'Default Title',
+                    );
+                  }).toList(),
+                )),
           ),
           Expanded(
             child: ListView(
@@ -103,23 +67,52 @@ class HomePage extends StatelessWidget {
                   style: Get.textTheme.bodyLarge!.copyWith(),
                 ),
                 const SizedBox(height: 20),
-                const MenuItem(),
-                const MenuItem(),
-                const MenuItem(),
+                const MenuItem(
+                  title: "Classic Beef Burger",
+                  subTitle: "Our all time BBQ favorite",
+                  price: "\$50.20",
+                ),
+                const MenuItem(
+                  title: "Bacon Wrapped Hotdog",
+                  subTitle: "Our all time favorite",
+                  price: "\$80.20",
+                ),
+                const MenuItem(
+                  title: "Classic Cheese Sandwich",
+                  subTitle: "Our all time BBQ favorite",
+                  price: "\$25.20",
+                ),
                 Text(
                   "BURGERS",
                   style: Get.textTheme.bodyLarge!.copyWith(),
                 ),
                 const SizedBox(height: 20),
-                const MenuItem(),
-                const MenuItem(),
-                const MenuItem(),
+                const MenuItem(
+                  title: "Classic Beef Burger",
+                  subTitle: "Our all time BBQ favorite",
+                  price: "\$50.20",
+                ),
+                const MenuItem(
+                  title: "Classic Beef Burger",
+                  subTitle: "Our all time BBQ favorite",
+                  price: "\$50.20",
+                ),
+                const MenuItem(
+                  title: "Classic Beef Burger",
+                  subTitle: "Our all time BBQ favorite",
+                  price: "\$50.20",
+                ),
                 const Button(
+                  color: AppColors.primary,
                   text: 'Basket • 3 items • £24.00',
+                  textColor: AppColors.light,
                 ),
                 const SizedBox(height: 10),
                 const Button(
                   text: 'View Basket',
+                  textColor: AppColors.primary,
+                  color: AppColors.secondary,
+                  bgColor: AppColors.primary,
                 ),
                 const SizedBox(height: 20)
               ],
