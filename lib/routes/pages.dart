@@ -3,6 +3,7 @@ import 'package:food_ordering_app/features/home/data/data_sources/i_home_remote_
 import 'package:food_ordering_app/features/home/data/repositories/home_repository.dart';
 import 'package:food_ordering_app/features/home/domain/repositories/i_home_repository.dart';
 import 'package:food_ordering_app/features/home/domain/use_cases/get_categories.dart';
+import 'package:food_ordering_app/features/home/domain/use_cases/get_menu_items.dart';
 import 'package:food_ordering_app/features/home/domain/use_cases/get_menu_list.dart';
 import 'package:food_ordering_app/features/home/presentation/controllers/home_controller.dart';
 import 'package:food_ordering_app/features/home/presentation/pages/home_page.dart';
@@ -34,6 +35,7 @@ final List<GetPage> pages = [
       // use cases
       Get.lazyPut(() => GetMenuList(Get.find()));
       Get.lazyPut(() => GetCategories(Get.find()));
+      Get.lazyPut(() => GetMenuItems(Get.find()));
     }),
   ),
   GetPage(

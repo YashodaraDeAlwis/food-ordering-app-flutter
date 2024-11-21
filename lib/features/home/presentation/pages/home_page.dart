@@ -50,11 +50,12 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: Values.horizontalPadding),
             scrollDirection: Axis.horizontal,
             child: Obx(() => Row(
-                  children: controller.menuList.map((menu) {
+                  children: controller.categoryList.map((category) {
                     return Padding(
                       padding: const EdgeInsets.only(left: 5),
                       child: MenuButton(
-                        category: menu.title?.en ?? 'Default Title',
+                        category: category.title?.en ?? 'Default Title',
+                        onTap: () {},
                       ),
                     );
                   }).toList(),

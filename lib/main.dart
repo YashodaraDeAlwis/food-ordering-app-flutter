@@ -1,10 +1,3 @@
-// import 'package:ai_accounting/bindings/initial_bindings.dart';
-// import 'package:ai_accounting/config/theme.dart';
-// import 'package:ai_accounting/config/values.dart';
-// import 'package:ai_accounting/core/routes/pages.dart';
-// import 'package:ai_accounting/core/routes/routes.dart';
-// import 'package:ai_accounting/core/utils/scaling.dart';
-// import 'package:ai_accounting/core/i18n/app_translation.dart';
 import 'package:flutter/material.dart';
 import 'package:food_ordering_app/bindings/initial_bindings.dart';
 import 'package:food_ordering_app/config/theme.dart';

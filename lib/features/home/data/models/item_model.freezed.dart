@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Item _$ItemFromJson(Map<String, dynamic> json) {
-  return _Item.fromJson(json);
+ItemModel _$ItemModelFromJson(Map<String, dynamic> json) {
+  return _ItemModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Item {
+mixin _$ItemModel {
   @JsonKey(name: 'ID')
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'MenuItemID')
@@ -27,15 +27,13 @@ mixin _$Item {
   @JsonKey(name: 'StoreID')
   String get storeID => throw _privateConstructorUsedError;
   @JsonKey(name: 'Title')
-  Title get title => throw _privateConstructorUsedError;
+  Map<String, String> get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'Description')
-  Description get description => throw _privateConstructorUsedError;
+  Map<String, String> get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'ImageURL')
   String get imageURL => throw _privateConstructorUsedError;
   @JsonKey(name: 'PriceInfo')
   PriceInfo get priceInfo => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ExternalData')
-  String get externalData => throw _privateConstructorUsedError;
   @JsonKey(name: 'QuantityInfo')
   QuantityInfo get quantityInfo => throw _privateConstructorUsedError;
   @JsonKey(name: 'SuspensionRules')
@@ -51,48 +49,34 @@ mixin _$Item {
   double get aggregatedProductRating => throw _privateConstructorUsedError;
   @JsonKey(name: 'TotalReviews')
   int get totalReviews => throw _privateConstructorUsedError;
-  @JsonKey(name: 'CreatedDate')
-  DateTime get createdDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ModifiedDate')
-  DateTime get modifiedDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'NutrientData')
   NutrientData get nutrientData => throw _privateConstructorUsedError;
   @JsonKey(name: 'DishInfo')
   DishInfo get dishInfo => throw _privateConstructorUsedError;
-  @JsonKey(name: 'VisibilityInfo')
-  VisibilityInfo get visibilityInfo => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ProductInfo')
-  ProductInfo get productInfo => throw _privateConstructorUsedError;
-  @JsonKey(name: 'BundleItems')
-  List<dynamic>? get bundleItems => throw _privateConstructorUsedError;
-  @JsonKey(name: 'BeverageInfo')
-  BeverageInfo get beverageInfo => throw _privateConstructorUsedError;
   @JsonKey(name: 'CategoryIDs')
   List<String> get categoryIDs => throw _privateConstructorUsedError;
-  @JsonKey(name: 'Allergens')
-  List<String>? get allergens => throw _privateConstructorUsedError;
   @JsonKey(name: 'MetaData')
   MetaData get metaData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ItemCopyWith<Item> get copyWith => throw _privateConstructorUsedError;
+  $ItemModelCopyWith<ItemModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ItemCopyWith<$Res> {
-  factory $ItemCopyWith(Item value, $Res Function(Item) then) =
-      _$ItemCopyWithImpl<$Res, Item>;
+abstract class $ItemModelCopyWith<$Res> {
+  factory $ItemModelCopyWith(ItemModel value, $Res Function(ItemModel) then) =
+      _$ItemModelCopyWithImpl<$Res, ItemModel>;
   @useResult
   $Res call(
       {@JsonKey(name: 'ID') String id,
       @JsonKey(name: 'MenuItemID') String menuItemID,
       @JsonKey(name: 'StoreID') String storeID,
-      @JsonKey(name: 'Title') Title title,
-      @JsonKey(name: 'Description') Description description,
+      @JsonKey(name: 'Title') Map<String, String> title,
+      @JsonKey(name: 'Description') Map<String, String> description,
       @JsonKey(name: 'ImageURL') String imageURL,
       @JsonKey(name: 'PriceInfo') PriceInfo priceInfo,
-      @JsonKey(name: 'ExternalData') String externalData,
       @JsonKey(name: 'QuantityInfo') QuantityInfo quantityInfo,
       @JsonKey(name: 'SuspensionRules') SuspensionRules suspensionRules,
       @JsonKey(name: 'ModifierGroupRules')
@@ -101,20 +85,11 @@ abstract class $ItemCopyWith<$Res> {
       @JsonKey(name: 'TaxInfo') TaxInfo taxInfo,
       @JsonKey(name: 'AggregatedProductRating') double aggregatedProductRating,
       @JsonKey(name: 'TotalReviews') int totalReviews,
-      @JsonKey(name: 'CreatedDate') DateTime createdDate,
-      @JsonKey(name: 'ModifiedDate') DateTime modifiedDate,
       @JsonKey(name: 'NutrientData') NutrientData nutrientData,
       @JsonKey(name: 'DishInfo') DishInfo dishInfo,
-      @JsonKey(name: 'VisibilityInfo') VisibilityInfo visibilityInfo,
-      @JsonKey(name: 'ProductInfo') ProductInfo productInfo,
-      @JsonKey(name: 'BundleItems') List<dynamic>? bundleItems,
-      @JsonKey(name: 'BeverageInfo') BeverageInfo beverageInfo,
       @JsonKey(name: 'CategoryIDs') List<String> categoryIDs,
-      @JsonKey(name: 'Allergens') List<String>? allergens,
       @JsonKey(name: 'MetaData') MetaData metaData});
 
-  $TitleCopyWith<$Res> get title;
-  $DescriptionCopyWith<$Res> get description;
   $PriceInfoCopyWith<$Res> get priceInfo;
   $QuantityInfoCopyWith<$Res> get quantityInfo;
   $SuspensionRulesCopyWith<$Res> get suspensionRules;
@@ -123,16 +98,13 @@ abstract class $ItemCopyWith<$Res> {
   $TaxInfoCopyWith<$Res> get taxInfo;
   $NutrientDataCopyWith<$Res> get nutrientData;
   $DishInfoCopyWith<$Res> get dishInfo;
-  $VisibilityInfoCopyWith<$Res> get visibilityInfo;
-  $ProductInfoCopyWith<$Res> get productInfo;
-  $BeverageInfoCopyWith<$Res> get beverageInfo;
   $MetaDataCopyWith<$Res> get metaData;
 }
 
 /// @nodoc
-class _$ItemCopyWithImpl<$Res, $Val extends Item>
-    implements $ItemCopyWith<$Res> {
-  _$ItemCopyWithImpl(this._value, this._then);
+class _$ItemModelCopyWithImpl<$Res, $Val extends ItemModel>
+    implements $ItemModelCopyWith<$Res> {
+  _$ItemModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -149,7 +121,6 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
     Object? description = null,
     Object? imageURL = null,
     Object? priceInfo = null,
-    Object? externalData = null,
     Object? quantityInfo = null,
     Object? suspensionRules = null,
     Object? modifierGroupRules = null,
@@ -157,16 +128,9 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
     Object? taxInfo = null,
     Object? aggregatedProductRating = null,
     Object? totalReviews = null,
-    Object? createdDate = null,
-    Object? modifiedDate = null,
     Object? nutrientData = null,
     Object? dishInfo = null,
-    Object? visibilityInfo = null,
-    Object? productInfo = null,
-    Object? bundleItems = freezed,
-    Object? beverageInfo = null,
     Object? categoryIDs = null,
-    Object? allergens = freezed,
     Object? metaData = null,
   }) {
     return _then(_value.copyWith(
@@ -185,11 +149,11 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as Title,
+              as Map<String, String>,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as Description,
+              as Map<String, String>,
       imageURL: null == imageURL
           ? _value.imageURL
           : imageURL // ignore: cast_nullable_to_non_nullable
@@ -198,10 +162,6 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
           ? _value.priceInfo
           : priceInfo // ignore: cast_nullable_to_non_nullable
               as PriceInfo,
-      externalData: null == externalData
-          ? _value.externalData
-          : externalData // ignore: cast_nullable_to_non_nullable
-              as String,
       quantityInfo: null == quantityInfo
           ? _value.quantityInfo
           : quantityInfo // ignore: cast_nullable_to_non_nullable
@@ -230,14 +190,6 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
           ? _value.totalReviews
           : totalReviews // ignore: cast_nullable_to_non_nullable
               as int,
-      createdDate: null == createdDate
-          ? _value.createdDate
-          : createdDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      modifiedDate: null == modifiedDate
-          ? _value.modifiedDate
-          : modifiedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       nutrientData: null == nutrientData
           ? _value.nutrientData
           : nutrientData // ignore: cast_nullable_to_non_nullable
@@ -246,51 +198,15 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
           ? _value.dishInfo
           : dishInfo // ignore: cast_nullable_to_non_nullable
               as DishInfo,
-      visibilityInfo: null == visibilityInfo
-          ? _value.visibilityInfo
-          : visibilityInfo // ignore: cast_nullable_to_non_nullable
-              as VisibilityInfo,
-      productInfo: null == productInfo
-          ? _value.productInfo
-          : productInfo // ignore: cast_nullable_to_non_nullable
-              as ProductInfo,
-      bundleItems: freezed == bundleItems
-          ? _value.bundleItems
-          : bundleItems // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
-      beverageInfo: null == beverageInfo
-          ? _value.beverageInfo
-          : beverageInfo // ignore: cast_nullable_to_non_nullable
-              as BeverageInfo,
       categoryIDs: null == categoryIDs
           ? _value.categoryIDs
           : categoryIDs // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      allergens: freezed == allergens
-          ? _value.allergens
-          : allergens // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       metaData: null == metaData
           ? _value.metaData
           : metaData // ignore: cast_nullable_to_non_nullable
               as MetaData,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TitleCopyWith<$Res> get title {
-    return $TitleCopyWith<$Res>(_value.title, (value) {
-      return _then(_value.copyWith(title: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $DescriptionCopyWith<$Res> get description {
-    return $DescriptionCopyWith<$Res>(_value.description, (value) {
-      return _then(_value.copyWith(description: value) as $Val);
-    });
   }
 
   @override
@@ -360,30 +276,6 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
 
   @override
   @pragma('vm:prefer-inline')
-  $VisibilityInfoCopyWith<$Res> get visibilityInfo {
-    return $VisibilityInfoCopyWith<$Res>(_value.visibilityInfo, (value) {
-      return _then(_value.copyWith(visibilityInfo: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ProductInfoCopyWith<$Res> get productInfo {
-    return $ProductInfoCopyWith<$Res>(_value.productInfo, (value) {
-      return _then(_value.copyWith(productInfo: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $BeverageInfoCopyWith<$Res> get beverageInfo {
-    return $BeverageInfoCopyWith<$Res>(_value.beverageInfo, (value) {
-      return _then(_value.copyWith(beverageInfo: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $MetaDataCopyWith<$Res> get metaData {
     return $MetaDataCopyWith<$Res>(_value.metaData, (value) {
       return _then(_value.copyWith(metaData: value) as $Val);
@@ -392,21 +284,21 @@ class _$ItemCopyWithImpl<$Res, $Val extends Item>
 }
 
 /// @nodoc
-abstract class _$$ItemImplCopyWith<$Res> implements $ItemCopyWith<$Res> {
-  factory _$$ItemImplCopyWith(
-          _$ItemImpl value, $Res Function(_$ItemImpl) then) =
-      __$$ItemImplCopyWithImpl<$Res>;
+abstract class _$$ItemModelImplCopyWith<$Res>
+    implements $ItemModelCopyWith<$Res> {
+  factory _$$ItemModelImplCopyWith(
+          _$ItemModelImpl value, $Res Function(_$ItemModelImpl) then) =
+      __$$ItemModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {@JsonKey(name: 'ID') String id,
       @JsonKey(name: 'MenuItemID') String menuItemID,
       @JsonKey(name: 'StoreID') String storeID,
-      @JsonKey(name: 'Title') Title title,
-      @JsonKey(name: 'Description') Description description,
+      @JsonKey(name: 'Title') Map<String, String> title,
+      @JsonKey(name: 'Description') Map<String, String> description,
       @JsonKey(name: 'ImageURL') String imageURL,
       @JsonKey(name: 'PriceInfo') PriceInfo priceInfo,
-      @JsonKey(name: 'ExternalData') String externalData,
       @JsonKey(name: 'QuantityInfo') QuantityInfo quantityInfo,
       @JsonKey(name: 'SuspensionRules') SuspensionRules suspensionRules,
       @JsonKey(name: 'ModifierGroupRules')
@@ -415,22 +307,11 @@ abstract class _$$ItemImplCopyWith<$Res> implements $ItemCopyWith<$Res> {
       @JsonKey(name: 'TaxInfo') TaxInfo taxInfo,
       @JsonKey(name: 'AggregatedProductRating') double aggregatedProductRating,
       @JsonKey(name: 'TotalReviews') int totalReviews,
-      @JsonKey(name: 'CreatedDate') DateTime createdDate,
-      @JsonKey(name: 'ModifiedDate') DateTime modifiedDate,
       @JsonKey(name: 'NutrientData') NutrientData nutrientData,
       @JsonKey(name: 'DishInfo') DishInfo dishInfo,
-      @JsonKey(name: 'VisibilityInfo') VisibilityInfo visibilityInfo,
-      @JsonKey(name: 'ProductInfo') ProductInfo productInfo,
-      @JsonKey(name: 'BundleItems') List<dynamic>? bundleItems,
-      @JsonKey(name: 'BeverageInfo') BeverageInfo beverageInfo,
       @JsonKey(name: 'CategoryIDs') List<String> categoryIDs,
-      @JsonKey(name: 'Allergens') List<String>? allergens,
       @JsonKey(name: 'MetaData') MetaData metaData});
 
-  @override
-  $TitleCopyWith<$Res> get title;
-  @override
-  $DescriptionCopyWith<$Res> get description;
   @override
   $PriceInfoCopyWith<$Res> get priceInfo;
   @override
@@ -448,20 +329,15 @@ abstract class _$$ItemImplCopyWith<$Res> implements $ItemCopyWith<$Res> {
   @override
   $DishInfoCopyWith<$Res> get dishInfo;
   @override
-  $VisibilityInfoCopyWith<$Res> get visibilityInfo;
-  @override
-  $ProductInfoCopyWith<$Res> get productInfo;
-  @override
-  $BeverageInfoCopyWith<$Res> get beverageInfo;
-  @override
   $MetaDataCopyWith<$Res> get metaData;
 }
 
 /// @nodoc
-class __$$ItemImplCopyWithImpl<$Res>
-    extends _$ItemCopyWithImpl<$Res, _$ItemImpl>
-    implements _$$ItemImplCopyWith<$Res> {
-  __$$ItemImplCopyWithImpl(_$ItemImpl _value, $Res Function(_$ItemImpl) _then)
+class __$$ItemModelImplCopyWithImpl<$Res>
+    extends _$ItemModelCopyWithImpl<$Res, _$ItemModelImpl>
+    implements _$$ItemModelImplCopyWith<$Res> {
+  __$$ItemModelImplCopyWithImpl(
+      _$ItemModelImpl _value, $Res Function(_$ItemModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -474,7 +350,6 @@ class __$$ItemImplCopyWithImpl<$Res>
     Object? description = null,
     Object? imageURL = null,
     Object? priceInfo = null,
-    Object? externalData = null,
     Object? quantityInfo = null,
     Object? suspensionRules = null,
     Object? modifierGroupRules = null,
@@ -482,19 +357,12 @@ class __$$ItemImplCopyWithImpl<$Res>
     Object? taxInfo = null,
     Object? aggregatedProductRating = null,
     Object? totalReviews = null,
-    Object? createdDate = null,
-    Object? modifiedDate = null,
     Object? nutrientData = null,
     Object? dishInfo = null,
-    Object? visibilityInfo = null,
-    Object? productInfo = null,
-    Object? bundleItems = freezed,
-    Object? beverageInfo = null,
     Object? categoryIDs = null,
-    Object? allergens = freezed,
     Object? metaData = null,
   }) {
-    return _then(_$ItemImpl(
+    return _then(_$ItemModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -508,13 +376,13 @@ class __$$ItemImplCopyWithImpl<$Res>
           : storeID // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
-          ? _value.title
+          ? _value._title
           : title // ignore: cast_nullable_to_non_nullable
-              as Title,
+              as Map<String, String>,
       description: null == description
-          ? _value.description
+          ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as Description,
+              as Map<String, String>,
       imageURL: null == imageURL
           ? _value.imageURL
           : imageURL // ignore: cast_nullable_to_non_nullable
@@ -523,10 +391,6 @@ class __$$ItemImplCopyWithImpl<$Res>
           ? _value.priceInfo
           : priceInfo // ignore: cast_nullable_to_non_nullable
               as PriceInfo,
-      externalData: null == externalData
-          ? _value.externalData
-          : externalData // ignore: cast_nullable_to_non_nullable
-              as String,
       quantityInfo: null == quantityInfo
           ? _value.quantityInfo
           : quantityInfo // ignore: cast_nullable_to_non_nullable
@@ -555,14 +419,6 @@ class __$$ItemImplCopyWithImpl<$Res>
           ? _value.totalReviews
           : totalReviews // ignore: cast_nullable_to_non_nullable
               as int,
-      createdDate: null == createdDate
-          ? _value.createdDate
-          : createdDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      modifiedDate: null == modifiedDate
-          ? _value.modifiedDate
-          : modifiedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       nutrientData: null == nutrientData
           ? _value.nutrientData
           : nutrientData // ignore: cast_nullable_to_non_nullable
@@ -571,30 +427,10 @@ class __$$ItemImplCopyWithImpl<$Res>
           ? _value.dishInfo
           : dishInfo // ignore: cast_nullable_to_non_nullable
               as DishInfo,
-      visibilityInfo: null == visibilityInfo
-          ? _value.visibilityInfo
-          : visibilityInfo // ignore: cast_nullable_to_non_nullable
-              as VisibilityInfo,
-      productInfo: null == productInfo
-          ? _value.productInfo
-          : productInfo // ignore: cast_nullable_to_non_nullable
-              as ProductInfo,
-      bundleItems: freezed == bundleItems
-          ? _value._bundleItems
-          : bundleItems // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
-      beverageInfo: null == beverageInfo
-          ? _value.beverageInfo
-          : beverageInfo // ignore: cast_nullable_to_non_nullable
-              as BeverageInfo,
       categoryIDs: null == categoryIDs
           ? _value._categoryIDs
           : categoryIDs // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      allergens: freezed == allergens
-          ? _value._allergens
-          : allergens // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       metaData: null == metaData
           ? _value.metaData
           : metaData // ignore: cast_nullable_to_non_nullable
@@ -605,16 +441,16 @@ class __$$ItemImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ItemImpl implements _Item {
-  _$ItemImpl(
+class _$ItemModelImpl implements _ItemModel {
+  const _$ItemModelImpl(
       {@JsonKey(name: 'ID') required this.id,
       @JsonKey(name: 'MenuItemID') required this.menuItemID,
       @JsonKey(name: 'StoreID') required this.storeID,
-      @JsonKey(name: 'Title') required this.title,
-      @JsonKey(name: 'Description') required this.description,
+      @JsonKey(name: 'Title') required final Map<String, String> title,
+      @JsonKey(name: 'Description')
+      required final Map<String, String> description,
       @JsonKey(name: 'ImageURL') required this.imageURL,
       @JsonKey(name: 'PriceInfo') required this.priceInfo,
-      @JsonKey(name: 'ExternalData') required this.externalData,
       @JsonKey(name: 'QuantityInfo') required this.quantityInfo,
       @JsonKey(name: 'SuspensionRules') required this.suspensionRules,
       @JsonKey(name: 'ModifierGroupRules') required this.modifierGroupRules,
@@ -623,23 +459,16 @@ class _$ItemImpl implements _Item {
       @JsonKey(name: 'AggregatedProductRating')
       required this.aggregatedProductRating,
       @JsonKey(name: 'TotalReviews') required this.totalReviews,
-      @JsonKey(name: 'CreatedDate') required this.createdDate,
-      @JsonKey(name: 'ModifiedDate') required this.modifiedDate,
       @JsonKey(name: 'NutrientData') required this.nutrientData,
       @JsonKey(name: 'DishInfo') required this.dishInfo,
-      @JsonKey(name: 'VisibilityInfo') required this.visibilityInfo,
-      @JsonKey(name: 'ProductInfo') required this.productInfo,
-      @JsonKey(name: 'BundleItems') final List<dynamic>? bundleItems,
-      @JsonKey(name: 'BeverageInfo') required this.beverageInfo,
       @JsonKey(name: 'CategoryIDs') required final List<String> categoryIDs,
-      @JsonKey(name: 'Allergens') final List<String>? allergens,
       @JsonKey(name: 'MetaData') required this.metaData})
-      : _bundleItems = bundleItems,
-        _categoryIDs = categoryIDs,
-        _allergens = allergens;
+      : _title = title,
+        _description = description,
+        _categoryIDs = categoryIDs;
 
-  factory _$ItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ItemImplFromJson(json);
+  factory _$ItemModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ItemModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'ID')
@@ -650,21 +479,30 @@ class _$ItemImpl implements _Item {
   @override
   @JsonKey(name: 'StoreID')
   final String storeID;
+  final Map<String, String> _title;
   @override
   @JsonKey(name: 'Title')
-  final Title title;
+  Map<String, String> get title {
+    if (_title is EqualUnmodifiableMapView) return _title;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_title);
+  }
+
+  final Map<String, String> _description;
   @override
   @JsonKey(name: 'Description')
-  final Description description;
+  Map<String, String> get description {
+    if (_description is EqualUnmodifiableMapView) return _description;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_description);
+  }
+
   @override
   @JsonKey(name: 'ImageURL')
   final String imageURL;
   @override
   @JsonKey(name: 'PriceInfo')
   final PriceInfo priceInfo;
-  @override
-  @JsonKey(name: 'ExternalData')
-  final String externalData;
   @override
   @JsonKey(name: 'QuantityInfo')
   final QuantityInfo quantityInfo;
@@ -687,37 +525,11 @@ class _$ItemImpl implements _Item {
   @JsonKey(name: 'TotalReviews')
   final int totalReviews;
   @override
-  @JsonKey(name: 'CreatedDate')
-  final DateTime createdDate;
-  @override
-  @JsonKey(name: 'ModifiedDate')
-  final DateTime modifiedDate;
-  @override
   @JsonKey(name: 'NutrientData')
   final NutrientData nutrientData;
   @override
   @JsonKey(name: 'DishInfo')
   final DishInfo dishInfo;
-  @override
-  @JsonKey(name: 'VisibilityInfo')
-  final VisibilityInfo visibilityInfo;
-  @override
-  @JsonKey(name: 'ProductInfo')
-  final ProductInfo productInfo;
-  final List<dynamic>? _bundleItems;
-  @override
-  @JsonKey(name: 'BundleItems')
-  List<dynamic>? get bundleItems {
-    final value = _bundleItems;
-    if (value == null) return null;
-    if (_bundleItems is EqualUnmodifiableListView) return _bundleItems;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  @JsonKey(name: 'BeverageInfo')
-  final BeverageInfo beverageInfo;
   final List<String> _categoryIDs;
   @override
   @JsonKey(name: 'CategoryIDs')
@@ -727,44 +539,31 @@ class _$ItemImpl implements _Item {
     return EqualUnmodifiableListView(_categoryIDs);
   }
 
-  final List<String>? _allergens;
-  @override
-  @JsonKey(name: 'Allergens')
-  List<String>? get allergens {
-    final value = _allergens;
-    if (value == null) return null;
-    if (_allergens is EqualUnmodifiableListView) return _allergens;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
   @override
   @JsonKey(name: 'MetaData')
   final MetaData metaData;
 
   @override
   String toString() {
-    return 'Item(id: $id, menuItemID: $menuItemID, storeID: $storeID, title: $title, description: $description, imageURL: $imageURL, priceInfo: $priceInfo, externalData: $externalData, quantityInfo: $quantityInfo, suspensionRules: $suspensionRules, modifierGroupRules: $modifierGroupRules, rewardGroupRules: $rewardGroupRules, taxInfo: $taxInfo, aggregatedProductRating: $aggregatedProductRating, totalReviews: $totalReviews, createdDate: $createdDate, modifiedDate: $modifiedDate, nutrientData: $nutrientData, dishInfo: $dishInfo, visibilityInfo: $visibilityInfo, productInfo: $productInfo, bundleItems: $bundleItems, beverageInfo: $beverageInfo, categoryIDs: $categoryIDs, allergens: $allergens, metaData: $metaData)';
+    return 'ItemModel(id: $id, menuItemID: $menuItemID, storeID: $storeID, title: $title, description: $description, imageURL: $imageURL, priceInfo: $priceInfo, quantityInfo: $quantityInfo, suspensionRules: $suspensionRules, modifierGroupRules: $modifierGroupRules, rewardGroupRules: $rewardGroupRules, taxInfo: $taxInfo, aggregatedProductRating: $aggregatedProductRating, totalReviews: $totalReviews, nutrientData: $nutrientData, dishInfo: $dishInfo, categoryIDs: $categoryIDs, metaData: $metaData)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ItemImpl &&
+            other is _$ItemModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.menuItemID, menuItemID) ||
                 other.menuItemID == menuItemID) &&
             (identical(other.storeID, storeID) || other.storeID == storeID) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            const DeepCollectionEquality().equals(other._title, _title) &&
+            const DeepCollectionEquality()
+                .equals(other._description, _description) &&
             (identical(other.imageURL, imageURL) ||
                 other.imageURL == imageURL) &&
             (identical(other.priceInfo, priceInfo) ||
                 other.priceInfo == priceInfo) &&
-            (identical(other.externalData, externalData) ||
-                other.externalData == externalData) &&
             (identical(other.quantityInfo, quantityInfo) ||
                 other.quantityInfo == quantityInfo) &&
             (identical(other.suspensionRules, suspensionRules) ||
@@ -779,86 +578,63 @@ class _$ItemImpl implements _Item {
                 other.aggregatedProductRating == aggregatedProductRating) &&
             (identical(other.totalReviews, totalReviews) ||
                 other.totalReviews == totalReviews) &&
-            (identical(other.createdDate, createdDate) ||
-                other.createdDate == createdDate) &&
-            (identical(other.modifiedDate, modifiedDate) ||
-                other.modifiedDate == modifiedDate) &&
             (identical(other.nutrientData, nutrientData) ||
                 other.nutrientData == nutrientData) &&
             (identical(other.dishInfo, dishInfo) ||
                 other.dishInfo == dishInfo) &&
-            (identical(other.visibilityInfo, visibilityInfo) ||
-                other.visibilityInfo == visibilityInfo) &&
-            (identical(other.productInfo, productInfo) ||
-                other.productInfo == productInfo) &&
-            const DeepCollectionEquality()
-                .equals(other._bundleItems, _bundleItems) &&
-            (identical(other.beverageInfo, beverageInfo) ||
-                other.beverageInfo == beverageInfo) &&
             const DeepCollectionEquality()
                 .equals(other._categoryIDs, _categoryIDs) &&
-            const DeepCollectionEquality()
-                .equals(other._allergens, _allergens) &&
             (identical(other.metaData, metaData) ||
                 other.metaData == metaData));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        menuItemID,
-        storeID,
-        title,
-        description,
-        imageURL,
-        priceInfo,
-        externalData,
-        quantityInfo,
-        suspensionRules,
-        modifierGroupRules,
-        rewardGroupRules,
-        taxInfo,
-        aggregatedProductRating,
-        totalReviews,
-        createdDate,
-        modifiedDate,
-        nutrientData,
-        dishInfo,
-        visibilityInfo,
-        productInfo,
-        const DeepCollectionEquality().hash(_bundleItems),
-        beverageInfo,
-        const DeepCollectionEquality().hash(_categoryIDs),
-        const DeepCollectionEquality().hash(_allergens),
-        metaData
-      ]);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      menuItemID,
+      storeID,
+      const DeepCollectionEquality().hash(_title),
+      const DeepCollectionEquality().hash(_description),
+      imageURL,
+      priceInfo,
+      quantityInfo,
+      suspensionRules,
+      modifierGroupRules,
+      rewardGroupRules,
+      taxInfo,
+      aggregatedProductRating,
+      totalReviews,
+      nutrientData,
+      dishInfo,
+      const DeepCollectionEquality().hash(_categoryIDs),
+      metaData);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ItemImplCopyWith<_$ItemImpl> get copyWith =>
-      __$$ItemImplCopyWithImpl<_$ItemImpl>(this, _$identity);
+  _$$ItemModelImplCopyWith<_$ItemModelImpl> get copyWith =>
+      __$$ItemModelImplCopyWithImpl<_$ItemModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ItemImplToJson(
+    return _$$ItemModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _Item implements Item {
-  factory _Item(
+abstract class _ItemModel implements ItemModel {
+  const factory _ItemModel(
       {@JsonKey(name: 'ID') required final String id,
       @JsonKey(name: 'MenuItemID') required final String menuItemID,
       @JsonKey(name: 'StoreID') required final String storeID,
-      @JsonKey(name: 'Title') required final Title title,
-      @JsonKey(name: 'Description') required final Description description,
+      @JsonKey(name: 'Title') required final Map<String, String> title,
+      @JsonKey(name: 'Description')
+      required final Map<String, String> description,
       @JsonKey(name: 'ImageURL') required final String imageURL,
       @JsonKey(name: 'PriceInfo') required final PriceInfo priceInfo,
-      @JsonKey(name: 'ExternalData') required final String externalData,
       @JsonKey(name: 'QuantityInfo') required final QuantityInfo quantityInfo,
       @JsonKey(name: 'SuspensionRules')
       required final SuspensionRules suspensionRules,
@@ -870,21 +646,14 @@ abstract class _Item implements Item {
       @JsonKey(name: 'AggregatedProductRating')
       required final double aggregatedProductRating,
       @JsonKey(name: 'TotalReviews') required final int totalReviews,
-      @JsonKey(name: 'CreatedDate') required final DateTime createdDate,
-      @JsonKey(name: 'ModifiedDate') required final DateTime modifiedDate,
       @JsonKey(name: 'NutrientData') required final NutrientData nutrientData,
       @JsonKey(name: 'DishInfo') required final DishInfo dishInfo,
-      @JsonKey(name: 'VisibilityInfo')
-      required final VisibilityInfo visibilityInfo,
-      @JsonKey(name: 'ProductInfo') required final ProductInfo productInfo,
-      @JsonKey(name: 'BundleItems') final List<dynamic>? bundleItems,
-      @JsonKey(name: 'BeverageInfo') required final BeverageInfo beverageInfo,
       @JsonKey(name: 'CategoryIDs') required final List<String> categoryIDs,
-      @JsonKey(name: 'Allergens') final List<String>? allergens,
       @JsonKey(name: 'MetaData')
-      required final MetaData metaData}) = _$ItemImpl;
+      required final MetaData metaData}) = _$ItemModelImpl;
 
-  factory _Item.fromJson(Map<String, dynamic> json) = _$ItemImpl.fromJson;
+  factory _ItemModel.fromJson(Map<String, dynamic> json) =
+      _$ItemModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'ID')
@@ -897,19 +666,16 @@ abstract class _Item implements Item {
   String get storeID;
   @override
   @JsonKey(name: 'Title')
-  Title get title;
+  Map<String, String> get title;
   @override
   @JsonKey(name: 'Description')
-  Description get description;
+  Map<String, String> get description;
   @override
   @JsonKey(name: 'ImageURL')
   String get imageURL;
   @override
   @JsonKey(name: 'PriceInfo')
   PriceInfo get priceInfo;
-  @override
-  @JsonKey(name: 'ExternalData')
-  String get externalData;
   @override
   @JsonKey(name: 'QuantityInfo')
   QuantityInfo get quantityInfo;
@@ -932,316 +698,20 @@ abstract class _Item implements Item {
   @JsonKey(name: 'TotalReviews')
   int get totalReviews;
   @override
-  @JsonKey(name: 'CreatedDate')
-  DateTime get createdDate;
-  @override
-  @JsonKey(name: 'ModifiedDate')
-  DateTime get modifiedDate;
-  @override
   @JsonKey(name: 'NutrientData')
   NutrientData get nutrientData;
   @override
   @JsonKey(name: 'DishInfo')
   DishInfo get dishInfo;
   @override
-  @JsonKey(name: 'VisibilityInfo')
-  VisibilityInfo get visibilityInfo;
-  @override
-  @JsonKey(name: 'ProductInfo')
-  ProductInfo get productInfo;
-  @override
-  @JsonKey(name: 'BundleItems')
-  List<dynamic>? get bundleItems;
-  @override
-  @JsonKey(name: 'BeverageInfo')
-  BeverageInfo get beverageInfo;
-  @override
   @JsonKey(name: 'CategoryIDs')
   List<String> get categoryIDs;
-  @override
-  @JsonKey(name: 'Allergens')
-  List<String>? get allergens;
   @override
   @JsonKey(name: 'MetaData')
   MetaData get metaData;
   @override
   @JsonKey(ignore: true)
-  _$$ItemImplCopyWith<_$ItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Title _$TitleFromJson(Map<String, dynamic> json) {
-  return _Title.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Title {
-  @JsonKey(name: 'en')
-  String get en => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TitleCopyWith<Title> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TitleCopyWith<$Res> {
-  factory $TitleCopyWith(Title value, $Res Function(Title) then) =
-      _$TitleCopyWithImpl<$Res, Title>;
-  @useResult
-  $Res call({@JsonKey(name: 'en') String en});
-}
-
-/// @nodoc
-class _$TitleCopyWithImpl<$Res, $Val extends Title>
-    implements $TitleCopyWith<$Res> {
-  _$TitleCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? en = null,
-  }) {
-    return _then(_value.copyWith(
-      en: null == en
-          ? _value.en
-          : en // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TitleImplCopyWith<$Res> implements $TitleCopyWith<$Res> {
-  factory _$$TitleImplCopyWith(
-          _$TitleImpl value, $Res Function(_$TitleImpl) then) =
-      __$$TitleImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'en') String en});
-}
-
-/// @nodoc
-class __$$TitleImplCopyWithImpl<$Res>
-    extends _$TitleCopyWithImpl<$Res, _$TitleImpl>
-    implements _$$TitleImplCopyWith<$Res> {
-  __$$TitleImplCopyWithImpl(
-      _$TitleImpl _value, $Res Function(_$TitleImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? en = null,
-  }) {
-    return _then(_$TitleImpl(
-      en: null == en
-          ? _value.en
-          : en // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TitleImpl implements _Title {
-  _$TitleImpl({@JsonKey(name: 'en') required this.en});
-
-  factory _$TitleImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TitleImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'en')
-  final String en;
-
-  @override
-  String toString() {
-    return 'Title(en: $en)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TitleImpl &&
-            (identical(other.en, en) || other.en == en));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, en);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TitleImplCopyWith<_$TitleImpl> get copyWith =>
-      __$$TitleImplCopyWithImpl<_$TitleImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TitleImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Title implements Title {
-  factory _Title({@JsonKey(name: 'en') required final String en}) = _$TitleImpl;
-
-  factory _Title.fromJson(Map<String, dynamic> json) = _$TitleImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'en')
-  String get en;
-  @override
-  @JsonKey(ignore: true)
-  _$$TitleImplCopyWith<_$TitleImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Description _$DescriptionFromJson(Map<String, dynamic> json) {
-  return _Description.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Description {
-  @JsonKey(name: 'en')
-  String get en => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $DescriptionCopyWith<Description> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DescriptionCopyWith<$Res> {
-  factory $DescriptionCopyWith(
-          Description value, $Res Function(Description) then) =
-      _$DescriptionCopyWithImpl<$Res, Description>;
-  @useResult
-  $Res call({@JsonKey(name: 'en') String en});
-}
-
-/// @nodoc
-class _$DescriptionCopyWithImpl<$Res, $Val extends Description>
-    implements $DescriptionCopyWith<$Res> {
-  _$DescriptionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? en = null,
-  }) {
-    return _then(_value.copyWith(
-      en: null == en
-          ? _value.en
-          : en // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$DescriptionImplCopyWith<$Res>
-    implements $DescriptionCopyWith<$Res> {
-  factory _$$DescriptionImplCopyWith(
-          _$DescriptionImpl value, $Res Function(_$DescriptionImpl) then) =
-      __$$DescriptionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'en') String en});
-}
-
-/// @nodoc
-class __$$DescriptionImplCopyWithImpl<$Res>
-    extends _$DescriptionCopyWithImpl<$Res, _$DescriptionImpl>
-    implements _$$DescriptionImplCopyWith<$Res> {
-  __$$DescriptionImplCopyWithImpl(
-      _$DescriptionImpl _value, $Res Function(_$DescriptionImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? en = null,
-  }) {
-    return _then(_$DescriptionImpl(
-      en: null == en
-          ? _value.en
-          : en // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$DescriptionImpl implements _Description {
-  _$DescriptionImpl({@JsonKey(name: 'en') required this.en});
-
-  factory _$DescriptionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DescriptionImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'en')
-  final String en;
-
-  @override
-  String toString() {
-    return 'Description(en: $en)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DescriptionImpl &&
-            (identical(other.en, en) || other.en == en));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, en);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DescriptionImplCopyWith<_$DescriptionImpl> get copyWith =>
-      __$$DescriptionImplCopyWithImpl<_$DescriptionImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DescriptionImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Description implements Description {
-  factory _Description({@JsonKey(name: 'en') required final String en}) =
-      _$DescriptionImpl;
-
-  factory _Description.fromJson(Map<String, dynamic> json) =
-      _$DescriptionImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'en')
-  String get en;
-  @override
-  @JsonKey(ignore: true)
-  _$$DescriptionImplCopyWith<_$DescriptionImpl> get copyWith =>
+  _$$ItemModelImplCopyWith<_$ItemModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1254,12 +724,12 @@ mixin _$PriceInfo {
   @JsonKey(name: 'Price')
   Price get price => throw _privateConstructorUsedError;
   @JsonKey(name: 'CorePrice')
-  int get corePrice => throw _privateConstructorUsedError;
+  double get corePrice => throw _privateConstructorUsedError;
   @JsonKey(name: 'ContainerDeposit')
-  int get containerDeposit => throw _privateConstructorUsedError;
+  double get containerDeposit => throw _privateConstructorUsedError;
   @JsonKey(name: 'Overrides')
   List<dynamic> get overrides => throw _privateConstructorUsedError;
-  @JsonKey(name: 'PricebyUnit')
+  @JsonKey(name: 'PriceByUnit')
   String get priceByUnit => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1275,10 +745,10 @@ abstract class $PriceInfoCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'Price') Price price,
-      @JsonKey(name: 'CorePrice') int corePrice,
-      @JsonKey(name: 'ContainerDeposit') int containerDeposit,
+      @JsonKey(name: 'CorePrice') double corePrice,
+      @JsonKey(name: 'ContainerDeposit') double containerDeposit,
       @JsonKey(name: 'Overrides') List<dynamic> overrides,
-      @JsonKey(name: 'PricebyUnit') String priceByUnit});
+      @JsonKey(name: 'PriceByUnit') String priceByUnit});
 
   $PriceCopyWith<$Res> get price;
 }
@@ -1310,11 +780,11 @@ class _$PriceInfoCopyWithImpl<$Res, $Val extends PriceInfo>
       corePrice: null == corePrice
           ? _value.corePrice
           : corePrice // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       containerDeposit: null == containerDeposit
           ? _value.containerDeposit
           : containerDeposit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       overrides: null == overrides
           ? _value.overrides
           : overrides // ignore: cast_nullable_to_non_nullable
@@ -1345,10 +815,10 @@ abstract class _$$PriceInfoImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'Price') Price price,
-      @JsonKey(name: 'CorePrice') int corePrice,
-      @JsonKey(name: 'ContainerDeposit') int containerDeposit,
+      @JsonKey(name: 'CorePrice') double corePrice,
+      @JsonKey(name: 'ContainerDeposit') double containerDeposit,
       @JsonKey(name: 'Overrides') List<dynamic> overrides,
-      @JsonKey(name: 'PricebyUnit') String priceByUnit});
+      @JsonKey(name: 'PriceByUnit') String priceByUnit});
 
   @override
   $PriceCopyWith<$Res> get price;
@@ -1379,11 +849,11 @@ class __$$PriceInfoImplCopyWithImpl<$Res>
       corePrice: null == corePrice
           ? _value.corePrice
           : corePrice // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       containerDeposit: null == containerDeposit
           ? _value.containerDeposit
           : containerDeposit // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       overrides: null == overrides
           ? _value._overrides
           : overrides // ignore: cast_nullable_to_non_nullable
@@ -1399,12 +869,12 @@ class __$$PriceInfoImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PriceInfoImpl implements _PriceInfo {
-  _$PriceInfoImpl(
+  const _$PriceInfoImpl(
       {@JsonKey(name: 'Price') required this.price,
       @JsonKey(name: 'CorePrice') required this.corePrice,
       @JsonKey(name: 'ContainerDeposit') required this.containerDeposit,
       @JsonKey(name: 'Overrides') required final List<dynamic> overrides,
-      @JsonKey(name: 'PricebyUnit') required this.priceByUnit})
+      @JsonKey(name: 'PriceByUnit') required this.priceByUnit})
       : _overrides = overrides;
 
   factory _$PriceInfoImpl.fromJson(Map<String, dynamic> json) =>
@@ -1415,10 +885,10 @@ class _$PriceInfoImpl implements _PriceInfo {
   final Price price;
   @override
   @JsonKey(name: 'CorePrice')
-  final int corePrice;
+  final double corePrice;
   @override
   @JsonKey(name: 'ContainerDeposit')
-  final int containerDeposit;
+  final double containerDeposit;
   final List<dynamic> _overrides;
   @override
   @JsonKey(name: 'Overrides')
@@ -1429,7 +899,7 @@ class _$PriceInfoImpl implements _PriceInfo {
   }
 
   @override
-  @JsonKey(name: 'PricebyUnit')
+  @JsonKey(name: 'PriceByUnit')
   final String priceByUnit;
 
   @override
@@ -1478,12 +948,12 @@ class _$PriceInfoImpl implements _PriceInfo {
 }
 
 abstract class _PriceInfo implements PriceInfo {
-  factory _PriceInfo(
+  const factory _PriceInfo(
       {@JsonKey(name: 'Price') required final Price price,
-      @JsonKey(name: 'CorePrice') required final int corePrice,
-      @JsonKey(name: 'ContainerDeposit') required final int containerDeposit,
+      @JsonKey(name: 'CorePrice') required final double corePrice,
+      @JsonKey(name: 'ContainerDeposit') required final double containerDeposit,
       @JsonKey(name: 'Overrides') required final List<dynamic> overrides,
-      @JsonKey(name: 'PricebyUnit')
+      @JsonKey(name: 'PriceByUnit')
       required final String priceByUnit}) = _$PriceInfoImpl;
 
   factory _PriceInfo.fromJson(Map<String, dynamic> json) =
@@ -1494,15 +964,15 @@ abstract class _PriceInfo implements PriceInfo {
   Price get price;
   @override
   @JsonKey(name: 'CorePrice')
-  int get corePrice;
+  double get corePrice;
   @override
   @JsonKey(name: 'ContainerDeposit')
-  int get containerDeposit;
+  double get containerDeposit;
   @override
   @JsonKey(name: 'Overrides')
   List<dynamic> get overrides;
   @override
-  @JsonKey(name: 'PricebyUnit')
+  @JsonKey(name: 'PriceByUnit')
   String get priceByUnit;
   @override
   @JsonKey(ignore: true)
@@ -1517,11 +987,11 @@ Price _$PriceFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Price {
   @JsonKey(name: 'DeliveryPrice')
-  int get deliveryPrice => throw _privateConstructorUsedError;
+  double get deliveryPrice => throw _privateConstructorUsedError;
   @JsonKey(name: 'PickupPrice')
-  int get pickupPrice => throw _privateConstructorUsedError;
+  double get pickupPrice => throw _privateConstructorUsedError;
   @JsonKey(name: 'TablePrice')
-  int get tablePrice => throw _privateConstructorUsedError;
+  double get tablePrice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1534,9 +1004,9 @@ abstract class $PriceCopyWith<$Res> {
       _$PriceCopyWithImpl<$Res, Price>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'DeliveryPrice') int deliveryPrice,
-      @JsonKey(name: 'PickupPrice') int pickupPrice,
-      @JsonKey(name: 'TablePrice') int tablePrice});
+      {@JsonKey(name: 'DeliveryPrice') double deliveryPrice,
+      @JsonKey(name: 'PickupPrice') double pickupPrice,
+      @JsonKey(name: 'TablePrice') double tablePrice});
 }
 
 /// @nodoc
@@ -1560,15 +1030,15 @@ class _$PriceCopyWithImpl<$Res, $Val extends Price>
       deliveryPrice: null == deliveryPrice
           ? _value.deliveryPrice
           : deliveryPrice // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       pickupPrice: null == pickupPrice
           ? _value.pickupPrice
           : pickupPrice // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       tablePrice: null == tablePrice
           ? _value.tablePrice
           : tablePrice // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ) as $Val);
   }
 }
@@ -1581,9 +1051,9 @@ abstract class _$$PriceImplCopyWith<$Res> implements $PriceCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'DeliveryPrice') int deliveryPrice,
-      @JsonKey(name: 'PickupPrice') int pickupPrice,
-      @JsonKey(name: 'TablePrice') int tablePrice});
+      {@JsonKey(name: 'DeliveryPrice') double deliveryPrice,
+      @JsonKey(name: 'PickupPrice') double pickupPrice,
+      @JsonKey(name: 'TablePrice') double tablePrice});
 }
 
 /// @nodoc
@@ -1605,15 +1075,15 @@ class __$$PriceImplCopyWithImpl<$Res>
       deliveryPrice: null == deliveryPrice
           ? _value.deliveryPrice
           : deliveryPrice // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       pickupPrice: null == pickupPrice
           ? _value.pickupPrice
           : pickupPrice // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       tablePrice: null == tablePrice
           ? _value.tablePrice
           : tablePrice // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -1621,7 +1091,7 @@ class __$$PriceImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PriceImpl implements _Price {
-  _$PriceImpl(
+  const _$PriceImpl(
       {@JsonKey(name: 'DeliveryPrice') required this.deliveryPrice,
       @JsonKey(name: 'PickupPrice') required this.pickupPrice,
       @JsonKey(name: 'TablePrice') required this.tablePrice});
@@ -1631,13 +1101,13 @@ class _$PriceImpl implements _Price {
 
   @override
   @JsonKey(name: 'DeliveryPrice')
-  final int deliveryPrice;
+  final double deliveryPrice;
   @override
   @JsonKey(name: 'PickupPrice')
-  final int pickupPrice;
+  final double pickupPrice;
   @override
   @JsonKey(name: 'TablePrice')
-  final int tablePrice;
+  final double tablePrice;
 
   @override
   String toString() {
@@ -1677,23 +1147,23 @@ class _$PriceImpl implements _Price {
 }
 
 abstract class _Price implements Price {
-  factory _Price(
-          {@JsonKey(name: 'DeliveryPrice') required final int deliveryPrice,
-          @JsonKey(name: 'PickupPrice') required final int pickupPrice,
-          @JsonKey(name: 'TablePrice') required final int tablePrice}) =
+  const factory _Price(
+          {@JsonKey(name: 'DeliveryPrice') required final double deliveryPrice,
+          @JsonKey(name: 'PickupPrice') required final double pickupPrice,
+          @JsonKey(name: 'TablePrice') required final double tablePrice}) =
       _$PriceImpl;
 
   factory _Price.fromJson(Map<String, dynamic> json) = _$PriceImpl.fromJson;
 
   @override
   @JsonKey(name: 'DeliveryPrice')
-  int get deliveryPrice;
+  double get deliveryPrice;
   @override
   @JsonKey(name: 'PickupPrice')
-  int get pickupPrice;
+  double get pickupPrice;
   @override
   @JsonKey(name: 'TablePrice')
-  int get tablePrice;
+  double get tablePrice;
   @override
   @JsonKey(ignore: true)
   _$$PriceImplCopyWith<_$PriceImpl> get copyWith =>
@@ -1708,8 +1178,6 @@ QuantityInfo _$QuantityInfoFromJson(Map<String, dynamic> json) {
 mixin _$QuantityInfo {
   @JsonKey(name: 'Quantity')
   Quantity get quantity => throw _privateConstructorUsedError;
-  @JsonKey(name: 'Overrides')
-  dynamic get overrides => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1723,9 +1191,7 @@ abstract class $QuantityInfoCopyWith<$Res> {
           QuantityInfo value, $Res Function(QuantityInfo) then) =
       _$QuantityInfoCopyWithImpl<$Res, QuantityInfo>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'Quantity') Quantity quantity,
-      @JsonKey(name: 'Overrides') dynamic overrides});
+  $Res call({@JsonKey(name: 'Quantity') Quantity quantity});
 
   $QuantityCopyWith<$Res> get quantity;
 }
@@ -1744,17 +1210,12 @@ class _$QuantityInfoCopyWithImpl<$Res, $Val extends QuantityInfo>
   @override
   $Res call({
     Object? quantity = null,
-    Object? overrides = freezed,
   }) {
     return _then(_value.copyWith(
       quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as Quantity,
-      overrides: freezed == overrides
-          ? _value.overrides
-          : overrides // ignore: cast_nullable_to_non_nullable
-              as dynamic,
     ) as $Val);
   }
 
@@ -1775,9 +1236,7 @@ abstract class _$$QuantityInfoImplCopyWith<$Res>
       __$$QuantityInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'Quantity') Quantity quantity,
-      @JsonKey(name: 'Overrides') dynamic overrides});
+  $Res call({@JsonKey(name: 'Quantity') Quantity quantity});
 
   @override
   $QuantityCopyWith<$Res> get quantity;
@@ -1795,17 +1254,12 @@ class __$$QuantityInfoImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? quantity = null,
-    Object? overrides = freezed,
   }) {
     return _then(_$QuantityInfoImpl(
       quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as Quantity,
-      overrides: freezed == overrides
-          ? _value.overrides
-          : overrides // ignore: cast_nullable_to_non_nullable
-              as dynamic,
     ));
   }
 }
@@ -1813,9 +1267,7 @@ class __$$QuantityInfoImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$QuantityInfoImpl implements _QuantityInfo {
-  _$QuantityInfoImpl(
-      {@JsonKey(name: 'Quantity') required this.quantity,
-      @JsonKey(name: 'Overrides') required this.overrides});
+  const _$QuantityInfoImpl({@JsonKey(name: 'Quantity') required this.quantity});
 
   factory _$QuantityInfoImpl.fromJson(Map<String, dynamic> json) =>
       _$$QuantityInfoImplFromJson(json);
@@ -1823,13 +1275,10 @@ class _$QuantityInfoImpl implements _QuantityInfo {
   @override
   @JsonKey(name: 'Quantity')
   final Quantity quantity;
-  @override
-  @JsonKey(name: 'Overrides')
-  final dynamic overrides;
 
   @override
   String toString() {
-    return 'QuantityInfo(quantity: $quantity, overrides: $overrides)';
+    return 'QuantityInfo(quantity: $quantity)';
   }
 
   @override
@@ -1838,14 +1287,12 @@ class _$QuantityInfoImpl implements _QuantityInfo {
         (other.runtimeType == runtimeType &&
             other is _$QuantityInfoImpl &&
             (identical(other.quantity, quantity) ||
-                other.quantity == quantity) &&
-            const DeepCollectionEquality().equals(other.overrides, overrides));
+                other.quantity == quantity));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, quantity, const DeepCollectionEquality().hash(overrides));
+  int get hashCode => Object.hash(runtimeType, quantity);
 
   @JsonKey(ignore: true)
   @override
@@ -1862,9 +1309,8 @@ class _$QuantityInfoImpl implements _QuantityInfo {
 }
 
 abstract class _QuantityInfo implements QuantityInfo {
-  factory _QuantityInfo(
-          {@JsonKey(name: 'Quantity') required final Quantity quantity,
-          @JsonKey(name: 'Overrides') required final dynamic overrides}) =
+  const factory _QuantityInfo(
+          {@JsonKey(name: 'Quantity') required final Quantity quantity}) =
       _$QuantityInfoImpl;
 
   factory _QuantityInfo.fromJson(Map<String, dynamic> json) =
@@ -1873,9 +1319,6 @@ abstract class _QuantityInfo implements QuantityInfo {
   @override
   @JsonKey(name: 'Quantity')
   Quantity get quantity;
-  @override
-  @JsonKey(name: 'Overrides')
-  dynamic get overrides;
   @override
   @JsonKey(ignore: true)
   _$$QuantityInfoImplCopyWith<_$QuantityInfoImpl> get copyWith =>
@@ -2051,7 +1494,7 @@ class __$$QuantityImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$QuantityImpl implements _Quantity {
-  _$QuantityImpl(
+  const _$QuantityImpl(
       {@JsonKey(name: 'MinPermitted') required this.minPermitted,
       @JsonKey(name: 'MaxPermitted') required this.maxPermitted,
       @JsonKey(name: 'IsMinPermittedOptional')
@@ -2139,7 +1582,7 @@ class _$QuantityImpl implements _Quantity {
 }
 
 abstract class _Quantity implements Quantity {
-  factory _Quantity(
+  const factory _Quantity(
       {@JsonKey(name: 'MinPermitted') required final int minPermitted,
       @JsonKey(name: 'MaxPermitted') required final int maxPermitted,
       @JsonKey(name: 'IsMinPermittedOptional')
@@ -2189,8 +1632,6 @@ SuspensionRules _$SuspensionRulesFromJson(Map<String, dynamic> json) {
 mixin _$SuspensionRules {
   @JsonKey(name: 'Suspension')
   Suspension get suspension => throw _privateConstructorUsedError;
-  @JsonKey(name: 'SuspensionOverride')
-  dynamic get suspensionOverride => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2204,9 +1645,7 @@ abstract class $SuspensionRulesCopyWith<$Res> {
           SuspensionRules value, $Res Function(SuspensionRules) then) =
       _$SuspensionRulesCopyWithImpl<$Res, SuspensionRules>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'Suspension') Suspension suspension,
-      @JsonKey(name: 'SuspensionOverride') dynamic suspensionOverride});
+  $Res call({@JsonKey(name: 'Suspension') Suspension suspension});
 
   $SuspensionCopyWith<$Res> get suspension;
 }
@@ -2225,17 +1664,12 @@ class _$SuspensionRulesCopyWithImpl<$Res, $Val extends SuspensionRules>
   @override
   $Res call({
     Object? suspension = null,
-    Object? suspensionOverride = freezed,
   }) {
     return _then(_value.copyWith(
       suspension: null == suspension
           ? _value.suspension
           : suspension // ignore: cast_nullable_to_non_nullable
               as Suspension,
-      suspensionOverride: freezed == suspensionOverride
-          ? _value.suspensionOverride
-          : suspensionOverride // ignore: cast_nullable_to_non_nullable
-              as dynamic,
     ) as $Val);
   }
 
@@ -2256,9 +1690,7 @@ abstract class _$$SuspensionRulesImplCopyWith<$Res>
       __$$SuspensionRulesImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'Suspension') Suspension suspension,
-      @JsonKey(name: 'SuspensionOverride') dynamic suspensionOverride});
+  $Res call({@JsonKey(name: 'Suspension') Suspension suspension});
 
   @override
   $SuspensionCopyWith<$Res> get suspension;
@@ -2276,17 +1708,12 @@ class __$$SuspensionRulesImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? suspension = null,
-    Object? suspensionOverride = freezed,
   }) {
     return _then(_$SuspensionRulesImpl(
       suspension: null == suspension
           ? _value.suspension
           : suspension // ignore: cast_nullable_to_non_nullable
               as Suspension,
-      suspensionOverride: freezed == suspensionOverride
-          ? _value.suspensionOverride
-          : suspensionOverride // ignore: cast_nullable_to_non_nullable
-              as dynamic,
     ));
   }
 }
@@ -2294,9 +1721,8 @@ class __$$SuspensionRulesImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SuspensionRulesImpl implements _SuspensionRules {
-  _$SuspensionRulesImpl(
-      {@JsonKey(name: 'Suspension') required this.suspension,
-      @JsonKey(name: 'SuspensionOverride') this.suspensionOverride});
+  const _$SuspensionRulesImpl(
+      {@JsonKey(name: 'Suspension') required this.suspension});
 
   factory _$SuspensionRulesImpl.fromJson(Map<String, dynamic> json) =>
       _$$SuspensionRulesImplFromJson(json);
@@ -2304,13 +1730,10 @@ class _$SuspensionRulesImpl implements _SuspensionRules {
   @override
   @JsonKey(name: 'Suspension')
   final Suspension suspension;
-  @override
-  @JsonKey(name: 'SuspensionOverride')
-  final dynamic suspensionOverride;
 
   @override
   String toString() {
-    return 'SuspensionRules(suspension: $suspension, suspensionOverride: $suspensionOverride)';
+    return 'SuspensionRules(suspension: $suspension)';
   }
 
   @override
@@ -2319,15 +1742,12 @@ class _$SuspensionRulesImpl implements _SuspensionRules {
         (other.runtimeType == runtimeType &&
             other is _$SuspensionRulesImpl &&
             (identical(other.suspension, suspension) ||
-                other.suspension == suspension) &&
-            const DeepCollectionEquality()
-                .equals(other.suspensionOverride, suspensionOverride));
+                other.suspension == suspension));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, suspension,
-      const DeepCollectionEquality().hash(suspensionOverride));
+  int get hashCode => Object.hash(runtimeType, suspension);
 
   @JsonKey(ignore: true)
   @override
@@ -2345,10 +1765,9 @@ class _$SuspensionRulesImpl implements _SuspensionRules {
 }
 
 abstract class _SuspensionRules implements SuspensionRules {
-  factory _SuspensionRules(
-      {@JsonKey(name: 'Suspension') required final Suspension suspension,
-      @JsonKey(name: 'SuspensionOverride')
-      final dynamic suspensionOverride}) = _$SuspensionRulesImpl;
+  const factory _SuspensionRules(
+          {@JsonKey(name: 'Suspension') required final Suspension suspension}) =
+      _$SuspensionRulesImpl;
 
   factory _SuspensionRules.fromJson(Map<String, dynamic> json) =
       _$SuspensionRulesImpl.fromJson;
@@ -2356,9 +1775,6 @@ abstract class _SuspensionRules implements SuspensionRules {
   @override
   @JsonKey(name: 'Suspension')
   Suspension get suspension;
-  @override
-  @JsonKey(name: 'SuspensionOverride')
-  dynamic get suspensionOverride;
   @override
   @JsonKey(ignore: true)
   _$$SuspensionRulesImplCopyWith<_$SuspensionRulesImpl> get copyWith =>
@@ -2479,7 +1895,7 @@ class __$$SuspensionImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SuspensionImpl implements _Suspension {
-  _$SuspensionImpl(
+  const _$SuspensionImpl(
       {@JsonKey(name: 'SuspendedUntil') required this.suspendedUntil,
       @JsonKey(name: 'IsSuspended') required this.isSuspended,
       @JsonKey(name: 'Reason') required this.reason});
@@ -2534,7 +1950,7 @@ class _$SuspensionImpl implements _Suspension {
 }
 
 abstract class _Suspension implements Suspension {
-  factory _Suspension(
+  const factory _Suspension(
           {@JsonKey(name: 'SuspendedUntil') required final int suspendedUntil,
           @JsonKey(name: 'IsSuspended') required final bool isSuspended,
           @JsonKey(name: 'Reason') required final String reason}) =
@@ -2658,7 +2074,7 @@ class __$$ModifierGroupRulesImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ModifierGroupRulesImpl implements _ModifierGroupRules {
-  _$ModifierGroupRulesImpl(
+  const _$ModifierGroupRulesImpl(
       {@JsonKey(name: 'IDs') required final List<String> ids,
       @JsonKey(name: 'Overrides') required final List<dynamic> overrides})
       : _ids = ids,
@@ -2723,7 +2139,7 @@ class _$ModifierGroupRulesImpl implements _ModifierGroupRules {
 }
 
 abstract class _ModifierGroupRules implements ModifierGroupRules {
-  factory _ModifierGroupRules(
+  const factory _ModifierGroupRules(
           {@JsonKey(name: 'IDs') required final List<String> ids,
           @JsonKey(name: 'Overrides') required final List<dynamic> overrides}) =
       _$ModifierGroupRulesImpl;
@@ -2751,8 +2167,6 @@ RewardGroupRules _$RewardGroupRulesFromJson(Map<String, dynamic> json) {
 mixin _$RewardGroupRules {
   @JsonKey(name: 'Reward')
   Reward get reward => throw _privateConstructorUsedError;
-  @JsonKey(name: 'Overrides')
-  dynamic get overrides => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2766,9 +2180,7 @@ abstract class $RewardGroupRulesCopyWith<$Res> {
           RewardGroupRules value, $Res Function(RewardGroupRules) then) =
       _$RewardGroupRulesCopyWithImpl<$Res, RewardGroupRules>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'Reward') Reward reward,
-      @JsonKey(name: 'Overrides') dynamic overrides});
+  $Res call({@JsonKey(name: 'Reward') Reward reward});
 
   $RewardCopyWith<$Res> get reward;
 }
@@ -2787,17 +2199,12 @@ class _$RewardGroupRulesCopyWithImpl<$Res, $Val extends RewardGroupRules>
   @override
   $Res call({
     Object? reward = null,
-    Object? overrides = freezed,
   }) {
     return _then(_value.copyWith(
       reward: null == reward
           ? _value.reward
           : reward // ignore: cast_nullable_to_non_nullable
               as Reward,
-      overrides: freezed == overrides
-          ? _value.overrides
-          : overrides // ignore: cast_nullable_to_non_nullable
-              as dynamic,
     ) as $Val);
   }
 
@@ -2818,9 +2225,7 @@ abstract class _$$RewardGroupRulesImplCopyWith<$Res>
       __$$RewardGroupRulesImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'Reward') Reward reward,
-      @JsonKey(name: 'Overrides') dynamic overrides});
+  $Res call({@JsonKey(name: 'Reward') Reward reward});
 
   @override
   $RewardCopyWith<$Res> get reward;
@@ -2838,17 +2243,12 @@ class __$$RewardGroupRulesImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? reward = null,
-    Object? overrides = freezed,
   }) {
     return _then(_$RewardGroupRulesImpl(
       reward: null == reward
           ? _value.reward
           : reward // ignore: cast_nullable_to_non_nullable
               as Reward,
-      overrides: freezed == overrides
-          ? _value.overrides
-          : overrides // ignore: cast_nullable_to_non_nullable
-              as dynamic,
     ));
   }
 }
@@ -2856,9 +2256,7 @@ class __$$RewardGroupRulesImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$RewardGroupRulesImpl implements _RewardGroupRules {
-  _$RewardGroupRulesImpl(
-      {@JsonKey(name: 'Reward') required this.reward,
-      @JsonKey(name: 'Overrides') this.overrides});
+  const _$RewardGroupRulesImpl({@JsonKey(name: 'Reward') required this.reward});
 
   factory _$RewardGroupRulesImpl.fromJson(Map<String, dynamic> json) =>
       _$$RewardGroupRulesImplFromJson(json);
@@ -2866,13 +2264,10 @@ class _$RewardGroupRulesImpl implements _RewardGroupRules {
   @override
   @JsonKey(name: 'Reward')
   final Reward reward;
-  @override
-  @JsonKey(name: 'Overrides')
-  final dynamic overrides;
 
   @override
   String toString() {
-    return 'RewardGroupRules(reward: $reward, overrides: $overrides)';
+    return 'RewardGroupRules(reward: $reward)';
   }
 
   @override
@@ -2880,14 +2275,12 @@ class _$RewardGroupRulesImpl implements _RewardGroupRules {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RewardGroupRulesImpl &&
-            (identical(other.reward, reward) || other.reward == reward) &&
-            const DeepCollectionEquality().equals(other.overrides, overrides));
+            (identical(other.reward, reward) || other.reward == reward));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, reward, const DeepCollectionEquality().hash(overrides));
+  int get hashCode => Object.hash(runtimeType, reward);
 
   @JsonKey(ignore: true)
   @override
@@ -2905,9 +2298,8 @@ class _$RewardGroupRulesImpl implements _RewardGroupRules {
 }
 
 abstract class _RewardGroupRules implements RewardGroupRules {
-  factory _RewardGroupRules(
-          {@JsonKey(name: 'Reward') required final Reward reward,
-          @JsonKey(name: 'Overrides') final dynamic overrides}) =
+  const factory _RewardGroupRules(
+          {@JsonKey(name: 'Reward') required final Reward reward}) =
       _$RewardGroupRulesImpl;
 
   factory _RewardGroupRules.fromJson(Map<String, dynamic> json) =
@@ -2916,9 +2308,6 @@ abstract class _RewardGroupRules implements RewardGroupRules {
   @override
   @JsonKey(name: 'Reward')
   Reward get reward;
-  @override
-  @JsonKey(name: 'Overrides')
-  dynamic get overrides;
   @override
   @JsonKey(ignore: true)
   _$$RewardGroupRulesImplCopyWith<_$RewardGroupRulesImpl> get copyWith =>
@@ -2934,12 +2323,12 @@ mixin _$Reward {
   @JsonKey(name: 'Type')
   String get type => throw _privateConstructorUsedError;
   @JsonKey(name: 'DefaultValue')
-  int get defaultValue => throw _privateConstructorUsedError;
+  double get defaultValue => throw _privateConstructorUsedError;
   @JsonKey(name: 'MultiplierValue')
-  int get multiplierValue => throw _privateConstructorUsedError;
+  double get multiplierValue => throw _privateConstructorUsedError;
   @JsonKey(name: 'CustomValue')
-  int get customValue => throw _privateConstructorUsedError;
-  @JsonKey(name: 'IsMutiplierRequired')
+  double get customValue => throw _privateConstructorUsedError;
+  @JsonKey(name: 'IsMultiplierRequired')
   bool get isMultiplierRequired => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2954,10 +2343,10 @@ abstract class $RewardCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'Type') String type,
-      @JsonKey(name: 'DefaultValue') int defaultValue,
-      @JsonKey(name: 'MultiplierValue') int multiplierValue,
-      @JsonKey(name: 'CustomValue') int customValue,
-      @JsonKey(name: 'IsMutiplierRequired') bool isMultiplierRequired});
+      @JsonKey(name: 'DefaultValue') double defaultValue,
+      @JsonKey(name: 'MultiplierValue') double multiplierValue,
+      @JsonKey(name: 'CustomValue') double customValue,
+      @JsonKey(name: 'IsMultiplierRequired') bool isMultiplierRequired});
 }
 
 /// @nodoc
@@ -2987,15 +2376,15 @@ class _$RewardCopyWithImpl<$Res, $Val extends Reward>
       defaultValue: null == defaultValue
           ? _value.defaultValue
           : defaultValue // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       multiplierValue: null == multiplierValue
           ? _value.multiplierValue
           : multiplierValue // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       customValue: null == customValue
           ? _value.customValue
           : customValue // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       isMultiplierRequired: null == isMultiplierRequired
           ? _value.isMultiplierRequired
           : isMultiplierRequired // ignore: cast_nullable_to_non_nullable
@@ -3013,10 +2402,10 @@ abstract class _$$RewardImplCopyWith<$Res> implements $RewardCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'Type') String type,
-      @JsonKey(name: 'DefaultValue') int defaultValue,
-      @JsonKey(name: 'MultiplierValue') int multiplierValue,
-      @JsonKey(name: 'CustomValue') int customValue,
-      @JsonKey(name: 'IsMutiplierRequired') bool isMultiplierRequired});
+      @JsonKey(name: 'DefaultValue') double defaultValue,
+      @JsonKey(name: 'MultiplierValue') double multiplierValue,
+      @JsonKey(name: 'CustomValue') double customValue,
+      @JsonKey(name: 'IsMultiplierRequired') bool isMultiplierRequired});
 }
 
 /// @nodoc
@@ -3044,15 +2433,15 @@ class __$$RewardImplCopyWithImpl<$Res>
       defaultValue: null == defaultValue
           ? _value.defaultValue
           : defaultValue // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       multiplierValue: null == multiplierValue
           ? _value.multiplierValue
           : multiplierValue // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       customValue: null == customValue
           ? _value.customValue
           : customValue // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       isMultiplierRequired: null == isMultiplierRequired
           ? _value.isMultiplierRequired
           : isMultiplierRequired // ignore: cast_nullable_to_non_nullable
@@ -3064,12 +2453,12 @@ class __$$RewardImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$RewardImpl implements _Reward {
-  _$RewardImpl(
+  const _$RewardImpl(
       {@JsonKey(name: 'Type') required this.type,
       @JsonKey(name: 'DefaultValue') required this.defaultValue,
       @JsonKey(name: 'MultiplierValue') required this.multiplierValue,
       @JsonKey(name: 'CustomValue') required this.customValue,
-      @JsonKey(name: 'IsMutiplierRequired')
+      @JsonKey(name: 'IsMultiplierRequired')
       required this.isMultiplierRequired});
 
   factory _$RewardImpl.fromJson(Map<String, dynamic> json) =>
@@ -3080,15 +2469,15 @@ class _$RewardImpl implements _Reward {
   final String type;
   @override
   @JsonKey(name: 'DefaultValue')
-  final int defaultValue;
+  final double defaultValue;
   @override
   @JsonKey(name: 'MultiplierValue')
-  final int multiplierValue;
+  final double multiplierValue;
   @override
   @JsonKey(name: 'CustomValue')
-  final int customValue;
+  final double customValue;
   @override
-  @JsonKey(name: 'IsMutiplierRequired')
+  @JsonKey(name: 'IsMultiplierRequired')
   final bool isMultiplierRequired;
 
   @override
@@ -3132,12 +2521,12 @@ class _$RewardImpl implements _Reward {
 }
 
 abstract class _Reward implements Reward {
-  factory _Reward(
+  const factory _Reward(
       {@JsonKey(name: 'Type') required final String type,
-      @JsonKey(name: 'DefaultValue') required final int defaultValue,
-      @JsonKey(name: 'MultiplierValue') required final int multiplierValue,
-      @JsonKey(name: 'CustomValue') required final int customValue,
-      @JsonKey(name: 'IsMutiplierRequired')
+      @JsonKey(name: 'DefaultValue') required final double defaultValue,
+      @JsonKey(name: 'MultiplierValue') required final double multiplierValue,
+      @JsonKey(name: 'CustomValue') required final double customValue,
+      @JsonKey(name: 'IsMultiplierRequired')
       required final bool isMultiplierRequired}) = _$RewardImpl;
 
   factory _Reward.fromJson(Map<String, dynamic> json) = _$RewardImpl.fromJson;
@@ -3147,15 +2536,15 @@ abstract class _Reward implements Reward {
   String get type;
   @override
   @JsonKey(name: 'DefaultValue')
-  int get defaultValue;
+  double get defaultValue;
   @override
   @JsonKey(name: 'MultiplierValue')
-  int get multiplierValue;
+  double get multiplierValue;
   @override
   @JsonKey(name: 'CustomValue')
-  int get customValue;
+  double get customValue;
   @override
-  @JsonKey(name: 'IsMutiplierRequired')
+  @JsonKey(name: 'IsMultiplierRequired')
   bool get isMultiplierRequired;
   @override
   @JsonKey(ignore: true)
@@ -3169,9 +2558,9 @@ TaxInfo _$TaxInfoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TaxInfo {
-  @JsonKey(name: 'Taxrate')
+  @JsonKey(name: 'TaxRate')
   double get taxRate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'VATRateInPercentage')
+  @JsonKey(name: 'VatRateInPercentage')
   double get vatRateInPercentage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -3185,8 +2574,8 @@ abstract class $TaxInfoCopyWith<$Res> {
       _$TaxInfoCopyWithImpl<$Res, TaxInfo>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'Taxrate') double taxRate,
-      @JsonKey(name: 'VATRateInPercentage') double vatRateInPercentage});
+      {@JsonKey(name: 'TaxRate') double taxRate,
+      @JsonKey(name: 'VatRateInPercentage') double vatRateInPercentage});
 }
 
 /// @nodoc
@@ -3226,8 +2615,8 @@ abstract class _$$TaxInfoImplCopyWith<$Res> implements $TaxInfoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'Taxrate') double taxRate,
-      @JsonKey(name: 'VATRateInPercentage') double vatRateInPercentage});
+      {@JsonKey(name: 'TaxRate') double taxRate,
+      @JsonKey(name: 'VatRateInPercentage') double vatRateInPercentage});
 }
 
 /// @nodoc
@@ -3260,18 +2649,18 @@ class __$$TaxInfoImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TaxInfoImpl implements _TaxInfo {
-  _$TaxInfoImpl(
-      {@JsonKey(name: 'Taxrate') required this.taxRate,
-      @JsonKey(name: 'VATRateInPercentage') required this.vatRateInPercentage});
+  const _$TaxInfoImpl(
+      {@JsonKey(name: 'TaxRate') required this.taxRate,
+      @JsonKey(name: 'VatRateInPercentage') required this.vatRateInPercentage});
 
   factory _$TaxInfoImpl.fromJson(Map<String, dynamic> json) =>
       _$$TaxInfoImplFromJson(json);
 
   @override
-  @JsonKey(name: 'Taxrate')
+  @JsonKey(name: 'TaxRate')
   final double taxRate;
   @override
-  @JsonKey(name: 'VATRateInPercentage')
+  @JsonKey(name: 'VatRateInPercentage')
   final double vatRateInPercentage;
 
   @override
@@ -3308,18 +2697,18 @@ class _$TaxInfoImpl implements _TaxInfo {
 }
 
 abstract class _TaxInfo implements TaxInfo {
-  factory _TaxInfo(
-      {@JsonKey(name: 'Taxrate') required final double taxRate,
-      @JsonKey(name: 'VATRateInPercentage')
+  const factory _TaxInfo(
+      {@JsonKey(name: 'TaxRate') required final double taxRate,
+      @JsonKey(name: 'VatRateInPercentage')
       required final double vatRateInPercentage}) = _$TaxInfoImpl;
 
   factory _TaxInfo.fromJson(Map<String, dynamic> json) = _$TaxInfoImpl.fromJson;
 
   @override
-  @JsonKey(name: 'Taxrate')
+  @JsonKey(name: 'TaxRate')
   double get taxRate;
   @override
-  @JsonKey(name: 'VATRateInPercentage')
+  @JsonKey(name: 'VatRateInPercentage')
   double get vatRateInPercentage;
   @override
   @JsonKey(ignore: true)
@@ -3334,33 +2723,35 @@ NutrientData _$NutrientDataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NutrientData {
   @JsonKey(name: 'Calories')
-  Calories get calories => throw _privateConstructorUsedError;
+  NutrientDataItem get calories => throw _privateConstructorUsedError;
   @JsonKey(name: 'Kilojules')
-  Kilojules get kilojules => throw _privateConstructorUsedError;
+  NutrientDataItem get kilojules => throw _privateConstructorUsedError;
   @JsonKey(name: 'ServingSize')
   ServingSize get servingSize => throw _privateConstructorUsedError;
-  @JsonKey(name: 'NumberofServings')
+  @JsonKey(name: 'NumberOfServings')
   int get numberOfServings => throw _privateConstructorUsedError;
-  @JsonKey(name: 'NumberofServingIntervals')
+  @JsonKey(name: 'NumberOfServingIntervals')
   Interval get numberOfServingIntervals => throw _privateConstructorUsedError;
   @JsonKey(name: 'NetQuantity')
-  NetQuantity get netQuantity => throw _privateConstructorUsedError;
-  @JsonKey(name: 'CaloriesperServing')
-  Calories get caloriesPerServing => throw _privateConstructorUsedError;
-  @JsonKey(name: 'KilojulesperServing')
-  Kilojules get kilojulesPerServing => throw _privateConstructorUsedError;
+  Quantity get netQuantity => throw _privateConstructorUsedError;
+  @JsonKey(name: 'CaloriesPerServing')
+  NutrientDataItem get caloriesPerServing => throw _privateConstructorUsedError;
+  @JsonKey(name: 'KilojulesPerServing')
+  NutrientDataItem get kilojulesPerServing =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: 'Fat')
-  Fat get fat => throw _privateConstructorUsedError;
+  NutrientDataItem get fat => throw _privateConstructorUsedError;
   @JsonKey(name: 'SaturatedFattyAcids')
-  Fat get saturatedFattyAcids => throw _privateConstructorUsedError;
+  NutrientDataItem get saturatedFattyAcids =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: 'Carbohydrates')
-  Carbohydrates get carbohydrates => throw _privateConstructorUsedError;
+  NutrientDataItem get carbohydrates => throw _privateConstructorUsedError;
   @JsonKey(name: 'Sugar')
-  Carbohydrates get sugar => throw _privateConstructorUsedError;
+  NutrientDataItem get sugar => throw _privateConstructorUsedError;
   @JsonKey(name: 'Protein')
-  Protein get protein => throw _privateConstructorUsedError;
+  NutrientDataItem get protein => throw _privateConstructorUsedError;
   @JsonKey(name: 'Salt')
-  Salt get salt => throw _privateConstructorUsedError;
+  NutrientDataItem get salt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3375,35 +2766,37 @@ abstract class $NutrientDataCopyWith<$Res> {
       _$NutrientDataCopyWithImpl<$Res, NutrientData>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'Calories') Calories calories,
-      @JsonKey(name: 'Kilojules') Kilojules kilojules,
+      {@JsonKey(name: 'Calories') NutrientDataItem calories,
+      @JsonKey(name: 'Kilojules') NutrientDataItem kilojules,
       @JsonKey(name: 'ServingSize') ServingSize servingSize,
-      @JsonKey(name: 'NumberofServings') int numberOfServings,
-      @JsonKey(name: 'NumberofServingIntervals')
+      @JsonKey(name: 'NumberOfServings') int numberOfServings,
+      @JsonKey(name: 'NumberOfServingIntervals')
       Interval numberOfServingIntervals,
-      @JsonKey(name: 'NetQuantity') NetQuantity netQuantity,
-      @JsonKey(name: 'CaloriesperServing') Calories caloriesPerServing,
-      @JsonKey(name: 'KilojulesperServing') Kilojules kilojulesPerServing,
-      @JsonKey(name: 'Fat') Fat fat,
-      @JsonKey(name: 'SaturatedFattyAcids') Fat saturatedFattyAcids,
-      @JsonKey(name: 'Carbohydrates') Carbohydrates carbohydrates,
-      @JsonKey(name: 'Sugar') Carbohydrates sugar,
-      @JsonKey(name: 'Protein') Protein protein,
-      @JsonKey(name: 'Salt') Salt salt});
+      @JsonKey(name: 'NetQuantity') Quantity netQuantity,
+      @JsonKey(name: 'CaloriesPerServing') NutrientDataItem caloriesPerServing,
+      @JsonKey(name: 'KilojulesPerServing')
+      NutrientDataItem kilojulesPerServing,
+      @JsonKey(name: 'Fat') NutrientDataItem fat,
+      @JsonKey(name: 'SaturatedFattyAcids')
+      NutrientDataItem saturatedFattyAcids,
+      @JsonKey(name: 'Carbohydrates') NutrientDataItem carbohydrates,
+      @JsonKey(name: 'Sugar') NutrientDataItem sugar,
+      @JsonKey(name: 'Protein') NutrientDataItem protein,
+      @JsonKey(name: 'Salt') NutrientDataItem salt});
 
-  $CaloriesCopyWith<$Res> get calories;
-  $KilojulesCopyWith<$Res> get kilojules;
+  $NutrientDataItemCopyWith<$Res> get calories;
+  $NutrientDataItemCopyWith<$Res> get kilojules;
   $ServingSizeCopyWith<$Res> get servingSize;
   $IntervalCopyWith<$Res> get numberOfServingIntervals;
-  $NetQuantityCopyWith<$Res> get netQuantity;
-  $CaloriesCopyWith<$Res> get caloriesPerServing;
-  $KilojulesCopyWith<$Res> get kilojulesPerServing;
-  $FatCopyWith<$Res> get fat;
-  $FatCopyWith<$Res> get saturatedFattyAcids;
-  $CarbohydratesCopyWith<$Res> get carbohydrates;
-  $CarbohydratesCopyWith<$Res> get sugar;
-  $ProteinCopyWith<$Res> get protein;
-  $SaltCopyWith<$Res> get salt;
+  $QuantityCopyWith<$Res> get netQuantity;
+  $NutrientDataItemCopyWith<$Res> get caloriesPerServing;
+  $NutrientDataItemCopyWith<$Res> get kilojulesPerServing;
+  $NutrientDataItemCopyWith<$Res> get fat;
+  $NutrientDataItemCopyWith<$Res> get saturatedFattyAcids;
+  $NutrientDataItemCopyWith<$Res> get carbohydrates;
+  $NutrientDataItemCopyWith<$Res> get sugar;
+  $NutrientDataItemCopyWith<$Res> get protein;
+  $NutrientDataItemCopyWith<$Res> get salt;
 }
 
 /// @nodoc
@@ -3438,11 +2831,11 @@ class _$NutrientDataCopyWithImpl<$Res, $Val extends NutrientData>
       calories: null == calories
           ? _value.calories
           : calories // ignore: cast_nullable_to_non_nullable
-              as Calories,
+              as NutrientDataItem,
       kilojules: null == kilojules
           ? _value.kilojules
           : kilojules // ignore: cast_nullable_to_non_nullable
-              as Kilojules,
+              as NutrientDataItem,
       servingSize: null == servingSize
           ? _value.servingSize
           : servingSize // ignore: cast_nullable_to_non_nullable
@@ -3458,54 +2851,54 @@ class _$NutrientDataCopyWithImpl<$Res, $Val extends NutrientData>
       netQuantity: null == netQuantity
           ? _value.netQuantity
           : netQuantity // ignore: cast_nullable_to_non_nullable
-              as NetQuantity,
+              as Quantity,
       caloriesPerServing: null == caloriesPerServing
           ? _value.caloriesPerServing
           : caloriesPerServing // ignore: cast_nullable_to_non_nullable
-              as Calories,
+              as NutrientDataItem,
       kilojulesPerServing: null == kilojulesPerServing
           ? _value.kilojulesPerServing
           : kilojulesPerServing // ignore: cast_nullable_to_non_nullable
-              as Kilojules,
+              as NutrientDataItem,
       fat: null == fat
           ? _value.fat
           : fat // ignore: cast_nullable_to_non_nullable
-              as Fat,
+              as NutrientDataItem,
       saturatedFattyAcids: null == saturatedFattyAcids
           ? _value.saturatedFattyAcids
           : saturatedFattyAcids // ignore: cast_nullable_to_non_nullable
-              as Fat,
+              as NutrientDataItem,
       carbohydrates: null == carbohydrates
           ? _value.carbohydrates
           : carbohydrates // ignore: cast_nullable_to_non_nullable
-              as Carbohydrates,
+              as NutrientDataItem,
       sugar: null == sugar
           ? _value.sugar
           : sugar // ignore: cast_nullable_to_non_nullable
-              as Carbohydrates,
+              as NutrientDataItem,
       protein: null == protein
           ? _value.protein
           : protein // ignore: cast_nullable_to_non_nullable
-              as Protein,
+              as NutrientDataItem,
       salt: null == salt
           ? _value.salt
           : salt // ignore: cast_nullable_to_non_nullable
-              as Salt,
+              as NutrientDataItem,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CaloriesCopyWith<$Res> get calories {
-    return $CaloriesCopyWith<$Res>(_value.calories, (value) {
+  $NutrientDataItemCopyWith<$Res> get calories {
+    return $NutrientDataItemCopyWith<$Res>(_value.calories, (value) {
       return _then(_value.copyWith(calories: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $KilojulesCopyWith<$Res> get kilojules {
-    return $KilojulesCopyWith<$Res>(_value.kilojules, (value) {
+  $NutrientDataItemCopyWith<$Res> get kilojules {
+    return $NutrientDataItemCopyWith<$Res>(_value.kilojules, (value) {
       return _then(_value.copyWith(kilojules: value) as $Val);
     });
   }
@@ -3528,72 +2921,72 @@ class _$NutrientDataCopyWithImpl<$Res, $Val extends NutrientData>
 
   @override
   @pragma('vm:prefer-inline')
-  $NetQuantityCopyWith<$Res> get netQuantity {
-    return $NetQuantityCopyWith<$Res>(_value.netQuantity, (value) {
+  $QuantityCopyWith<$Res> get netQuantity {
+    return $QuantityCopyWith<$Res>(_value.netQuantity, (value) {
       return _then(_value.copyWith(netQuantity: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CaloriesCopyWith<$Res> get caloriesPerServing {
-    return $CaloriesCopyWith<$Res>(_value.caloriesPerServing, (value) {
+  $NutrientDataItemCopyWith<$Res> get caloriesPerServing {
+    return $NutrientDataItemCopyWith<$Res>(_value.caloriesPerServing, (value) {
       return _then(_value.copyWith(caloriesPerServing: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $KilojulesCopyWith<$Res> get kilojulesPerServing {
-    return $KilojulesCopyWith<$Res>(_value.kilojulesPerServing, (value) {
+  $NutrientDataItemCopyWith<$Res> get kilojulesPerServing {
+    return $NutrientDataItemCopyWith<$Res>(_value.kilojulesPerServing, (value) {
       return _then(_value.copyWith(kilojulesPerServing: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $FatCopyWith<$Res> get fat {
-    return $FatCopyWith<$Res>(_value.fat, (value) {
+  $NutrientDataItemCopyWith<$Res> get fat {
+    return $NutrientDataItemCopyWith<$Res>(_value.fat, (value) {
       return _then(_value.copyWith(fat: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $FatCopyWith<$Res> get saturatedFattyAcids {
-    return $FatCopyWith<$Res>(_value.saturatedFattyAcids, (value) {
+  $NutrientDataItemCopyWith<$Res> get saturatedFattyAcids {
+    return $NutrientDataItemCopyWith<$Res>(_value.saturatedFattyAcids, (value) {
       return _then(_value.copyWith(saturatedFattyAcids: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CarbohydratesCopyWith<$Res> get carbohydrates {
-    return $CarbohydratesCopyWith<$Res>(_value.carbohydrates, (value) {
+  $NutrientDataItemCopyWith<$Res> get carbohydrates {
+    return $NutrientDataItemCopyWith<$Res>(_value.carbohydrates, (value) {
       return _then(_value.copyWith(carbohydrates: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CarbohydratesCopyWith<$Res> get sugar {
-    return $CarbohydratesCopyWith<$Res>(_value.sugar, (value) {
+  $NutrientDataItemCopyWith<$Res> get sugar {
+    return $NutrientDataItemCopyWith<$Res>(_value.sugar, (value) {
       return _then(_value.copyWith(sugar: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ProteinCopyWith<$Res> get protein {
-    return $ProteinCopyWith<$Res>(_value.protein, (value) {
+  $NutrientDataItemCopyWith<$Res> get protein {
+    return $NutrientDataItemCopyWith<$Res>(_value.protein, (value) {
       return _then(_value.copyWith(protein: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SaltCopyWith<$Res> get salt {
-    return $SaltCopyWith<$Res>(_value.salt, (value) {
+  $NutrientDataItemCopyWith<$Res> get salt {
+    return $NutrientDataItemCopyWith<$Res>(_value.salt, (value) {
       return _then(_value.copyWith(salt: value) as $Val);
     });
   }
@@ -3608,48 +3001,50 @@ abstract class _$$NutrientDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'Calories') Calories calories,
-      @JsonKey(name: 'Kilojules') Kilojules kilojules,
+      {@JsonKey(name: 'Calories') NutrientDataItem calories,
+      @JsonKey(name: 'Kilojules') NutrientDataItem kilojules,
       @JsonKey(name: 'ServingSize') ServingSize servingSize,
-      @JsonKey(name: 'NumberofServings') int numberOfServings,
-      @JsonKey(name: 'NumberofServingIntervals')
+      @JsonKey(name: 'NumberOfServings') int numberOfServings,
+      @JsonKey(name: 'NumberOfServingIntervals')
       Interval numberOfServingIntervals,
-      @JsonKey(name: 'NetQuantity') NetQuantity netQuantity,
-      @JsonKey(name: 'CaloriesperServing') Calories caloriesPerServing,
-      @JsonKey(name: 'KilojulesperServing') Kilojules kilojulesPerServing,
-      @JsonKey(name: 'Fat') Fat fat,
-      @JsonKey(name: 'SaturatedFattyAcids') Fat saturatedFattyAcids,
-      @JsonKey(name: 'Carbohydrates') Carbohydrates carbohydrates,
-      @JsonKey(name: 'Sugar') Carbohydrates sugar,
-      @JsonKey(name: 'Protein') Protein protein,
-      @JsonKey(name: 'Salt') Salt salt});
+      @JsonKey(name: 'NetQuantity') Quantity netQuantity,
+      @JsonKey(name: 'CaloriesPerServing') NutrientDataItem caloriesPerServing,
+      @JsonKey(name: 'KilojulesPerServing')
+      NutrientDataItem kilojulesPerServing,
+      @JsonKey(name: 'Fat') NutrientDataItem fat,
+      @JsonKey(name: 'SaturatedFattyAcids')
+      NutrientDataItem saturatedFattyAcids,
+      @JsonKey(name: 'Carbohydrates') NutrientDataItem carbohydrates,
+      @JsonKey(name: 'Sugar') NutrientDataItem sugar,
+      @JsonKey(name: 'Protein') NutrientDataItem protein,
+      @JsonKey(name: 'Salt') NutrientDataItem salt});
 
   @override
-  $CaloriesCopyWith<$Res> get calories;
+  $NutrientDataItemCopyWith<$Res> get calories;
   @override
-  $KilojulesCopyWith<$Res> get kilojules;
+  $NutrientDataItemCopyWith<$Res> get kilojules;
   @override
   $ServingSizeCopyWith<$Res> get servingSize;
   @override
   $IntervalCopyWith<$Res> get numberOfServingIntervals;
   @override
-  $NetQuantityCopyWith<$Res> get netQuantity;
+  $QuantityCopyWith<$Res> get netQuantity;
   @override
-  $CaloriesCopyWith<$Res> get caloriesPerServing;
+  $NutrientDataItemCopyWith<$Res> get caloriesPerServing;
   @override
-  $KilojulesCopyWith<$Res> get kilojulesPerServing;
+  $NutrientDataItemCopyWith<$Res> get kilojulesPerServing;
   @override
-  $FatCopyWith<$Res> get fat;
+  $NutrientDataItemCopyWith<$Res> get fat;
   @override
-  $FatCopyWith<$Res> get saturatedFattyAcids;
+  $NutrientDataItemCopyWith<$Res> get saturatedFattyAcids;
   @override
-  $CarbohydratesCopyWith<$Res> get carbohydrates;
+  $NutrientDataItemCopyWith<$Res> get carbohydrates;
   @override
-  $CarbohydratesCopyWith<$Res> get sugar;
+  $NutrientDataItemCopyWith<$Res> get sugar;
   @override
-  $ProteinCopyWith<$Res> get protein;
+  $NutrientDataItemCopyWith<$Res> get protein;
   @override
-  $SaltCopyWith<$Res> get salt;
+  $NutrientDataItemCopyWith<$Res> get salt;
 }
 
 /// @nodoc
@@ -3682,11 +3077,11 @@ class __$$NutrientDataImplCopyWithImpl<$Res>
       calories: null == calories
           ? _value.calories
           : calories // ignore: cast_nullable_to_non_nullable
-              as Calories,
+              as NutrientDataItem,
       kilojules: null == kilojules
           ? _value.kilojules
           : kilojules // ignore: cast_nullable_to_non_nullable
-              as Kilojules,
+              as NutrientDataItem,
       servingSize: null == servingSize
           ? _value.servingSize
           : servingSize // ignore: cast_nullable_to_non_nullable
@@ -3702,39 +3097,39 @@ class __$$NutrientDataImplCopyWithImpl<$Res>
       netQuantity: null == netQuantity
           ? _value.netQuantity
           : netQuantity // ignore: cast_nullable_to_non_nullable
-              as NetQuantity,
+              as Quantity,
       caloriesPerServing: null == caloriesPerServing
           ? _value.caloriesPerServing
           : caloriesPerServing // ignore: cast_nullable_to_non_nullable
-              as Calories,
+              as NutrientDataItem,
       kilojulesPerServing: null == kilojulesPerServing
           ? _value.kilojulesPerServing
           : kilojulesPerServing // ignore: cast_nullable_to_non_nullable
-              as Kilojules,
+              as NutrientDataItem,
       fat: null == fat
           ? _value.fat
           : fat // ignore: cast_nullable_to_non_nullable
-              as Fat,
+              as NutrientDataItem,
       saturatedFattyAcids: null == saturatedFattyAcids
           ? _value.saturatedFattyAcids
           : saturatedFattyAcids // ignore: cast_nullable_to_non_nullable
-              as Fat,
+              as NutrientDataItem,
       carbohydrates: null == carbohydrates
           ? _value.carbohydrates
           : carbohydrates // ignore: cast_nullable_to_non_nullable
-              as Carbohydrates,
+              as NutrientDataItem,
       sugar: null == sugar
           ? _value.sugar
           : sugar // ignore: cast_nullable_to_non_nullable
-              as Carbohydrates,
+              as NutrientDataItem,
       protein: null == protein
           ? _value.protein
           : protein // ignore: cast_nullable_to_non_nullable
-              as Protein,
+              as NutrientDataItem,
       salt: null == salt
           ? _value.salt
           : salt // ignore: cast_nullable_to_non_nullable
-              as Salt,
+              as NutrientDataItem,
     ));
   }
 }
@@ -3742,16 +3137,16 @@ class __$$NutrientDataImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$NutrientDataImpl implements _NutrientData {
-  _$NutrientDataImpl(
+  const _$NutrientDataImpl(
       {@JsonKey(name: 'Calories') required this.calories,
       @JsonKey(name: 'Kilojules') required this.kilojules,
       @JsonKey(name: 'ServingSize') required this.servingSize,
-      @JsonKey(name: 'NumberofServings') required this.numberOfServings,
-      @JsonKey(name: 'NumberofServingIntervals')
+      @JsonKey(name: 'NumberOfServings') required this.numberOfServings,
+      @JsonKey(name: 'NumberOfServingIntervals')
       required this.numberOfServingIntervals,
       @JsonKey(name: 'NetQuantity') required this.netQuantity,
-      @JsonKey(name: 'CaloriesperServing') required this.caloriesPerServing,
-      @JsonKey(name: 'KilojulesperServing') required this.kilojulesPerServing,
+      @JsonKey(name: 'CaloriesPerServing') required this.caloriesPerServing,
+      @JsonKey(name: 'KilojulesPerServing') required this.kilojulesPerServing,
       @JsonKey(name: 'Fat') required this.fat,
       @JsonKey(name: 'SaturatedFattyAcids') required this.saturatedFattyAcids,
       @JsonKey(name: 'Carbohydrates') required this.carbohydrates,
@@ -3764,46 +3159,46 @@ class _$NutrientDataImpl implements _NutrientData {
 
   @override
   @JsonKey(name: 'Calories')
-  final Calories calories;
+  final NutrientDataItem calories;
   @override
   @JsonKey(name: 'Kilojules')
-  final Kilojules kilojules;
+  final NutrientDataItem kilojules;
   @override
   @JsonKey(name: 'ServingSize')
   final ServingSize servingSize;
   @override
-  @JsonKey(name: 'NumberofServings')
+  @JsonKey(name: 'NumberOfServings')
   final int numberOfServings;
   @override
-  @JsonKey(name: 'NumberofServingIntervals')
+  @JsonKey(name: 'NumberOfServingIntervals')
   final Interval numberOfServingIntervals;
   @override
   @JsonKey(name: 'NetQuantity')
-  final NetQuantity netQuantity;
+  final Quantity netQuantity;
   @override
-  @JsonKey(name: 'CaloriesperServing')
-  final Calories caloriesPerServing;
+  @JsonKey(name: 'CaloriesPerServing')
+  final NutrientDataItem caloriesPerServing;
   @override
-  @JsonKey(name: 'KilojulesperServing')
-  final Kilojules kilojulesPerServing;
+  @JsonKey(name: 'KilojulesPerServing')
+  final NutrientDataItem kilojulesPerServing;
   @override
   @JsonKey(name: 'Fat')
-  final Fat fat;
+  final NutrientDataItem fat;
   @override
   @JsonKey(name: 'SaturatedFattyAcids')
-  final Fat saturatedFattyAcids;
+  final NutrientDataItem saturatedFattyAcids;
   @override
   @JsonKey(name: 'Carbohydrates')
-  final Carbohydrates carbohydrates;
+  final NutrientDataItem carbohydrates;
   @override
   @JsonKey(name: 'Sugar')
-  final Carbohydrates sugar;
+  final NutrientDataItem sugar;
   @override
   @JsonKey(name: 'Protein')
-  final Protein protein;
+  final NutrientDataItem protein;
   @override
   @JsonKey(name: 'Salt')
-  final Salt salt;
+  final NutrientDataItem salt;
 
   @override
   String toString() {
@@ -3876,111 +3271,113 @@ class _$NutrientDataImpl implements _NutrientData {
 }
 
 abstract class _NutrientData implements NutrientData {
-  factory _NutrientData(
-      {@JsonKey(name: 'Calories') required final Calories calories,
-      @JsonKey(name: 'Kilojules') required final Kilojules kilojules,
+  const factory _NutrientData(
+      {@JsonKey(name: 'Calories') required final NutrientDataItem calories,
+      @JsonKey(name: 'Kilojules') required final NutrientDataItem kilojules,
       @JsonKey(name: 'ServingSize') required final ServingSize servingSize,
-      @JsonKey(name: 'NumberofServings') required final int numberOfServings,
-      @JsonKey(name: 'NumberofServingIntervals')
+      @JsonKey(name: 'NumberOfServings') required final int numberOfServings,
+      @JsonKey(name: 'NumberOfServingIntervals')
       required final Interval numberOfServingIntervals,
-      @JsonKey(name: 'NetQuantity') required final NetQuantity netQuantity,
-      @JsonKey(name: 'CaloriesperServing')
-      required final Calories caloriesPerServing,
-      @JsonKey(name: 'KilojulesperServing')
-      required final Kilojules kilojulesPerServing,
-      @JsonKey(name: 'Fat') required final Fat fat,
+      @JsonKey(name: 'NetQuantity') required final Quantity netQuantity,
+      @JsonKey(name: 'CaloriesPerServing')
+      required final NutrientDataItem caloriesPerServing,
+      @JsonKey(name: 'KilojulesPerServing')
+      required final NutrientDataItem kilojulesPerServing,
+      @JsonKey(name: 'Fat') required final NutrientDataItem fat,
       @JsonKey(name: 'SaturatedFattyAcids')
-      required final Fat saturatedFattyAcids,
+      required final NutrientDataItem saturatedFattyAcids,
       @JsonKey(name: 'Carbohydrates')
-      required final Carbohydrates carbohydrates,
-      @JsonKey(name: 'Sugar') required final Carbohydrates sugar,
-      @JsonKey(name: 'Protein') required final Protein protein,
-      @JsonKey(name: 'Salt') required final Salt salt}) = _$NutrientDataImpl;
+      required final NutrientDataItem carbohydrates,
+      @JsonKey(name: 'Sugar') required final NutrientDataItem sugar,
+      @JsonKey(name: 'Protein') required final NutrientDataItem protein,
+      @JsonKey(name: 'Salt')
+      required final NutrientDataItem salt}) = _$NutrientDataImpl;
 
   factory _NutrientData.fromJson(Map<String, dynamic> json) =
       _$NutrientDataImpl.fromJson;
 
   @override
   @JsonKey(name: 'Calories')
-  Calories get calories;
+  NutrientDataItem get calories;
   @override
   @JsonKey(name: 'Kilojules')
-  Kilojules get kilojules;
+  NutrientDataItem get kilojules;
   @override
   @JsonKey(name: 'ServingSize')
   ServingSize get servingSize;
   @override
-  @JsonKey(name: 'NumberofServings')
+  @JsonKey(name: 'NumberOfServings')
   int get numberOfServings;
   @override
-  @JsonKey(name: 'NumberofServingIntervals')
+  @JsonKey(name: 'NumberOfServingIntervals')
   Interval get numberOfServingIntervals;
   @override
   @JsonKey(name: 'NetQuantity')
-  NetQuantity get netQuantity;
+  Quantity get netQuantity;
   @override
-  @JsonKey(name: 'CaloriesperServing')
-  Calories get caloriesPerServing;
+  @JsonKey(name: 'CaloriesPerServing')
+  NutrientDataItem get caloriesPerServing;
   @override
-  @JsonKey(name: 'KilojulesperServing')
-  Kilojules get kilojulesPerServing;
+  @JsonKey(name: 'KilojulesPerServing')
+  NutrientDataItem get kilojulesPerServing;
   @override
   @JsonKey(name: 'Fat')
-  Fat get fat;
+  NutrientDataItem get fat;
   @override
   @JsonKey(name: 'SaturatedFattyAcids')
-  Fat get saturatedFattyAcids;
+  NutrientDataItem get saturatedFattyAcids;
   @override
   @JsonKey(name: 'Carbohydrates')
-  Carbohydrates get carbohydrates;
+  NutrientDataItem get carbohydrates;
   @override
   @JsonKey(name: 'Sugar')
-  Carbohydrates get sugar;
+  NutrientDataItem get sugar;
   @override
   @JsonKey(name: 'Protein')
-  Protein get protein;
+  NutrientDataItem get protein;
   @override
   @JsonKey(name: 'Salt')
-  Salt get salt;
+  NutrientDataItem get salt;
   @override
   @JsonKey(ignore: true)
   _$$NutrientDataImplCopyWith<_$NutrientDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Calories _$CaloriesFromJson(Map<String, dynamic> json) {
-  return _Calories.fromJson(json);
+NutrientDataItem _$NutrientDataItemFromJson(Map<String, dynamic> json) {
+  return _NutrientDataItem.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Calories {
+mixin _$NutrientDataItem {
   @JsonKey(name: 'EnergyInterval')
-  Interval get energyInterval => throw _privateConstructorUsedError;
+  EnergyInterval get energyInterval => throw _privateConstructorUsedError;
   @JsonKey(name: 'DisplayType')
   int get displayType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CaloriesCopyWith<Calories> get copyWith =>
+  $NutrientDataItemCopyWith<NutrientDataItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CaloriesCopyWith<$Res> {
-  factory $CaloriesCopyWith(Calories value, $Res Function(Calories) then) =
-      _$CaloriesCopyWithImpl<$Res, Calories>;
+abstract class $NutrientDataItemCopyWith<$Res> {
+  factory $NutrientDataItemCopyWith(
+          NutrientDataItem value, $Res Function(NutrientDataItem) then) =
+      _$NutrientDataItemCopyWithImpl<$Res, NutrientDataItem>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'EnergyInterval') Interval energyInterval,
+      {@JsonKey(name: 'EnergyInterval') EnergyInterval energyInterval,
       @JsonKey(name: 'DisplayType') int displayType});
 
-  $IntervalCopyWith<$Res> get energyInterval;
+  $EnergyIntervalCopyWith<$Res> get energyInterval;
 }
 
 /// @nodoc
-class _$CaloriesCopyWithImpl<$Res, $Val extends Calories>
-    implements $CaloriesCopyWith<$Res> {
-  _$CaloriesCopyWithImpl(this._value, this._then);
+class _$NutrientDataItemCopyWithImpl<$Res, $Val extends NutrientDataItem>
+    implements $NutrientDataItemCopyWith<$Res> {
+  _$NutrientDataItemCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -3997,7 +3394,7 @@ class _$CaloriesCopyWithImpl<$Res, $Val extends Calories>
       energyInterval: null == energyInterval
           ? _value.energyInterval
           : energyInterval // ignore: cast_nullable_to_non_nullable
-              as Interval,
+              as EnergyInterval,
       displayType: null == displayType
           ? _value.displayType
           : displayType // ignore: cast_nullable_to_non_nullable
@@ -4007,35 +3404,35 @@ class _$CaloriesCopyWithImpl<$Res, $Val extends Calories>
 
   @override
   @pragma('vm:prefer-inline')
-  $IntervalCopyWith<$Res> get energyInterval {
-    return $IntervalCopyWith<$Res>(_value.energyInterval, (value) {
+  $EnergyIntervalCopyWith<$Res> get energyInterval {
+    return $EnergyIntervalCopyWith<$Res>(_value.energyInterval, (value) {
       return _then(_value.copyWith(energyInterval: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$CaloriesImplCopyWith<$Res>
-    implements $CaloriesCopyWith<$Res> {
-  factory _$$CaloriesImplCopyWith(
-          _$CaloriesImpl value, $Res Function(_$CaloriesImpl) then) =
-      __$$CaloriesImplCopyWithImpl<$Res>;
+abstract class _$$NutrientDataItemImplCopyWith<$Res>
+    implements $NutrientDataItemCopyWith<$Res> {
+  factory _$$NutrientDataItemImplCopyWith(_$NutrientDataItemImpl value,
+          $Res Function(_$NutrientDataItemImpl) then) =
+      __$$NutrientDataItemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'EnergyInterval') Interval energyInterval,
+      {@JsonKey(name: 'EnergyInterval') EnergyInterval energyInterval,
       @JsonKey(name: 'DisplayType') int displayType});
 
   @override
-  $IntervalCopyWith<$Res> get energyInterval;
+  $EnergyIntervalCopyWith<$Res> get energyInterval;
 }
 
 /// @nodoc
-class __$$CaloriesImplCopyWithImpl<$Res>
-    extends _$CaloriesCopyWithImpl<$Res, _$CaloriesImpl>
-    implements _$$CaloriesImplCopyWith<$Res> {
-  __$$CaloriesImplCopyWithImpl(
-      _$CaloriesImpl _value, $Res Function(_$CaloriesImpl) _then)
+class __$$NutrientDataItemImplCopyWithImpl<$Res>
+    extends _$NutrientDataItemCopyWithImpl<$Res, _$NutrientDataItemImpl>
+    implements _$$NutrientDataItemImplCopyWith<$Res> {
+  __$$NutrientDataItemImplCopyWithImpl(_$NutrientDataItemImpl _value,
+      $Res Function(_$NutrientDataItemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -4044,11 +3441,11 @@ class __$$CaloriesImplCopyWithImpl<$Res>
     Object? energyInterval = null,
     Object? displayType = null,
   }) {
-    return _then(_$CaloriesImpl(
+    return _then(_$NutrientDataItemImpl(
       energyInterval: null == energyInterval
           ? _value.energyInterval
           : energyInterval // ignore: cast_nullable_to_non_nullable
-              as Interval,
+              as EnergyInterval,
       displayType: null == displayType
           ? _value.displayType
           : displayType // ignore: cast_nullable_to_non_nullable
@@ -4059,31 +3456,31 @@ class __$$CaloriesImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CaloriesImpl implements _Calories {
-  _$CaloriesImpl(
+class _$NutrientDataItemImpl implements _NutrientDataItem {
+  const _$NutrientDataItemImpl(
       {@JsonKey(name: 'EnergyInterval') required this.energyInterval,
       @JsonKey(name: 'DisplayType') required this.displayType});
 
-  factory _$CaloriesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CaloriesImplFromJson(json);
+  factory _$NutrientDataItemImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NutrientDataItemImplFromJson(json);
 
   @override
   @JsonKey(name: 'EnergyInterval')
-  final Interval energyInterval;
+  final EnergyInterval energyInterval;
   @override
   @JsonKey(name: 'DisplayType')
   final int displayType;
 
   @override
   String toString() {
-    return 'Calories(energyInterval: $energyInterval, displayType: $displayType)';
+    return 'NutrientDataItem(energyInterval: $energyInterval, displayType: $displayType)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CaloriesImpl &&
+            other is _$NutrientDataItemImpl &&
             (identical(other.energyInterval, energyInterval) ||
                 other.energyInterval == energyInterval) &&
             (identical(other.displayType, displayType) ||
@@ -4097,71 +3494,71 @@ class _$CaloriesImpl implements _Calories {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CaloriesImplCopyWith<_$CaloriesImpl> get copyWith =>
-      __$$CaloriesImplCopyWithImpl<_$CaloriesImpl>(this, _$identity);
+  _$$NutrientDataItemImplCopyWith<_$NutrientDataItemImpl> get copyWith =>
+      __$$NutrientDataItemImplCopyWithImpl<_$NutrientDataItemImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CaloriesImplToJson(
+    return _$$NutrientDataItemImplToJson(
       this,
     );
   }
 }
 
-abstract class _Calories implements Calories {
-  factory _Calories(
-      {@JsonKey(name: 'EnergyInterval') required final Interval energyInterval,
-      @JsonKey(name: 'DisplayType')
-      required final int displayType}) = _$CaloriesImpl;
+abstract class _NutrientDataItem implements NutrientDataItem {
+  const factory _NutrientDataItem(
+          {@JsonKey(name: 'EnergyInterval')
+          required final EnergyInterval energyInterval,
+          @JsonKey(name: 'DisplayType') required final int displayType}) =
+      _$NutrientDataItemImpl;
 
-  factory _Calories.fromJson(Map<String, dynamic> json) =
-      _$CaloriesImpl.fromJson;
+  factory _NutrientDataItem.fromJson(Map<String, dynamic> json) =
+      _$NutrientDataItemImpl.fromJson;
 
   @override
   @JsonKey(name: 'EnergyInterval')
-  Interval get energyInterval;
+  EnergyInterval get energyInterval;
   @override
   @JsonKey(name: 'DisplayType')
   int get displayType;
   @override
   @JsonKey(ignore: true)
-  _$$CaloriesImplCopyWith<_$CaloriesImpl> get copyWith =>
+  _$$NutrientDataItemImplCopyWith<_$NutrientDataItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Kilojules _$KilojulesFromJson(Map<String, dynamic> json) {
-  return _Kilojules.fromJson(json);
+EnergyInterval _$EnergyIntervalFromJson(Map<String, dynamic> json) {
+  return _EnergyInterval.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Kilojules {
-  @JsonKey(name: 'EnergyInterval')
-  Interval get energyInterval => throw _privateConstructorUsedError;
-  @JsonKey(name: 'DisplayType')
-  int get displayType => throw _privateConstructorUsedError;
+mixin _$EnergyInterval {
+  @JsonKey(name: 'Lower')
+  int get lower => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Upper')
+  int get upper => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $KilojulesCopyWith<Kilojules> get copyWith =>
+  $EnergyIntervalCopyWith<EnergyInterval> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $KilojulesCopyWith<$Res> {
-  factory $KilojulesCopyWith(Kilojules value, $Res Function(Kilojules) then) =
-      _$KilojulesCopyWithImpl<$Res, Kilojules>;
+abstract class $EnergyIntervalCopyWith<$Res> {
+  factory $EnergyIntervalCopyWith(
+          EnergyInterval value, $Res Function(EnergyInterval) then) =
+      _$EnergyIntervalCopyWithImpl<$Res, EnergyInterval>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'EnergyInterval') Interval energyInterval,
-      @JsonKey(name: 'DisplayType') int displayType});
-
-  $IntervalCopyWith<$Res> get energyInterval;
+      {@JsonKey(name: 'Lower') int lower, @JsonKey(name: 'Upper') int upper});
 }
 
 /// @nodoc
-class _$KilojulesCopyWithImpl<$Res, $Val extends Kilojules>
-    implements $KilojulesCopyWith<$Res> {
-  _$KilojulesCopyWithImpl(this._value, this._then);
+class _$EnergyIntervalCopyWithImpl<$Res, $Val extends EnergyInterval>
+    implements $EnergyIntervalCopyWith<$Res> {
+  _$EnergyIntervalCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -4171,68 +3568,56 @@ class _$KilojulesCopyWithImpl<$Res, $Val extends Kilojules>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? energyInterval = null,
-    Object? displayType = null,
+    Object? lower = null,
+    Object? upper = null,
   }) {
     return _then(_value.copyWith(
-      energyInterval: null == energyInterval
-          ? _value.energyInterval
-          : energyInterval // ignore: cast_nullable_to_non_nullable
-              as Interval,
-      displayType: null == displayType
-          ? _value.displayType
-          : displayType // ignore: cast_nullable_to_non_nullable
+      lower: null == lower
+          ? _value.lower
+          : lower // ignore: cast_nullable_to_non_nullable
+              as int,
+      upper: null == upper
+          ? _value.upper
+          : upper // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $IntervalCopyWith<$Res> get energyInterval {
-    return $IntervalCopyWith<$Res>(_value.energyInterval, (value) {
-      return _then(_value.copyWith(energyInterval: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$KilojulesImplCopyWith<$Res>
-    implements $KilojulesCopyWith<$Res> {
-  factory _$$KilojulesImplCopyWith(
-          _$KilojulesImpl value, $Res Function(_$KilojulesImpl) then) =
-      __$$KilojulesImplCopyWithImpl<$Res>;
+abstract class _$$EnergyIntervalImplCopyWith<$Res>
+    implements $EnergyIntervalCopyWith<$Res> {
+  factory _$$EnergyIntervalImplCopyWith(_$EnergyIntervalImpl value,
+          $Res Function(_$EnergyIntervalImpl) then) =
+      __$$EnergyIntervalImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'EnergyInterval') Interval energyInterval,
-      @JsonKey(name: 'DisplayType') int displayType});
-
-  @override
-  $IntervalCopyWith<$Res> get energyInterval;
+      {@JsonKey(name: 'Lower') int lower, @JsonKey(name: 'Upper') int upper});
 }
 
 /// @nodoc
-class __$$KilojulesImplCopyWithImpl<$Res>
-    extends _$KilojulesCopyWithImpl<$Res, _$KilojulesImpl>
-    implements _$$KilojulesImplCopyWith<$Res> {
-  __$$KilojulesImplCopyWithImpl(
-      _$KilojulesImpl _value, $Res Function(_$KilojulesImpl) _then)
+class __$$EnergyIntervalImplCopyWithImpl<$Res>
+    extends _$EnergyIntervalCopyWithImpl<$Res, _$EnergyIntervalImpl>
+    implements _$$EnergyIntervalImplCopyWith<$Res> {
+  __$$EnergyIntervalImplCopyWithImpl(
+      _$EnergyIntervalImpl _value, $Res Function(_$EnergyIntervalImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? energyInterval = null,
-    Object? displayType = null,
+    Object? lower = null,
+    Object? upper = null,
   }) {
-    return _then(_$KilojulesImpl(
-      energyInterval: null == energyInterval
-          ? _value.energyInterval
-          : energyInterval // ignore: cast_nullable_to_non_nullable
-              as Interval,
-      displayType: null == displayType
-          ? _value.displayType
-          : displayType // ignore: cast_nullable_to_non_nullable
+    return _then(_$EnergyIntervalImpl(
+      lower: null == lower
+          ? _value.lower
+          : lower // ignore: cast_nullable_to_non_nullable
+              as int,
+      upper: null == upper
+          ? _value.upper
+          : upper // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -4240,73 +3625,71 @@ class __$$KilojulesImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$KilojulesImpl implements _Kilojules {
-  _$KilojulesImpl(
-      {@JsonKey(name: 'EnergyInterval') required this.energyInterval,
-      @JsonKey(name: 'DisplayType') required this.displayType});
+class _$EnergyIntervalImpl implements _EnergyInterval {
+  const _$EnergyIntervalImpl(
+      {@JsonKey(name: 'Lower') required this.lower,
+      @JsonKey(name: 'Upper') required this.upper});
 
-  factory _$KilojulesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$KilojulesImplFromJson(json);
+  factory _$EnergyIntervalImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EnergyIntervalImplFromJson(json);
 
   @override
-  @JsonKey(name: 'EnergyInterval')
-  final Interval energyInterval;
+  @JsonKey(name: 'Lower')
+  final int lower;
   @override
-  @JsonKey(name: 'DisplayType')
-  final int displayType;
+  @JsonKey(name: 'Upper')
+  final int upper;
 
   @override
   String toString() {
-    return 'Kilojules(energyInterval: $energyInterval, displayType: $displayType)';
+    return 'EnergyInterval(lower: $lower, upper: $upper)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$KilojulesImpl &&
-            (identical(other.energyInterval, energyInterval) ||
-                other.energyInterval == energyInterval) &&
-            (identical(other.displayType, displayType) ||
-                other.displayType == displayType));
+            other is _$EnergyIntervalImpl &&
+            (identical(other.lower, lower) || other.lower == lower) &&
+            (identical(other.upper, upper) || other.upper == upper));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, energyInterval, displayType);
+  int get hashCode => Object.hash(runtimeType, lower, upper);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$KilojulesImplCopyWith<_$KilojulesImpl> get copyWith =>
-      __$$KilojulesImplCopyWithImpl<_$KilojulesImpl>(this, _$identity);
+  _$$EnergyIntervalImplCopyWith<_$EnergyIntervalImpl> get copyWith =>
+      __$$EnergyIntervalImplCopyWithImpl<_$EnergyIntervalImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$KilojulesImplToJson(
+    return _$$EnergyIntervalImplToJson(
       this,
     );
   }
 }
 
-abstract class _Kilojules implements Kilojules {
-  factory _Kilojules(
-      {@JsonKey(name: 'EnergyInterval') required final Interval energyInterval,
-      @JsonKey(name: 'DisplayType')
-      required final int displayType}) = _$KilojulesImpl;
+abstract class _EnergyInterval implements EnergyInterval {
+  const factory _EnergyInterval(
+      {@JsonKey(name: 'Lower') required final int lower,
+      @JsonKey(name: 'Upper') required final int upper}) = _$EnergyIntervalImpl;
 
-  factory _Kilojules.fromJson(Map<String, dynamic> json) =
-      _$KilojulesImpl.fromJson;
+  factory _EnergyInterval.fromJson(Map<String, dynamic> json) =
+      _$EnergyIntervalImpl.fromJson;
 
   @override
-  @JsonKey(name: 'EnergyInterval')
-  Interval get energyInterval;
+  @JsonKey(name: 'Lower')
+  int get lower;
   @override
-  @JsonKey(name: 'DisplayType')
-  int get displayType;
+  @JsonKey(name: 'Upper')
+  int get upper;
   @override
   @JsonKey(ignore: true)
-  _$$KilojulesImplCopyWith<_$KilojulesImpl> get copyWith =>
+  _$$EnergyIntervalImplCopyWith<_$EnergyIntervalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -4316,10 +3699,14 @@ ServingSize _$ServingSizeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ServingSize {
-  @JsonKey(name: 'Weight')
-  double get weight => throw _privateConstructorUsedError;
-  @JsonKey(name: 'Unit')
-  String get unit => throw _privateConstructorUsedError;
+  @JsonKey(name: 'MeasurementType')
+  String get measurementType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'WeightedInterval')
+  WeightedInterval get weightedInterval => throw _privateConstructorUsedError;
+  @JsonKey(name: 'VolumenInterval')
+  VolumenInterval get volumenInterval => throw _privateConstructorUsedError;
+  @JsonKey(name: 'CountInterval')
+  CountInterval get countInterval => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -4334,8 +3721,14 @@ abstract class $ServingSizeCopyWith<$Res> {
       _$ServingSizeCopyWithImpl<$Res, ServingSize>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'Weight') double weight,
-      @JsonKey(name: 'Unit') String unit});
+      {@JsonKey(name: 'MeasurementType') String measurementType,
+      @JsonKey(name: 'WeightedInterval') WeightedInterval weightedInterval,
+      @JsonKey(name: 'VolumenInterval') VolumenInterval volumenInterval,
+      @JsonKey(name: 'CountInterval') CountInterval countInterval});
+
+  $WeightedIntervalCopyWith<$Res> get weightedInterval;
+  $VolumenIntervalCopyWith<$Res> get volumenInterval;
+  $CountIntervalCopyWith<$Res> get countInterval;
 }
 
 /// @nodoc
@@ -4351,19 +3744,53 @@ class _$ServingSizeCopyWithImpl<$Res, $Val extends ServingSize>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weight = null,
-    Object? unit = null,
+    Object? measurementType = null,
+    Object? weightedInterval = null,
+    Object? volumenInterval = null,
+    Object? countInterval = null,
   }) {
     return _then(_value.copyWith(
-      weight: null == weight
-          ? _value.weight
-          : weight // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
+      measurementType: null == measurementType
+          ? _value.measurementType
+          : measurementType // ignore: cast_nullable_to_non_nullable
               as String,
+      weightedInterval: null == weightedInterval
+          ? _value.weightedInterval
+          : weightedInterval // ignore: cast_nullable_to_non_nullable
+              as WeightedInterval,
+      volumenInterval: null == volumenInterval
+          ? _value.volumenInterval
+          : volumenInterval // ignore: cast_nullable_to_non_nullable
+              as VolumenInterval,
+      countInterval: null == countInterval
+          ? _value.countInterval
+          : countInterval // ignore: cast_nullable_to_non_nullable
+              as CountInterval,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $WeightedIntervalCopyWith<$Res> get weightedInterval {
+    return $WeightedIntervalCopyWith<$Res>(_value.weightedInterval, (value) {
+      return _then(_value.copyWith(weightedInterval: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $VolumenIntervalCopyWith<$Res> get volumenInterval {
+    return $VolumenIntervalCopyWith<$Res>(_value.volumenInterval, (value) {
+      return _then(_value.copyWith(volumenInterval: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CountIntervalCopyWith<$Res> get countInterval {
+    return $CountIntervalCopyWith<$Res>(_value.countInterval, (value) {
+      return _then(_value.copyWith(countInterval: value) as $Val);
+    });
   }
 }
 
@@ -4376,8 +3803,17 @@ abstract class _$$ServingSizeImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'Weight') double weight,
-      @JsonKey(name: 'Unit') String unit});
+      {@JsonKey(name: 'MeasurementType') String measurementType,
+      @JsonKey(name: 'WeightedInterval') WeightedInterval weightedInterval,
+      @JsonKey(name: 'VolumenInterval') VolumenInterval volumenInterval,
+      @JsonKey(name: 'CountInterval') CountInterval countInterval});
+
+  @override
+  $WeightedIntervalCopyWith<$Res> get weightedInterval;
+  @override
+  $VolumenIntervalCopyWith<$Res> get volumenInterval;
+  @override
+  $CountIntervalCopyWith<$Res> get countInterval;
 }
 
 /// @nodoc
@@ -4391,18 +3827,28 @@ class __$$ServingSizeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weight = null,
-    Object? unit = null,
+    Object? measurementType = null,
+    Object? weightedInterval = null,
+    Object? volumenInterval = null,
+    Object? countInterval = null,
   }) {
     return _then(_$ServingSizeImpl(
-      weight: null == weight
-          ? _value.weight
-          : weight // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
+      measurementType: null == measurementType
+          ? _value.measurementType
+          : measurementType // ignore: cast_nullable_to_non_nullable
               as String,
+      weightedInterval: null == weightedInterval
+          ? _value.weightedInterval
+          : weightedInterval // ignore: cast_nullable_to_non_nullable
+              as WeightedInterval,
+      volumenInterval: null == volumenInterval
+          ? _value.volumenInterval
+          : volumenInterval // ignore: cast_nullable_to_non_nullable
+              as VolumenInterval,
+      countInterval: null == countInterval
+          ? _value.countInterval
+          : countInterval // ignore: cast_nullable_to_non_nullable
+              as CountInterval,
     ));
   }
 }
@@ -4410,23 +3856,31 @@ class __$$ServingSizeImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ServingSizeImpl implements _ServingSize {
-  _$ServingSizeImpl(
-      {@JsonKey(name: 'Weight') required this.weight,
-      @JsonKey(name: 'Unit') required this.unit});
+  const _$ServingSizeImpl(
+      {@JsonKey(name: 'MeasurementType') required this.measurementType,
+      @JsonKey(name: 'WeightedInterval') required this.weightedInterval,
+      @JsonKey(name: 'VolumenInterval') required this.volumenInterval,
+      @JsonKey(name: 'CountInterval') required this.countInterval});
 
   factory _$ServingSizeImpl.fromJson(Map<String, dynamic> json) =>
       _$$ServingSizeImplFromJson(json);
 
   @override
-  @JsonKey(name: 'Weight')
-  final double weight;
+  @JsonKey(name: 'MeasurementType')
+  final String measurementType;
   @override
-  @JsonKey(name: 'Unit')
-  final String unit;
+  @JsonKey(name: 'WeightedInterval')
+  final WeightedInterval weightedInterval;
+  @override
+  @JsonKey(name: 'VolumenInterval')
+  final VolumenInterval volumenInterval;
+  @override
+  @JsonKey(name: 'CountInterval')
+  final CountInterval countInterval;
 
   @override
   String toString() {
-    return 'ServingSize(weight: $weight, unit: $unit)';
+    return 'ServingSize(measurementType: $measurementType, weightedInterval: $weightedInterval, volumenInterval: $volumenInterval, countInterval: $countInterval)';
   }
 
   @override
@@ -4434,13 +3888,20 @@ class _$ServingSizeImpl implements _ServingSize {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServingSizeImpl &&
-            (identical(other.weight, weight) || other.weight == weight) &&
-            (identical(other.unit, unit) || other.unit == unit));
+            (identical(other.measurementType, measurementType) ||
+                other.measurementType == measurementType) &&
+            (identical(other.weightedInterval, weightedInterval) ||
+                other.weightedInterval == weightedInterval) &&
+            (identical(other.volumenInterval, volumenInterval) ||
+                other.volumenInterval == volumenInterval) &&
+            (identical(other.countInterval, countInterval) ||
+                other.countInterval == countInterval));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, weight, unit);
+  int get hashCode => Object.hash(runtimeType, measurementType,
+      weightedInterval, volumenInterval, countInterval);
 
   @JsonKey(ignore: true)
   @override
@@ -4457,22 +3918,611 @@ class _$ServingSizeImpl implements _ServingSize {
 }
 
 abstract class _ServingSize implements ServingSize {
-  factory _ServingSize(
-      {@JsonKey(name: 'Weight') required final double weight,
-      @JsonKey(name: 'Unit') required final String unit}) = _$ServingSizeImpl;
+  const factory _ServingSize(
+      {@JsonKey(name: 'MeasurementType') required final String measurementType,
+      @JsonKey(name: 'WeightedInterval')
+      required final WeightedInterval weightedInterval,
+      @JsonKey(name: 'VolumenInterval')
+      required final VolumenInterval volumenInterval,
+      @JsonKey(name: 'CountInterval')
+      required final CountInterval countInterval}) = _$ServingSizeImpl;
 
   factory _ServingSize.fromJson(Map<String, dynamic> json) =
       _$ServingSizeImpl.fromJson;
 
   @override
-  @JsonKey(name: 'Weight')
-  double get weight;
+  @JsonKey(name: 'MeasurementType')
+  String get measurementType;
   @override
-  @JsonKey(name: 'Unit')
-  String get unit;
+  @JsonKey(name: 'WeightedInterval')
+  WeightedInterval get weightedInterval;
+  @override
+  @JsonKey(name: 'VolumenInterval')
+  VolumenInterval get volumenInterval;
+  @override
+  @JsonKey(name: 'CountInterval')
+  CountInterval get countInterval;
   @override
   @JsonKey(ignore: true)
   _$$ServingSizeImplCopyWith<_$ServingSizeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+WeightedInterval _$WeightedIntervalFromJson(Map<String, dynamic> json) {
+  return _WeightedInterval.fromJson(json);
+}
+
+/// @nodoc
+mixin _$WeightedInterval {
+  @JsonKey(name: 'Interval')
+  Interval get interval => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Weight')
+  Weight get weight => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $WeightedIntervalCopyWith<WeightedInterval> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $WeightedIntervalCopyWith<$Res> {
+  factory $WeightedIntervalCopyWith(
+          WeightedInterval value, $Res Function(WeightedInterval) then) =
+      _$WeightedIntervalCopyWithImpl<$Res, WeightedInterval>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'Interval') Interval interval,
+      @JsonKey(name: 'Weight') Weight weight});
+
+  $IntervalCopyWith<$Res> get interval;
+  $WeightCopyWith<$Res> get weight;
+}
+
+/// @nodoc
+class _$WeightedIntervalCopyWithImpl<$Res, $Val extends WeightedInterval>
+    implements $WeightedIntervalCopyWith<$Res> {
+  _$WeightedIntervalCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? interval = null,
+    Object? weight = null,
+  }) {
+    return _then(_value.copyWith(
+      interval: null == interval
+          ? _value.interval
+          : interval // ignore: cast_nullable_to_non_nullable
+              as Interval,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as Weight,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $IntervalCopyWith<$Res> get interval {
+    return $IntervalCopyWith<$Res>(_value.interval, (value) {
+      return _then(_value.copyWith(interval: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $WeightCopyWith<$Res> get weight {
+    return $WeightCopyWith<$Res>(_value.weight, (value) {
+      return _then(_value.copyWith(weight: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$WeightedIntervalImplCopyWith<$Res>
+    implements $WeightedIntervalCopyWith<$Res> {
+  factory _$$WeightedIntervalImplCopyWith(_$WeightedIntervalImpl value,
+          $Res Function(_$WeightedIntervalImpl) then) =
+      __$$WeightedIntervalImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'Interval') Interval interval,
+      @JsonKey(name: 'Weight') Weight weight});
+
+  @override
+  $IntervalCopyWith<$Res> get interval;
+  @override
+  $WeightCopyWith<$Res> get weight;
+}
+
+/// @nodoc
+class __$$WeightedIntervalImplCopyWithImpl<$Res>
+    extends _$WeightedIntervalCopyWithImpl<$Res, _$WeightedIntervalImpl>
+    implements _$$WeightedIntervalImplCopyWith<$Res> {
+  __$$WeightedIntervalImplCopyWithImpl(_$WeightedIntervalImpl _value,
+      $Res Function(_$WeightedIntervalImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? interval = null,
+    Object? weight = null,
+  }) {
+    return _then(_$WeightedIntervalImpl(
+      interval: null == interval
+          ? _value.interval
+          : interval // ignore: cast_nullable_to_non_nullable
+              as Interval,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as Weight,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$WeightedIntervalImpl implements _WeightedInterval {
+  const _$WeightedIntervalImpl(
+      {@JsonKey(name: 'Interval') required this.interval,
+      @JsonKey(name: 'Weight') required this.weight});
+
+  factory _$WeightedIntervalImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WeightedIntervalImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'Interval')
+  final Interval interval;
+  @override
+  @JsonKey(name: 'Weight')
+  final Weight weight;
+
+  @override
+  String toString() {
+    return 'WeightedInterval(interval: $interval, weight: $weight)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WeightedIntervalImpl &&
+            (identical(other.interval, interval) ||
+                other.interval == interval) &&
+            (identical(other.weight, weight) || other.weight == weight));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, interval, weight);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$WeightedIntervalImplCopyWith<_$WeightedIntervalImpl> get copyWith =>
+      __$$WeightedIntervalImplCopyWithImpl<_$WeightedIntervalImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$WeightedIntervalImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _WeightedInterval implements WeightedInterval {
+  const factory _WeightedInterval(
+          {@JsonKey(name: 'Interval') required final Interval interval,
+          @JsonKey(name: 'Weight') required final Weight weight}) =
+      _$WeightedIntervalImpl;
+
+  factory _WeightedInterval.fromJson(Map<String, dynamic> json) =
+      _$WeightedIntervalImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'Interval')
+  Interval get interval;
+  @override
+  @JsonKey(name: 'Weight')
+  Weight get weight;
+  @override
+  @JsonKey(ignore: true)
+  _$$WeightedIntervalImplCopyWith<_$WeightedIntervalImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+VolumenInterval _$VolumenIntervalFromJson(Map<String, dynamic> json) {
+  return _VolumenInterval.fromJson(json);
+}
+
+/// @nodoc
+mixin _$VolumenInterval {
+  @JsonKey(name: 'Interval')
+  Interval get interval => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Volume')
+  Volume get volume => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $VolumenIntervalCopyWith<VolumenInterval> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $VolumenIntervalCopyWith<$Res> {
+  factory $VolumenIntervalCopyWith(
+          VolumenInterval value, $Res Function(VolumenInterval) then) =
+      _$VolumenIntervalCopyWithImpl<$Res, VolumenInterval>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'Interval') Interval interval,
+      @JsonKey(name: 'Volume') Volume volume});
+
+  $IntervalCopyWith<$Res> get interval;
+  $VolumeCopyWith<$Res> get volume;
+}
+
+/// @nodoc
+class _$VolumenIntervalCopyWithImpl<$Res, $Val extends VolumenInterval>
+    implements $VolumenIntervalCopyWith<$Res> {
+  _$VolumenIntervalCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? interval = null,
+    Object? volume = null,
+  }) {
+    return _then(_value.copyWith(
+      interval: null == interval
+          ? _value.interval
+          : interval // ignore: cast_nullable_to_non_nullable
+              as Interval,
+      volume: null == volume
+          ? _value.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as Volume,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $IntervalCopyWith<$Res> get interval {
+    return $IntervalCopyWith<$Res>(_value.interval, (value) {
+      return _then(_value.copyWith(interval: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $VolumeCopyWith<$Res> get volume {
+    return $VolumeCopyWith<$Res>(_value.volume, (value) {
+      return _then(_value.copyWith(volume: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$VolumenIntervalImplCopyWith<$Res>
+    implements $VolumenIntervalCopyWith<$Res> {
+  factory _$$VolumenIntervalImplCopyWith(_$VolumenIntervalImpl value,
+          $Res Function(_$VolumenIntervalImpl) then) =
+      __$$VolumenIntervalImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'Interval') Interval interval,
+      @JsonKey(name: 'Volume') Volume volume});
+
+  @override
+  $IntervalCopyWith<$Res> get interval;
+  @override
+  $VolumeCopyWith<$Res> get volume;
+}
+
+/// @nodoc
+class __$$VolumenIntervalImplCopyWithImpl<$Res>
+    extends _$VolumenIntervalCopyWithImpl<$Res, _$VolumenIntervalImpl>
+    implements _$$VolumenIntervalImplCopyWith<$Res> {
+  __$$VolumenIntervalImplCopyWithImpl(
+      _$VolumenIntervalImpl _value, $Res Function(_$VolumenIntervalImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? interval = null,
+    Object? volume = null,
+  }) {
+    return _then(_$VolumenIntervalImpl(
+      interval: null == interval
+          ? _value.interval
+          : interval // ignore: cast_nullable_to_non_nullable
+              as Interval,
+      volume: null == volume
+          ? _value.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as Volume,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$VolumenIntervalImpl implements _VolumenInterval {
+  const _$VolumenIntervalImpl(
+      {@JsonKey(name: 'Interval') required this.interval,
+      @JsonKey(name: 'Volume') required this.volume});
+
+  factory _$VolumenIntervalImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VolumenIntervalImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'Interval')
+  final Interval interval;
+  @override
+  @JsonKey(name: 'Volume')
+  final Volume volume;
+
+  @override
+  String toString() {
+    return 'VolumenInterval(interval: $interval, volume: $volume)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VolumenIntervalImpl &&
+            (identical(other.interval, interval) ||
+                other.interval == interval) &&
+            (identical(other.volume, volume) || other.volume == volume));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, interval, volume);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VolumenIntervalImplCopyWith<_$VolumenIntervalImpl> get copyWith =>
+      __$$VolumenIntervalImplCopyWithImpl<_$VolumenIntervalImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$VolumenIntervalImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _VolumenInterval implements VolumenInterval {
+  const factory _VolumenInterval(
+          {@JsonKey(name: 'Interval') required final Interval interval,
+          @JsonKey(name: 'Volume') required final Volume volume}) =
+      _$VolumenIntervalImpl;
+
+  factory _VolumenInterval.fromJson(Map<String, dynamic> json) =
+      _$VolumenIntervalImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'Interval')
+  Interval get interval;
+  @override
+  @JsonKey(name: 'Volume')
+  Volume get volume;
+  @override
+  @JsonKey(ignore: true)
+  _$$VolumenIntervalImplCopyWith<_$VolumenIntervalImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+CountInterval _$CountIntervalFromJson(Map<String, dynamic> json) {
+  return _CountInterval.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CountInterval {
+  @JsonKey(name: 'Interval')
+  Interval get interval => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Count')
+  Count get count => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CountIntervalCopyWith<CountInterval> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CountIntervalCopyWith<$Res> {
+  factory $CountIntervalCopyWith(
+          CountInterval value, $Res Function(CountInterval) then) =
+      _$CountIntervalCopyWithImpl<$Res, CountInterval>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'Interval') Interval interval,
+      @JsonKey(name: 'Count') Count count});
+
+  $IntervalCopyWith<$Res> get interval;
+  $CountCopyWith<$Res> get count;
+}
+
+/// @nodoc
+class _$CountIntervalCopyWithImpl<$Res, $Val extends CountInterval>
+    implements $CountIntervalCopyWith<$Res> {
+  _$CountIntervalCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? interval = null,
+    Object? count = null,
+  }) {
+    return _then(_value.copyWith(
+      interval: null == interval
+          ? _value.interval
+          : interval // ignore: cast_nullable_to_non_nullable
+              as Interval,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as Count,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $IntervalCopyWith<$Res> get interval {
+    return $IntervalCopyWith<$Res>(_value.interval, (value) {
+      return _then(_value.copyWith(interval: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CountCopyWith<$Res> get count {
+    return $CountCopyWith<$Res>(_value.count, (value) {
+      return _then(_value.copyWith(count: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$CountIntervalImplCopyWith<$Res>
+    implements $CountIntervalCopyWith<$Res> {
+  factory _$$CountIntervalImplCopyWith(
+          _$CountIntervalImpl value, $Res Function(_$CountIntervalImpl) then) =
+      __$$CountIntervalImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'Interval') Interval interval,
+      @JsonKey(name: 'Count') Count count});
+
+  @override
+  $IntervalCopyWith<$Res> get interval;
+  @override
+  $CountCopyWith<$Res> get count;
+}
+
+/// @nodoc
+class __$$CountIntervalImplCopyWithImpl<$Res>
+    extends _$CountIntervalCopyWithImpl<$Res, _$CountIntervalImpl>
+    implements _$$CountIntervalImplCopyWith<$Res> {
+  __$$CountIntervalImplCopyWithImpl(
+      _$CountIntervalImpl _value, $Res Function(_$CountIntervalImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? interval = null,
+    Object? count = null,
+  }) {
+    return _then(_$CountIntervalImpl(
+      interval: null == interval
+          ? _value.interval
+          : interval // ignore: cast_nullable_to_non_nullable
+              as Interval,
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as Count,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CountIntervalImpl implements _CountInterval {
+  const _$CountIntervalImpl(
+      {@JsonKey(name: 'Interval') required this.interval,
+      @JsonKey(name: 'Count') required this.count});
+
+  factory _$CountIntervalImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CountIntervalImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'Interval')
+  final Interval interval;
+  @override
+  @JsonKey(name: 'Count')
+  final Count count;
+
+  @override
+  String toString() {
+    return 'CountInterval(interval: $interval, count: $count)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CountIntervalImpl &&
+            (identical(other.interval, interval) ||
+                other.interval == interval) &&
+            (identical(other.count, count) || other.count == count));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, interval, count);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CountIntervalImplCopyWith<_$CountIntervalImpl> get copyWith =>
+      __$$CountIntervalImplCopyWithImpl<_$CountIntervalImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CountIntervalImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _CountInterval implements CountInterval {
+  const factory _CountInterval(
+          {@JsonKey(name: 'Interval') required final Interval interval,
+          @JsonKey(name: 'Count') required final Count count}) =
+      _$CountIntervalImpl;
+
+  factory _CountInterval.fromJson(Map<String, dynamic> json) =
+      _$CountIntervalImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'Interval')
+  Interval get interval;
+  @override
+  @JsonKey(name: 'Count')
+  Count get count;
+  @override
+  @JsonKey(ignore: true)
+  _$$CountIntervalImplCopyWith<_$CountIntervalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -4482,10 +4532,10 @@ Interval _$IntervalFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Interval {
-  @JsonKey(name: 'From')
-  int get from => throw _privateConstructorUsedError;
-  @JsonKey(name: 'To')
-  int get to => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Lower')
+  int get lower => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Upper')
+  int get upper => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -4498,7 +4548,8 @@ abstract class $IntervalCopyWith<$Res> {
   factory $IntervalCopyWith(Interval value, $Res Function(Interval) then) =
       _$IntervalCopyWithImpl<$Res, Interval>;
   @useResult
-  $Res call({@JsonKey(name: 'From') int from, @JsonKey(name: 'To') int to});
+  $Res call(
+      {@JsonKey(name: 'Lower') int lower, @JsonKey(name: 'Upper') int upper});
 }
 
 /// @nodoc
@@ -4514,17 +4565,17 @@ class _$IntervalCopyWithImpl<$Res, $Val extends Interval>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? from = null,
-    Object? to = null,
+    Object? lower = null,
+    Object? upper = null,
   }) {
     return _then(_value.copyWith(
-      from: null == from
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
+      lower: null == lower
+          ? _value.lower
+          : lower // ignore: cast_nullable_to_non_nullable
               as int,
-      to: null == to
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
+      upper: null == upper
+          ? _value.upper
+          : upper // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -4538,7 +4589,8 @@ abstract class _$$IntervalImplCopyWith<$Res>
       __$$IntervalImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'From') int from, @JsonKey(name: 'To') int to});
+  $Res call(
+      {@JsonKey(name: 'Lower') int lower, @JsonKey(name: 'Upper') int upper});
 }
 
 /// @nodoc
@@ -4552,17 +4604,17 @@ class __$$IntervalImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? from = null,
-    Object? to = null,
+    Object? lower = null,
+    Object? upper = null,
   }) {
     return _then(_$IntervalImpl(
-      from: null == from
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
+      lower: null == lower
+          ? _value.lower
+          : lower // ignore: cast_nullable_to_non_nullable
               as int,
-      to: null == to
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
+      upper: null == upper
+          ? _value.upper
+          : upper // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -4571,23 +4623,23 @@ class __$$IntervalImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$IntervalImpl implements _Interval {
-  _$IntervalImpl(
-      {@JsonKey(name: 'From') required this.from,
-      @JsonKey(name: 'To') required this.to});
+  const _$IntervalImpl(
+      {@JsonKey(name: 'Lower') required this.lower,
+      @JsonKey(name: 'Upper') required this.upper});
 
   factory _$IntervalImpl.fromJson(Map<String, dynamic> json) =>
       _$$IntervalImplFromJson(json);
 
   @override
-  @JsonKey(name: 'From')
-  final int from;
+  @JsonKey(name: 'Lower')
+  final int lower;
   @override
-  @JsonKey(name: 'To')
-  final int to;
+  @JsonKey(name: 'Upper')
+  final int upper;
 
   @override
   String toString() {
-    return 'Interval(from: $from, to: $to)';
+    return 'Interval(lower: $lower, upper: $upper)';
   }
 
   @override
@@ -4595,13 +4647,13 @@ class _$IntervalImpl implements _Interval {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$IntervalImpl &&
-            (identical(other.from, from) || other.from == from) &&
-            (identical(other.to, to) || other.to == to));
+            (identical(other.lower, lower) || other.lower == lower) &&
+            (identical(other.upper, upper) || other.upper == upper));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, from, to);
+  int get hashCode => Object.hash(runtimeType, lower, upper);
 
   @JsonKey(ignore: true)
   @override
@@ -4618,57 +4670,55 @@ class _$IntervalImpl implements _Interval {
 }
 
 abstract class _Interval implements Interval {
-  factory _Interval(
-      {@JsonKey(name: 'From') required final int from,
-      @JsonKey(name: 'To') required final int to}) = _$IntervalImpl;
+  const factory _Interval(
+      {@JsonKey(name: 'Lower') required final int lower,
+      @JsonKey(name: 'Upper') required final int upper}) = _$IntervalImpl;
 
   factory _Interval.fromJson(Map<String, dynamic> json) =
       _$IntervalImpl.fromJson;
 
   @override
-  @JsonKey(name: 'From')
-  int get from;
+  @JsonKey(name: 'Lower')
+  int get lower;
   @override
-  @JsonKey(name: 'To')
-  int get to;
+  @JsonKey(name: 'Upper')
+  int get upper;
   @override
   @JsonKey(ignore: true)
   _$$IntervalImplCopyWith<_$IntervalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-NetQuantity _$NetQuantityFromJson(Map<String, dynamic> json) {
-  return _NetQuantity.fromJson(json);
+Weight _$WeightFromJson(Map<String, dynamic> json) {
+  return _Weight.fromJson(json);
 }
 
 /// @nodoc
-mixin _$NetQuantity {
-  @JsonKey(name: 'Weight')
-  double get weight => throw _privateConstructorUsedError;
+mixin _$Weight {
   @JsonKey(name: 'Unit')
   String get unit => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Value')
+  double get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NetQuantityCopyWith<NetQuantity> get copyWith =>
-      throw _privateConstructorUsedError;
+  $WeightCopyWith<Weight> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NetQuantityCopyWith<$Res> {
-  factory $NetQuantityCopyWith(
-          NetQuantity value, $Res Function(NetQuantity) then) =
-      _$NetQuantityCopyWithImpl<$Res, NetQuantity>;
+abstract class $WeightCopyWith<$Res> {
+  factory $WeightCopyWith(Weight value, $Res Function(Weight) then) =
+      _$WeightCopyWithImpl<$Res, Weight>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'Weight') double weight,
-      @JsonKey(name: 'Unit') String unit});
+      {@JsonKey(name: 'Unit') String unit,
+      @JsonKey(name: 'Value') double value});
 }
 
 /// @nodoc
-class _$NetQuantityCopyWithImpl<$Res, $Val extends NetQuantity>
-    implements $NetQuantityCopyWith<$Res> {
-  _$NetQuantityCopyWithImpl(this._value, this._then);
+class _$WeightCopyWithImpl<$Res, $Val extends Weight>
+    implements $WeightCopyWith<$Res> {
+  _$WeightCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -4678,160 +4728,159 @@ class _$NetQuantityCopyWithImpl<$Res, $Val extends NetQuantity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weight = null,
     Object? unit = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      weight: null == weight
-          ? _value.weight
-          : weight // ignore: cast_nullable_to_non_nullable
+      unit: null == unit
+          ? _value.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$NetQuantityImplCopyWith<$Res>
-    implements $NetQuantityCopyWith<$Res> {
-  factory _$$NetQuantityImplCopyWith(
-          _$NetQuantityImpl value, $Res Function(_$NetQuantityImpl) then) =
-      __$$NetQuantityImplCopyWithImpl<$Res>;
+abstract class _$$WeightImplCopyWith<$Res> implements $WeightCopyWith<$Res> {
+  factory _$$WeightImplCopyWith(
+          _$WeightImpl value, $Res Function(_$WeightImpl) then) =
+      __$$WeightImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'Weight') double weight,
-      @JsonKey(name: 'Unit') String unit});
+      {@JsonKey(name: 'Unit') String unit,
+      @JsonKey(name: 'Value') double value});
 }
 
 /// @nodoc
-class __$$NetQuantityImplCopyWithImpl<$Res>
-    extends _$NetQuantityCopyWithImpl<$Res, _$NetQuantityImpl>
-    implements _$$NetQuantityImplCopyWith<$Res> {
-  __$$NetQuantityImplCopyWithImpl(
-      _$NetQuantityImpl _value, $Res Function(_$NetQuantityImpl) _then)
+class __$$WeightImplCopyWithImpl<$Res>
+    extends _$WeightCopyWithImpl<$Res, _$WeightImpl>
+    implements _$$WeightImplCopyWith<$Res> {
+  __$$WeightImplCopyWithImpl(
+      _$WeightImpl _value, $Res Function(_$WeightImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weight = null,
     Object? unit = null,
+    Object? value = null,
   }) {
-    return _then(_$NetQuantityImpl(
-      weight: null == weight
-          ? _value.weight
-          : weight // ignore: cast_nullable_to_non_nullable
+    return _then(_$WeightImpl(
+      unit: null == unit
+          ? _value.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$NetQuantityImpl implements _NetQuantity {
-  _$NetQuantityImpl(
-      {@JsonKey(name: 'Weight') required this.weight,
-      @JsonKey(name: 'Unit') required this.unit});
+class _$WeightImpl implements _Weight {
+  const _$WeightImpl(
+      {@JsonKey(name: 'Unit') required this.unit,
+      @JsonKey(name: 'Value') required this.value});
 
-  factory _$NetQuantityImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NetQuantityImplFromJson(json);
+  factory _$WeightImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WeightImplFromJson(json);
 
-  @override
-  @JsonKey(name: 'Weight')
-  final double weight;
   @override
   @JsonKey(name: 'Unit')
   final String unit;
+  @override
+  @JsonKey(name: 'Value')
+  final double value;
 
   @override
   String toString() {
-    return 'NetQuantity(weight: $weight, unit: $unit)';
+    return 'Weight(unit: $unit, value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NetQuantityImpl &&
-            (identical(other.weight, weight) || other.weight == weight) &&
-            (identical(other.unit, unit) || other.unit == unit));
+            other is _$WeightImpl &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, weight, unit);
+  int get hashCode => Object.hash(runtimeType, unit, value);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$NetQuantityImplCopyWith<_$NetQuantityImpl> get copyWith =>
-      __$$NetQuantityImplCopyWithImpl<_$NetQuantityImpl>(this, _$identity);
+  _$$WeightImplCopyWith<_$WeightImpl> get copyWith =>
+      __$$WeightImplCopyWithImpl<_$WeightImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$NetQuantityImplToJson(
+    return _$$WeightImplToJson(
       this,
     );
   }
 }
 
-abstract class _NetQuantity implements NetQuantity {
-  factory _NetQuantity(
-      {@JsonKey(name: 'Weight') required final double weight,
-      @JsonKey(name: 'Unit') required final String unit}) = _$NetQuantityImpl;
+abstract class _Weight implements Weight {
+  const factory _Weight(
+      {@JsonKey(name: 'Unit') required final String unit,
+      @JsonKey(name: 'Value') required final double value}) = _$WeightImpl;
 
-  factory _NetQuantity.fromJson(Map<String, dynamic> json) =
-      _$NetQuantityImpl.fromJson;
+  factory _Weight.fromJson(Map<String, dynamic> json) = _$WeightImpl.fromJson;
 
-  @override
-  @JsonKey(name: 'Weight')
-  double get weight;
   @override
   @JsonKey(name: 'Unit')
   String get unit;
   @override
+  @JsonKey(name: 'Value')
+  double get value;
+  @override
   @JsonKey(ignore: true)
-  _$$NetQuantityImplCopyWith<_$NetQuantityImpl> get copyWith =>
+  _$$WeightImplCopyWith<_$WeightImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Fat _$FatFromJson(Map<String, dynamic> json) {
-  return _Fat.fromJson(json);
+Volume _$VolumeFromJson(Map<String, dynamic> json) {
+  return _Volume.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Fat {
-  @JsonKey(name: 'DisplayValue')
-  String get displayValue => throw _privateConstructorUsedError;
+mixin _$Volume {
   @JsonKey(name: 'Unit')
   String get unit => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Value')
+  double get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FatCopyWith<Fat> get copyWith => throw _privateConstructorUsedError;
+  $VolumeCopyWith<Volume> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FatCopyWith<$Res> {
-  factory $FatCopyWith(Fat value, $Res Function(Fat) then) =
-      _$FatCopyWithImpl<$Res, Fat>;
+abstract class $VolumeCopyWith<$Res> {
+  factory $VolumeCopyWith(Volume value, $Res Function(Volume) then) =
+      _$VolumeCopyWithImpl<$Res, Volume>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'DisplayValue') String displayValue,
-      @JsonKey(name: 'Unit') String unit});
+      {@JsonKey(name: 'Unit') String unit,
+      @JsonKey(name: 'Value') double value});
 }
 
 /// @nodoc
-class _$FatCopyWithImpl<$Res, $Val extends Fat> implements $FatCopyWith<$Res> {
-  _$FatCopyWithImpl(this._value, this._then);
+class _$VolumeCopyWithImpl<$Res, $Val extends Volume>
+    implements $VolumeCopyWith<$Res> {
+  _$VolumeCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -4841,159 +4890,158 @@ class _$FatCopyWithImpl<$Res, $Val extends Fat> implements $FatCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? displayValue = null,
     Object? unit = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      displayValue: null == displayValue
-          ? _value.displayValue
-          : displayValue // ignore: cast_nullable_to_non_nullable
-              as String,
       unit: null == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$FatImplCopyWith<$Res> implements $FatCopyWith<$Res> {
-  factory _$$FatImplCopyWith(_$FatImpl value, $Res Function(_$FatImpl) then) =
-      __$$FatImplCopyWithImpl<$Res>;
+abstract class _$$VolumeImplCopyWith<$Res> implements $VolumeCopyWith<$Res> {
+  factory _$$VolumeImplCopyWith(
+          _$VolumeImpl value, $Res Function(_$VolumeImpl) then) =
+      __$$VolumeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'DisplayValue') String displayValue,
-      @JsonKey(name: 'Unit') String unit});
+      {@JsonKey(name: 'Unit') String unit,
+      @JsonKey(name: 'Value') double value});
 }
 
 /// @nodoc
-class __$$FatImplCopyWithImpl<$Res> extends _$FatCopyWithImpl<$Res, _$FatImpl>
-    implements _$$FatImplCopyWith<$Res> {
-  __$$FatImplCopyWithImpl(_$FatImpl _value, $Res Function(_$FatImpl) _then)
+class __$$VolumeImplCopyWithImpl<$Res>
+    extends _$VolumeCopyWithImpl<$Res, _$VolumeImpl>
+    implements _$$VolumeImplCopyWith<$Res> {
+  __$$VolumeImplCopyWithImpl(
+      _$VolumeImpl _value, $Res Function(_$VolumeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? displayValue = null,
     Object? unit = null,
+    Object? value = null,
   }) {
-    return _then(_$FatImpl(
-      displayValue: null == displayValue
-          ? _value.displayValue
-          : displayValue // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$VolumeImpl(
       unit: null == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$FatImpl implements _Fat {
-  _$FatImpl(
-      {@JsonKey(name: 'DisplayValue') required this.displayValue,
-      @JsonKey(name: 'Unit') required this.unit});
+class _$VolumeImpl implements _Volume {
+  const _$VolumeImpl(
+      {@JsonKey(name: 'Unit') required this.unit,
+      @JsonKey(name: 'Value') required this.value});
 
-  factory _$FatImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FatImplFromJson(json);
+  factory _$VolumeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VolumeImplFromJson(json);
 
-  @override
-  @JsonKey(name: 'DisplayValue')
-  final String displayValue;
   @override
   @JsonKey(name: 'Unit')
   final String unit;
+  @override
+  @JsonKey(name: 'Value')
+  final double value;
 
   @override
   String toString() {
-    return 'Fat(displayValue: $displayValue, unit: $unit)';
+    return 'Volume(unit: $unit, value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FatImpl &&
-            (identical(other.displayValue, displayValue) ||
-                other.displayValue == displayValue) &&
-            (identical(other.unit, unit) || other.unit == unit));
+            other is _$VolumeImpl &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, displayValue, unit);
+  int get hashCode => Object.hash(runtimeType, unit, value);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FatImplCopyWith<_$FatImpl> get copyWith =>
-      __$$FatImplCopyWithImpl<_$FatImpl>(this, _$identity);
+  _$$VolumeImplCopyWith<_$VolumeImpl> get copyWith =>
+      __$$VolumeImplCopyWithImpl<_$VolumeImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$FatImplToJson(
+    return _$$VolumeImplToJson(
       this,
     );
   }
 }
 
-abstract class _Fat implements Fat {
-  factory _Fat(
-      {@JsonKey(name: 'DisplayValue') required final String displayValue,
-      @JsonKey(name: 'Unit') required final String unit}) = _$FatImpl;
+abstract class _Volume implements Volume {
+  const factory _Volume(
+      {@JsonKey(name: 'Unit') required final String unit,
+      @JsonKey(name: 'Value') required final double value}) = _$VolumeImpl;
 
-  factory _Fat.fromJson(Map<String, dynamic> json) = _$FatImpl.fromJson;
+  factory _Volume.fromJson(Map<String, dynamic> json) = _$VolumeImpl.fromJson;
 
-  @override
-  @JsonKey(name: 'DisplayValue')
-  String get displayValue;
   @override
   @JsonKey(name: 'Unit')
   String get unit;
   @override
+  @JsonKey(name: 'Value')
+  double get value;
+  @override
   @JsonKey(ignore: true)
-  _$$FatImplCopyWith<_$FatImpl> get copyWith =>
+  _$$VolumeImplCopyWith<_$VolumeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Carbohydrates _$CarbohydratesFromJson(Map<String, dynamic> json) {
-  return _Carbohydrates.fromJson(json);
+Count _$CountFromJson(Map<String, dynamic> json) {
+  return _Count.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Carbohydrates {
-  @JsonKey(name: 'DisplayValue')
-  String get displayValue => throw _privateConstructorUsedError;
+mixin _$Count {
   @JsonKey(name: 'Unit')
   String get unit => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Value')
+  int get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CarbohydratesCopyWith<Carbohydrates> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CountCopyWith<Count> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CarbohydratesCopyWith<$Res> {
-  factory $CarbohydratesCopyWith(
-          Carbohydrates value, $Res Function(Carbohydrates) then) =
-      _$CarbohydratesCopyWithImpl<$Res, Carbohydrates>;
+abstract class $CountCopyWith<$Res> {
+  factory $CountCopyWith(Count value, $Res Function(Count) then) =
+      _$CountCopyWithImpl<$Res, Count>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'DisplayValue') String displayValue,
-      @JsonKey(name: 'Unit') String unit});
+      {@JsonKey(name: 'Unit') String unit, @JsonKey(name: 'Value') int value});
 }
 
 /// @nodoc
-class _$CarbohydratesCopyWithImpl<$Res, $Val extends Carbohydrates>
-    implements $CarbohydratesCopyWith<$Res> {
-  _$CarbohydratesCopyWithImpl(this._value, this._then);
+class _$CountCopyWithImpl<$Res, $Val extends Count>
+    implements $CountCopyWith<$Res> {
+  _$CountCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -5003,454 +5051,125 @@ class _$CarbohydratesCopyWithImpl<$Res, $Val extends Carbohydrates>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? displayValue = null,
     Object? unit = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      displayValue: null == displayValue
-          ? _value.displayValue
-          : displayValue // ignore: cast_nullable_to_non_nullable
-              as String,
       unit: null == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$CarbohydratesImplCopyWith<$Res>
-    implements $CarbohydratesCopyWith<$Res> {
-  factory _$$CarbohydratesImplCopyWith(
-          _$CarbohydratesImpl value, $Res Function(_$CarbohydratesImpl) then) =
-      __$$CarbohydratesImplCopyWithImpl<$Res>;
+abstract class _$$CountImplCopyWith<$Res> implements $CountCopyWith<$Res> {
+  factory _$$CountImplCopyWith(
+          _$CountImpl value, $Res Function(_$CountImpl) then) =
+      __$$CountImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'DisplayValue') String displayValue,
-      @JsonKey(name: 'Unit') String unit});
+      {@JsonKey(name: 'Unit') String unit, @JsonKey(name: 'Value') int value});
 }
 
 /// @nodoc
-class __$$CarbohydratesImplCopyWithImpl<$Res>
-    extends _$CarbohydratesCopyWithImpl<$Res, _$CarbohydratesImpl>
-    implements _$$CarbohydratesImplCopyWith<$Res> {
-  __$$CarbohydratesImplCopyWithImpl(
-      _$CarbohydratesImpl _value, $Res Function(_$CarbohydratesImpl) _then)
+class __$$CountImplCopyWithImpl<$Res>
+    extends _$CountCopyWithImpl<$Res, _$CountImpl>
+    implements _$$CountImplCopyWith<$Res> {
+  __$$CountImplCopyWithImpl(
+      _$CountImpl _value, $Res Function(_$CountImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? displayValue = null,
     Object? unit = null,
+    Object? value = null,
   }) {
-    return _then(_$CarbohydratesImpl(
-      displayValue: null == displayValue
-          ? _value.displayValue
-          : displayValue // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$CountImpl(
       unit: null == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CarbohydratesImpl implements _Carbohydrates {
-  _$CarbohydratesImpl(
-      {@JsonKey(name: 'DisplayValue') required this.displayValue,
-      @JsonKey(name: 'Unit') required this.unit});
+class _$CountImpl implements _Count {
+  const _$CountImpl(
+      {@JsonKey(name: 'Unit') required this.unit,
+      @JsonKey(name: 'Value') required this.value});
 
-  factory _$CarbohydratesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CarbohydratesImplFromJson(json);
+  factory _$CountImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CountImplFromJson(json);
 
-  @override
-  @JsonKey(name: 'DisplayValue')
-  final String displayValue;
   @override
   @JsonKey(name: 'Unit')
   final String unit;
+  @override
+  @JsonKey(name: 'Value')
+  final int value;
 
   @override
   String toString() {
-    return 'Carbohydrates(displayValue: $displayValue, unit: $unit)';
+    return 'Count(unit: $unit, value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CarbohydratesImpl &&
-            (identical(other.displayValue, displayValue) ||
-                other.displayValue == displayValue) &&
-            (identical(other.unit, unit) || other.unit == unit));
+            other is _$CountImpl &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, displayValue, unit);
+  int get hashCode => Object.hash(runtimeType, unit, value);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CarbohydratesImplCopyWith<_$CarbohydratesImpl> get copyWith =>
-      __$$CarbohydratesImplCopyWithImpl<_$CarbohydratesImpl>(this, _$identity);
+  _$$CountImplCopyWith<_$CountImpl> get copyWith =>
+      __$$CountImplCopyWithImpl<_$CountImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CarbohydratesImplToJson(
+    return _$$CountImplToJson(
       this,
     );
   }
 }
 
-abstract class _Carbohydrates implements Carbohydrates {
-  factory _Carbohydrates(
-      {@JsonKey(name: 'DisplayValue') required final String displayValue,
-      @JsonKey(name: 'Unit') required final String unit}) = _$CarbohydratesImpl;
+abstract class _Count implements Count {
+  const factory _Count(
+      {@JsonKey(name: 'Unit') required final String unit,
+      @JsonKey(name: 'Value') required final int value}) = _$CountImpl;
 
-  factory _Carbohydrates.fromJson(Map<String, dynamic> json) =
-      _$CarbohydratesImpl.fromJson;
+  factory _Count.fromJson(Map<String, dynamic> json) = _$CountImpl.fromJson;
 
-  @override
-  @JsonKey(name: 'DisplayValue')
-  String get displayValue;
   @override
   @JsonKey(name: 'Unit')
   String get unit;
   @override
-  @JsonKey(ignore: true)
-  _$$CarbohydratesImplCopyWith<_$CarbohydratesImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Protein _$ProteinFromJson(Map<String, dynamic> json) {
-  return _Protein.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Protein {
-  @JsonKey(name: 'DisplayValue')
-  String get displayValue => throw _privateConstructorUsedError;
-  @JsonKey(name: 'Unit')
-  String get unit => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ProteinCopyWith<Protein> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ProteinCopyWith<$Res> {
-  factory $ProteinCopyWith(Protein value, $Res Function(Protein) then) =
-      _$ProteinCopyWithImpl<$Res, Protein>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'DisplayValue') String displayValue,
-      @JsonKey(name: 'Unit') String unit});
-}
-
-/// @nodoc
-class _$ProteinCopyWithImpl<$Res, $Val extends Protein>
-    implements $ProteinCopyWith<$Res> {
-  _$ProteinCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? displayValue = null,
-    Object? unit = null,
-  }) {
-    return _then(_value.copyWith(
-      displayValue: null == displayValue
-          ? _value.displayValue
-          : displayValue // ignore: cast_nullable_to_non_nullable
-              as String,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ProteinImplCopyWith<$Res> implements $ProteinCopyWith<$Res> {
-  factory _$$ProteinImplCopyWith(
-          _$ProteinImpl value, $Res Function(_$ProteinImpl) then) =
-      __$$ProteinImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'DisplayValue') String displayValue,
-      @JsonKey(name: 'Unit') String unit});
-}
-
-/// @nodoc
-class __$$ProteinImplCopyWithImpl<$Res>
-    extends _$ProteinCopyWithImpl<$Res, _$ProteinImpl>
-    implements _$$ProteinImplCopyWith<$Res> {
-  __$$ProteinImplCopyWithImpl(
-      _$ProteinImpl _value, $Res Function(_$ProteinImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? displayValue = null,
-    Object? unit = null,
-  }) {
-    return _then(_$ProteinImpl(
-      displayValue: null == displayValue
-          ? _value.displayValue
-          : displayValue // ignore: cast_nullable_to_non_nullable
-              as String,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ProteinImpl implements _Protein {
-  _$ProteinImpl(
-      {@JsonKey(name: 'DisplayValue') required this.displayValue,
-      @JsonKey(name: 'Unit') required this.unit});
-
-  factory _$ProteinImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProteinImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'DisplayValue')
-  final String displayValue;
-  @override
-  @JsonKey(name: 'Unit')
-  final String unit;
-
-  @override
-  String toString() {
-    return 'Protein(displayValue: $displayValue, unit: $unit)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProteinImpl &&
-            (identical(other.displayValue, displayValue) ||
-                other.displayValue == displayValue) &&
-            (identical(other.unit, unit) || other.unit == unit));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, displayValue, unit);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ProteinImplCopyWith<_$ProteinImpl> get copyWith =>
-      __$$ProteinImplCopyWithImpl<_$ProteinImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProteinImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Protein implements Protein {
-  factory _Protein(
-      {@JsonKey(name: 'DisplayValue') required final String displayValue,
-      @JsonKey(name: 'Unit') required final String unit}) = _$ProteinImpl;
-
-  factory _Protein.fromJson(Map<String, dynamic> json) = _$ProteinImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'DisplayValue')
-  String get displayValue;
-  @override
-  @JsonKey(name: 'Unit')
-  String get unit;
+  @JsonKey(name: 'Value')
+  int get value;
   @override
   @JsonKey(ignore: true)
-  _$$ProteinImplCopyWith<_$ProteinImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Salt _$SaltFromJson(Map<String, dynamic> json) {
-  return _Salt.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Salt {
-  @JsonKey(name: 'DisplayValue')
-  String get displayValue => throw _privateConstructorUsedError;
-  @JsonKey(name: 'Unit')
-  String get unit => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SaltCopyWith<Salt> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SaltCopyWith<$Res> {
-  factory $SaltCopyWith(Salt value, $Res Function(Salt) then) =
-      _$SaltCopyWithImpl<$Res, Salt>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'DisplayValue') String displayValue,
-      @JsonKey(name: 'Unit') String unit});
-}
-
-/// @nodoc
-class _$SaltCopyWithImpl<$Res, $Val extends Salt>
-    implements $SaltCopyWith<$Res> {
-  _$SaltCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? displayValue = null,
-    Object? unit = null,
-  }) {
-    return _then(_value.copyWith(
-      displayValue: null == displayValue
-          ? _value.displayValue
-          : displayValue // ignore: cast_nullable_to_non_nullable
-              as String,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$SaltImplCopyWith<$Res> implements $SaltCopyWith<$Res> {
-  factory _$$SaltImplCopyWith(
-          _$SaltImpl value, $Res Function(_$SaltImpl) then) =
-      __$$SaltImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'DisplayValue') String displayValue,
-      @JsonKey(name: 'Unit') String unit});
-}
-
-/// @nodoc
-class __$$SaltImplCopyWithImpl<$Res>
-    extends _$SaltCopyWithImpl<$Res, _$SaltImpl>
-    implements _$$SaltImplCopyWith<$Res> {
-  __$$SaltImplCopyWithImpl(_$SaltImpl _value, $Res Function(_$SaltImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? displayValue = null,
-    Object? unit = null,
-  }) {
-    return _then(_$SaltImpl(
-      displayValue: null == displayValue
-          ? _value.displayValue
-          : displayValue // ignore: cast_nullable_to_non_nullable
-              as String,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$SaltImpl implements _Salt {
-  _$SaltImpl(
-      {@JsonKey(name: 'DisplayValue') required this.displayValue,
-      @JsonKey(name: 'Unit') required this.unit});
-
-  factory _$SaltImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SaltImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'DisplayValue')
-  final String displayValue;
-  @override
-  @JsonKey(name: 'Unit')
-  final String unit;
-
-  @override
-  String toString() {
-    return 'Salt(displayValue: $displayValue, unit: $unit)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SaltImpl &&
-            (identical(other.displayValue, displayValue) ||
-                other.displayValue == displayValue) &&
-            (identical(other.unit, unit) || other.unit == unit));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, displayValue, unit);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SaltImplCopyWith<_$SaltImpl> get copyWith =>
-      __$$SaltImplCopyWithImpl<_$SaltImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SaltImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Salt implements Salt {
-  factory _Salt(
-      {@JsonKey(name: 'DisplayValue') required final String displayValue,
-      @JsonKey(name: 'Unit') required final String unit}) = _$SaltImpl;
-
-  factory _Salt.fromJson(Map<String, dynamic> json) = _$SaltImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'DisplayValue')
-  String get displayValue;
-  @override
-  @JsonKey(name: 'Unit')
-  String get unit;
-  @override
-  @JsonKey(ignore: true)
-  _$$SaltImplCopyWith<_$SaltImpl> get copyWith =>
+  _$$CountImplCopyWith<_$CountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -5460,12 +5179,14 @@ DishInfo _$DishInfoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DishInfo {
-  @JsonKey(name: 'DishType')
-  String get dishType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'CuisineType')
-  String get cuisineType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'MealType')
-  String get mealType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Classifications')
+  Classifications get classifications => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Dietary')
+  List<String> get dietary => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Ingredients')
+  List<String> get ingredients => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Nutritional')
+  Map<String, String> get nutritional => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -5479,9 +5200,12 @@ abstract class $DishInfoCopyWith<$Res> {
       _$DishInfoCopyWithImpl<$Res, DishInfo>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'DishType') String dishType,
-      @JsonKey(name: 'CuisineType') String cuisineType,
-      @JsonKey(name: 'MealType') String mealType});
+      {@JsonKey(name: 'Classifications') Classifications classifications,
+      @JsonKey(name: 'Dietary') List<String> dietary,
+      @JsonKey(name: 'Ingredients') List<String> ingredients,
+      @JsonKey(name: 'Nutritional') Map<String, String> nutritional});
+
+  $ClassificationsCopyWith<$Res> get classifications;
 }
 
 /// @nodoc
@@ -5497,24 +5221,37 @@ class _$DishInfoCopyWithImpl<$Res, $Val extends DishInfo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dishType = null,
-    Object? cuisineType = null,
-    Object? mealType = null,
+    Object? classifications = null,
+    Object? dietary = null,
+    Object? ingredients = null,
+    Object? nutritional = null,
   }) {
     return _then(_value.copyWith(
-      dishType: null == dishType
-          ? _value.dishType
-          : dishType // ignore: cast_nullable_to_non_nullable
-              as String,
-      cuisineType: null == cuisineType
-          ? _value.cuisineType
-          : cuisineType // ignore: cast_nullable_to_non_nullable
-              as String,
-      mealType: null == mealType
-          ? _value.mealType
-          : mealType // ignore: cast_nullable_to_non_nullable
-              as String,
+      classifications: null == classifications
+          ? _value.classifications
+          : classifications // ignore: cast_nullable_to_non_nullable
+              as Classifications,
+      dietary: null == dietary
+          ? _value.dietary
+          : dietary // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      ingredients: null == ingredients
+          ? _value.ingredients
+          : ingredients // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      nutritional: null == nutritional
+          ? _value.nutritional
+          : nutritional // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ClassificationsCopyWith<$Res> get classifications {
+    return $ClassificationsCopyWith<$Res>(_value.classifications, (value) {
+      return _then(_value.copyWith(classifications: value) as $Val);
+    });
   }
 }
 
@@ -5527,9 +5264,13 @@ abstract class _$$DishInfoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'DishType') String dishType,
-      @JsonKey(name: 'CuisineType') String cuisineType,
-      @JsonKey(name: 'MealType') String mealType});
+      {@JsonKey(name: 'Classifications') Classifications classifications,
+      @JsonKey(name: 'Dietary') List<String> dietary,
+      @JsonKey(name: 'Ingredients') List<String> ingredients,
+      @JsonKey(name: 'Nutritional') Map<String, String> nutritional});
+
+  @override
+  $ClassificationsCopyWith<$Res> get classifications;
 }
 
 /// @nodoc
@@ -5543,23 +5284,28 @@ class __$$DishInfoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dishType = null,
-    Object? cuisineType = null,
-    Object? mealType = null,
+    Object? classifications = null,
+    Object? dietary = null,
+    Object? ingredients = null,
+    Object? nutritional = null,
   }) {
     return _then(_$DishInfoImpl(
-      dishType: null == dishType
-          ? _value.dishType
-          : dishType // ignore: cast_nullable_to_non_nullable
-              as String,
-      cuisineType: null == cuisineType
-          ? _value.cuisineType
-          : cuisineType // ignore: cast_nullable_to_non_nullable
-              as String,
-      mealType: null == mealType
-          ? _value.mealType
-          : mealType // ignore: cast_nullable_to_non_nullable
-              as String,
+      classifications: null == classifications
+          ? _value.classifications
+          : classifications // ignore: cast_nullable_to_non_nullable
+              as Classifications,
+      dietary: null == dietary
+          ? _value._dietary
+          : dietary // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      ingredients: null == ingredients
+          ? _value._ingredients
+          : ingredients // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      nutritional: null == nutritional
+          ? _value._nutritional
+          : nutritional // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
     ));
   }
 }
@@ -5567,27 +5313,52 @@ class __$$DishInfoImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$DishInfoImpl implements _DishInfo {
-  _$DishInfoImpl(
-      {@JsonKey(name: 'DishType') required this.dishType,
-      @JsonKey(name: 'CuisineType') required this.cuisineType,
-      @JsonKey(name: 'MealType') required this.mealType});
+  const _$DishInfoImpl(
+      {@JsonKey(name: 'Classifications') required this.classifications,
+      @JsonKey(name: 'Dietary') required final List<String> dietary,
+      @JsonKey(name: 'Ingredients') required final List<String> ingredients,
+      @JsonKey(name: 'Nutritional')
+      required final Map<String, String> nutritional})
+      : _dietary = dietary,
+        _ingredients = ingredients,
+        _nutritional = nutritional;
 
   factory _$DishInfoImpl.fromJson(Map<String, dynamic> json) =>
       _$$DishInfoImplFromJson(json);
 
   @override
-  @JsonKey(name: 'DishType')
-  final String dishType;
+  @JsonKey(name: 'Classifications')
+  final Classifications classifications;
+  final List<String> _dietary;
   @override
-  @JsonKey(name: 'CuisineType')
-  final String cuisineType;
+  @JsonKey(name: 'Dietary')
+  List<String> get dietary {
+    if (_dietary is EqualUnmodifiableListView) return _dietary;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_dietary);
+  }
+
+  final List<String> _ingredients;
   @override
-  @JsonKey(name: 'MealType')
-  final String mealType;
+  @JsonKey(name: 'Ingredients')
+  List<String> get ingredients {
+    if (_ingredients is EqualUnmodifiableListView) return _ingredients;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_ingredients);
+  }
+
+  final Map<String, String> _nutritional;
+  @override
+  @JsonKey(name: 'Nutritional')
+  Map<String, String> get nutritional {
+    if (_nutritional is EqualUnmodifiableMapView) return _nutritional;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_nutritional);
+  }
 
   @override
   String toString() {
-    return 'DishInfo(dishType: $dishType, cuisineType: $cuisineType, mealType: $mealType)';
+    return 'DishInfo(classifications: $classifications, dietary: $dietary, ingredients: $ingredients, nutritional: $nutritional)';
   }
 
   @override
@@ -5595,17 +5366,23 @@ class _$DishInfoImpl implements _DishInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DishInfoImpl &&
-            (identical(other.dishType, dishType) ||
-                other.dishType == dishType) &&
-            (identical(other.cuisineType, cuisineType) ||
-                other.cuisineType == cuisineType) &&
-            (identical(other.mealType, mealType) ||
-                other.mealType == mealType));
+            (identical(other.classifications, classifications) ||
+                other.classifications == classifications) &&
+            const DeepCollectionEquality().equals(other._dietary, _dietary) &&
+            const DeepCollectionEquality()
+                .equals(other._ingredients, _ingredients) &&
+            const DeepCollectionEquality()
+                .equals(other._nutritional, _nutritional));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, dishType, cuisineType, mealType);
+  int get hashCode => Object.hash(
+      runtimeType,
+      classifications,
+      const DeepCollectionEquality().hash(_dietary),
+      const DeepCollectionEquality().hash(_ingredients),
+      const DeepCollectionEquality().hash(_nutritional));
 
   @JsonKey(ignore: true)
   @override
@@ -5622,58 +5399,73 @@ class _$DishInfoImpl implements _DishInfo {
 }
 
 abstract class _DishInfo implements DishInfo {
-  factory _DishInfo(
-          {@JsonKey(name: 'DishType') required final String dishType,
-          @JsonKey(name: 'CuisineType') required final String cuisineType,
-          @JsonKey(name: 'MealType') required final String mealType}) =
-      _$DishInfoImpl;
+  const factory _DishInfo(
+      {@JsonKey(name: 'Classifications')
+      required final Classifications classifications,
+      @JsonKey(name: 'Dietary') required final List<String> dietary,
+      @JsonKey(name: 'Ingredients') required final List<String> ingredients,
+      @JsonKey(name: 'Nutritional')
+      required final Map<String, String> nutritional}) = _$DishInfoImpl;
 
   factory _DishInfo.fromJson(Map<String, dynamic> json) =
       _$DishInfoImpl.fromJson;
 
   @override
-  @JsonKey(name: 'DishType')
-  String get dishType;
+  @JsonKey(name: 'Classifications')
+  Classifications get classifications;
   @override
-  @JsonKey(name: 'CuisineType')
-  String get cuisineType;
+  @JsonKey(name: 'Dietary')
+  List<String> get dietary;
   @override
-  @JsonKey(name: 'MealType')
-  String get mealType;
+  @JsonKey(name: 'Ingredients')
+  List<String> get ingredients;
+  @override
+  @JsonKey(name: 'Nutritional')
+  Map<String, String> get nutritional;
   @override
   @JsonKey(ignore: true)
   _$$DishInfoImplCopyWith<_$DishInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-VisibilityInfo _$VisibilityInfoFromJson(Map<String, dynamic> json) {
-  return _VisibilityInfo.fromJson(json);
+Classifications _$ClassificationsFromJson(Map<String, dynamic> json) {
+  return _Classifications.fromJson(json);
 }
 
 /// @nodoc
-mixin _$VisibilityInfo {
-  @JsonKey(name: 'Visibility')
-  String get visibility => throw _privateConstructorUsedError;
+mixin _$Classifications {
+  @JsonKey(name: 'Dietary')
+  List<String> get dietary => throw _privateConstructorUsedError;
+  @JsonKey(name: 'CookingMethod')
+  List<String> get cookingMethod => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Allergens')
+  List<String> get allergens => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ProductTypes')
+  List<String> get productTypes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $VisibilityInfoCopyWith<VisibilityInfo> get copyWith =>
+  $ClassificationsCopyWith<Classifications> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $VisibilityInfoCopyWith<$Res> {
-  factory $VisibilityInfoCopyWith(
-          VisibilityInfo value, $Res Function(VisibilityInfo) then) =
-      _$VisibilityInfoCopyWithImpl<$Res, VisibilityInfo>;
+abstract class $ClassificationsCopyWith<$Res> {
+  factory $ClassificationsCopyWith(
+          Classifications value, $Res Function(Classifications) then) =
+      _$ClassificationsCopyWithImpl<$Res, Classifications>;
   @useResult
-  $Res call({@JsonKey(name: 'Visibility') String visibility});
+  $Res call(
+      {@JsonKey(name: 'Dietary') List<String> dietary,
+      @JsonKey(name: 'CookingMethod') List<String> cookingMethod,
+      @JsonKey(name: 'Allergens') List<String> allergens,
+      @JsonKey(name: 'ProductTypes') List<String> productTypes});
 }
 
 /// @nodoc
-class _$VisibilityInfoCopyWithImpl<$Res, $Val extends VisibilityInfo>
-    implements $VisibilityInfoCopyWith<$Res> {
-  _$VisibilityInfoCopyWithImpl(this._value, this._then);
+class _$ClassificationsCopyWithImpl<$Res, $Val extends Classifications>
+    implements $ClassificationsCopyWith<$Res> {
+  _$ClassificationsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -5683,251 +5475,205 @@ class _$VisibilityInfoCopyWithImpl<$Res, $Val extends VisibilityInfo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? visibility = null,
+    Object? dietary = null,
+    Object? cookingMethod = null,
+    Object? allergens = null,
+    Object? productTypes = null,
   }) {
     return _then(_value.copyWith(
-      visibility: null == visibility
-          ? _value.visibility
-          : visibility // ignore: cast_nullable_to_non_nullable
-              as String,
+      dietary: null == dietary
+          ? _value.dietary
+          : dietary // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      cookingMethod: null == cookingMethod
+          ? _value.cookingMethod
+          : cookingMethod // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allergens: null == allergens
+          ? _value.allergens
+          : allergens // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      productTypes: null == productTypes
+          ? _value.productTypes
+          : productTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$VisibilityInfoImplCopyWith<$Res>
-    implements $VisibilityInfoCopyWith<$Res> {
-  factory _$$VisibilityInfoImplCopyWith(_$VisibilityInfoImpl value,
-          $Res Function(_$VisibilityInfoImpl) then) =
-      __$$VisibilityInfoImplCopyWithImpl<$Res>;
+abstract class _$$ClassificationsImplCopyWith<$Res>
+    implements $ClassificationsCopyWith<$Res> {
+  factory _$$ClassificationsImplCopyWith(_$ClassificationsImpl value,
+          $Res Function(_$ClassificationsImpl) then) =
+      __$$ClassificationsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'Visibility') String visibility});
+  $Res call(
+      {@JsonKey(name: 'Dietary') List<String> dietary,
+      @JsonKey(name: 'CookingMethod') List<String> cookingMethod,
+      @JsonKey(name: 'Allergens') List<String> allergens,
+      @JsonKey(name: 'ProductTypes') List<String> productTypes});
 }
 
 /// @nodoc
-class __$$VisibilityInfoImplCopyWithImpl<$Res>
-    extends _$VisibilityInfoCopyWithImpl<$Res, _$VisibilityInfoImpl>
-    implements _$$VisibilityInfoImplCopyWith<$Res> {
-  __$$VisibilityInfoImplCopyWithImpl(
-      _$VisibilityInfoImpl _value, $Res Function(_$VisibilityInfoImpl) _then)
+class __$$ClassificationsImplCopyWithImpl<$Res>
+    extends _$ClassificationsCopyWithImpl<$Res, _$ClassificationsImpl>
+    implements _$$ClassificationsImplCopyWith<$Res> {
+  __$$ClassificationsImplCopyWithImpl(
+      _$ClassificationsImpl _value, $Res Function(_$ClassificationsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? visibility = null,
+    Object? dietary = null,
+    Object? cookingMethod = null,
+    Object? allergens = null,
+    Object? productTypes = null,
   }) {
-    return _then(_$VisibilityInfoImpl(
-      visibility: null == visibility
-          ? _value.visibility
-          : visibility // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$ClassificationsImpl(
+      dietary: null == dietary
+          ? _value._dietary
+          : dietary // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      cookingMethod: null == cookingMethod
+          ? _value._cookingMethod
+          : cookingMethod // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allergens: null == allergens
+          ? _value._allergens
+          : allergens // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      productTypes: null == productTypes
+          ? _value._productTypes
+          : productTypes // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$VisibilityInfoImpl implements _VisibilityInfo {
-  _$VisibilityInfoImpl({@JsonKey(name: 'Visibility') required this.visibility});
+class _$ClassificationsImpl implements _Classifications {
+  const _$ClassificationsImpl(
+      {@JsonKey(name: 'Dietary') required final List<String> dietary,
+      @JsonKey(name: 'CookingMethod') required final List<String> cookingMethod,
+      @JsonKey(name: 'Allergens') required final List<String> allergens,
+      @JsonKey(name: 'ProductTypes') required final List<String> productTypes})
+      : _dietary = dietary,
+        _cookingMethod = cookingMethod,
+        _allergens = allergens,
+        _productTypes = productTypes;
 
-  factory _$VisibilityInfoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$VisibilityInfoImplFromJson(json);
+  factory _$ClassificationsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ClassificationsImplFromJson(json);
 
+  final List<String> _dietary;
   @override
-  @JsonKey(name: 'Visibility')
-  final String visibility;
+  @JsonKey(name: 'Dietary')
+  List<String> get dietary {
+    if (_dietary is EqualUnmodifiableListView) return _dietary;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_dietary);
+  }
+
+  final List<String> _cookingMethod;
+  @override
+  @JsonKey(name: 'CookingMethod')
+  List<String> get cookingMethod {
+    if (_cookingMethod is EqualUnmodifiableListView) return _cookingMethod;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_cookingMethod);
+  }
+
+  final List<String> _allergens;
+  @override
+  @JsonKey(name: 'Allergens')
+  List<String> get allergens {
+    if (_allergens is EqualUnmodifiableListView) return _allergens;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allergens);
+  }
+
+  final List<String> _productTypes;
+  @override
+  @JsonKey(name: 'ProductTypes')
+  List<String> get productTypes {
+    if (_productTypes is EqualUnmodifiableListView) return _productTypes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_productTypes);
+  }
 
   @override
   String toString() {
-    return 'VisibilityInfo(visibility: $visibility)';
+    return 'Classifications(dietary: $dietary, cookingMethod: $cookingMethod, allergens: $allergens, productTypes: $productTypes)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$VisibilityInfoImpl &&
-            (identical(other.visibility, visibility) ||
-                other.visibility == visibility));
+            other is _$ClassificationsImpl &&
+            const DeepCollectionEquality().equals(other._dietary, _dietary) &&
+            const DeepCollectionEquality()
+                .equals(other._cookingMethod, _cookingMethod) &&
+            const DeepCollectionEquality()
+                .equals(other._allergens, _allergens) &&
+            const DeepCollectionEquality()
+                .equals(other._productTypes, _productTypes));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, visibility);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_dietary),
+      const DeepCollectionEquality().hash(_cookingMethod),
+      const DeepCollectionEquality().hash(_allergens),
+      const DeepCollectionEquality().hash(_productTypes));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$VisibilityInfoImplCopyWith<_$VisibilityInfoImpl> get copyWith =>
-      __$$VisibilityInfoImplCopyWithImpl<_$VisibilityInfoImpl>(
+  _$$ClassificationsImplCopyWith<_$ClassificationsImpl> get copyWith =>
+      __$$ClassificationsImplCopyWithImpl<_$ClassificationsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$VisibilityInfoImplToJson(
+    return _$$ClassificationsImplToJson(
       this,
     );
   }
 }
 
-abstract class _VisibilityInfo implements VisibilityInfo {
-  factory _VisibilityInfo(
-          {@JsonKey(name: 'Visibility') required final String visibility}) =
-      _$VisibilityInfoImpl;
+abstract class _Classifications implements Classifications {
+  const factory _Classifications(
+      {@JsonKey(name: 'Dietary') required final List<String> dietary,
+      @JsonKey(name: 'CookingMethod') required final List<String> cookingMethod,
+      @JsonKey(name: 'Allergens') required final List<String> allergens,
+      @JsonKey(name: 'ProductTypes')
+      required final List<String> productTypes}) = _$ClassificationsImpl;
 
-  factory _VisibilityInfo.fromJson(Map<String, dynamic> json) =
-      _$VisibilityInfoImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'Visibility')
-  String get visibility;
-  @override
-  @JsonKey(ignore: true)
-  _$$VisibilityInfoImplCopyWith<_$VisibilityInfoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ProductInfo _$ProductInfoFromJson(Map<String, dynamic> json) {
-  return _ProductInfo.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ProductInfo {
-  @JsonKey(name: 'ProductType')
-  String get productType => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ProductInfoCopyWith<ProductInfo> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ProductInfoCopyWith<$Res> {
-  factory $ProductInfoCopyWith(
-          ProductInfo value, $Res Function(ProductInfo) then) =
-      _$ProductInfoCopyWithImpl<$Res, ProductInfo>;
-  @useResult
-  $Res call({@JsonKey(name: 'ProductType') String productType});
-}
-
-/// @nodoc
-class _$ProductInfoCopyWithImpl<$Res, $Val extends ProductInfo>
-    implements $ProductInfoCopyWith<$Res> {
-  _$ProductInfoCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? productType = null,
-  }) {
-    return _then(_value.copyWith(
-      productType: null == productType
-          ? _value.productType
-          : productType // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ProductInfoImplCopyWith<$Res>
-    implements $ProductInfoCopyWith<$Res> {
-  factory _$$ProductInfoImplCopyWith(
-          _$ProductInfoImpl value, $Res Function(_$ProductInfoImpl) then) =
-      __$$ProductInfoImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'ProductType') String productType});
-}
-
-/// @nodoc
-class __$$ProductInfoImplCopyWithImpl<$Res>
-    extends _$ProductInfoCopyWithImpl<$Res, _$ProductInfoImpl>
-    implements _$$ProductInfoImplCopyWith<$Res> {
-  __$$ProductInfoImplCopyWithImpl(
-      _$ProductInfoImpl _value, $Res Function(_$ProductInfoImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? productType = null,
-  }) {
-    return _then(_$ProductInfoImpl(
-      productType: null == productType
-          ? _value.productType
-          : productType // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ProductInfoImpl implements _ProductInfo {
-  _$ProductInfoImpl({@JsonKey(name: 'ProductType') required this.productType});
-
-  factory _$ProductInfoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProductInfoImplFromJson(json);
+  factory _Classifications.fromJson(Map<String, dynamic> json) =
+      _$ClassificationsImpl.fromJson;
 
   @override
-  @JsonKey(name: 'ProductType')
-  final String productType;
-
+  @JsonKey(name: 'Dietary')
+  List<String> get dietary;
   @override
-  String toString() {
-    return 'ProductInfo(productType: $productType)';
-  }
-
+  @JsonKey(name: 'CookingMethod')
+  List<String> get cookingMethod;
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProductInfoImpl &&
-            (identical(other.productType, productType) ||
-                other.productType == productType));
-  }
-
-  @JsonKey(ignore: true)
+  @JsonKey(name: 'Allergens')
+  List<String> get allergens;
   @override
-  int get hashCode => Object.hash(runtimeType, productType);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ProductInfoImplCopyWith<_$ProductInfoImpl> get copyWith =>
-      __$$ProductInfoImplCopyWithImpl<_$ProductInfoImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProductInfoImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ProductInfo implements ProductInfo {
-  factory _ProductInfo(
-          {@JsonKey(name: 'ProductType') required final String productType}) =
-      _$ProductInfoImpl;
-
-  factory _ProductInfo.fromJson(Map<String, dynamic> json) =
-      _$ProductInfoImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'ProductType')
-  String get productType;
+  @JsonKey(name: 'ProductTypes')
+  List<String> get productTypes;
   @override
   @JsonKey(ignore: true)
-  _$$ProductInfoImplCopyWith<_$ProductInfoImpl> get copyWith =>
+  _$$ClassificationsImplCopyWith<_$ClassificationsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -5937,10 +5683,10 @@ MetaData _$MetaDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MetaData {
-  @JsonKey(name: 'Category')
-  Category get category => throw _privateConstructorUsedError;
-  @JsonKey(name: 'Currency')
-  Currency get currency => throw _privateConstructorUsedError;
+  @JsonKey(name: 'IsAvailable')
+  bool get isAvailable => throw _privateConstructorUsedError;
+  @JsonKey(name: 'IsFeatured')
+  bool get isFeatured => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -5954,11 +5700,8 @@ abstract class $MetaDataCopyWith<$Res> {
       _$MetaDataCopyWithImpl<$Res, MetaData>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'Category') Category category,
-      @JsonKey(name: 'Currency') Currency currency});
-
-  $CategoryCopyWith<$Res> get category;
-  $CurrencyCopyWith<$Res> get currency;
+      {@JsonKey(name: 'IsAvailable') bool isAvailable,
+      @JsonKey(name: 'IsFeatured') bool isFeatured});
 }
 
 /// @nodoc
@@ -5974,35 +5717,19 @@ class _$MetaDataCopyWithImpl<$Res, $Val extends MetaData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? category = null,
-    Object? currency = null,
+    Object? isAvailable = null,
+    Object? isFeatured = null,
   }) {
     return _then(_value.copyWith(
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as Category,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as Currency,
+      isAvailable: null == isAvailable
+          ? _value.isAvailable
+          : isAvailable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isFeatured: null == isFeatured
+          ? _value.isFeatured
+          : isFeatured // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $CategoryCopyWith<$Res> get category {
-    return $CategoryCopyWith<$Res>(_value.category, (value) {
-      return _then(_value.copyWith(category: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $CurrencyCopyWith<$Res> get currency {
-    return $CurrencyCopyWith<$Res>(_value.currency, (value) {
-      return _then(_value.copyWith(currency: value) as $Val);
-    });
   }
 }
 
@@ -6015,13 +5742,8 @@ abstract class _$$MetaDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'Category') Category category,
-      @JsonKey(name: 'Currency') Currency currency});
-
-  @override
-  $CategoryCopyWith<$Res> get category;
-  @override
-  $CurrencyCopyWith<$Res> get currency;
+      {@JsonKey(name: 'IsAvailable') bool isAvailable,
+      @JsonKey(name: 'IsFeatured') bool isFeatured});
 }
 
 /// @nodoc
@@ -6035,18 +5757,18 @@ class __$$MetaDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? category = null,
-    Object? currency = null,
+    Object? isAvailable = null,
+    Object? isFeatured = null,
   }) {
     return _then(_$MetaDataImpl(
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as Category,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as Currency,
+      isAvailable: null == isAvailable
+          ? _value.isAvailable
+          : isAvailable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isFeatured: null == isFeatured
+          ? _value.isFeatured
+          : isFeatured // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -6054,23 +5776,23 @@ class __$$MetaDataImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MetaDataImpl implements _MetaData {
-  _$MetaDataImpl(
-      {@JsonKey(name: 'Category') required this.category,
-      @JsonKey(name: 'Currency') required this.currency});
+  const _$MetaDataImpl(
+      {@JsonKey(name: 'IsAvailable') required this.isAvailable,
+      @JsonKey(name: 'IsFeatured') required this.isFeatured});
 
   factory _$MetaDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$MetaDataImplFromJson(json);
 
   @override
-  @JsonKey(name: 'Category')
-  final Category category;
+  @JsonKey(name: 'IsAvailable')
+  final bool isAvailable;
   @override
-  @JsonKey(name: 'Currency')
-  final Currency currency;
+  @JsonKey(name: 'IsFeatured')
+  final bool isFeatured;
 
   @override
   String toString() {
-    return 'MetaData(category: $category, currency: $currency)';
+    return 'MetaData(isAvailable: $isAvailable, isFeatured: $isFeatured)';
   }
 
   @override
@@ -6078,15 +5800,15 @@ class _$MetaDataImpl implements _MetaData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MetaDataImpl &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            (identical(other.currency, currency) ||
-                other.currency == currency));
+            (identical(other.isAvailable, isAvailable) ||
+                other.isAvailable == isAvailable) &&
+            (identical(other.isFeatured, isFeatured) ||
+                other.isFeatured == isFeatured));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, category, currency);
+  int get hashCode => Object.hash(runtimeType, isAvailable, isFeatured);
 
   @JsonKey(ignore: true)
   @override
@@ -6103,519 +5825,22 @@ class _$MetaDataImpl implements _MetaData {
 }
 
 abstract class _MetaData implements MetaData {
-  factory _MetaData(
-          {@JsonKey(name: 'Category') required final Category category,
-          @JsonKey(name: 'Currency') required final Currency currency}) =
+  const factory _MetaData(
+          {@JsonKey(name: 'IsAvailable') required final bool isAvailable,
+          @JsonKey(name: 'IsFeatured') required final bool isFeatured}) =
       _$MetaDataImpl;
 
   factory _MetaData.fromJson(Map<String, dynamic> json) =
       _$MetaDataImpl.fromJson;
 
   @override
-  @JsonKey(name: 'Category')
-  Category get category;
+  @JsonKey(name: 'IsAvailable')
+  bool get isAvailable;
   @override
-  @JsonKey(name: 'Currency')
-  Currency get currency;
+  @JsonKey(name: 'IsFeatured')
+  bool get isFeatured;
   @override
   @JsonKey(ignore: true)
   _$$MetaDataImplCopyWith<_$MetaDataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Category _$CategoryFromJson(Map<String, dynamic> json) {
-  return _Category.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Category {
-  @JsonKey(name: 'ID')
-  String get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'CategoryType')
-  String get categoryType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'Name')
-  String get name => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CategoryCopyWith<Category> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CategoryCopyWith<$Res> {
-  factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
-      _$CategoryCopyWithImpl<$Res, Category>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'ID') String id,
-      @JsonKey(name: 'CategoryType') String categoryType,
-      @JsonKey(name: 'Name') String name});
-}
-
-/// @nodoc
-class _$CategoryCopyWithImpl<$Res, $Val extends Category>
-    implements $CategoryCopyWith<$Res> {
-  _$CategoryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? categoryType = null,
-    Object? name = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      categoryType: null == categoryType
-          ? _value.categoryType
-          : categoryType // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CategoryImplCopyWith<$Res>
-    implements $CategoryCopyWith<$Res> {
-  factory _$$CategoryImplCopyWith(
-          _$CategoryImpl value, $Res Function(_$CategoryImpl) then) =
-      __$$CategoryImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'ID') String id,
-      @JsonKey(name: 'CategoryType') String categoryType,
-      @JsonKey(name: 'Name') String name});
-}
-
-/// @nodoc
-class __$$CategoryImplCopyWithImpl<$Res>
-    extends _$CategoryCopyWithImpl<$Res, _$CategoryImpl>
-    implements _$$CategoryImplCopyWith<$Res> {
-  __$$CategoryImplCopyWithImpl(
-      _$CategoryImpl _value, $Res Function(_$CategoryImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? categoryType = null,
-    Object? name = null,
-  }) {
-    return _then(_$CategoryImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      categoryType: null == categoryType
-          ? _value.categoryType
-          : categoryType // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$CategoryImpl implements _Category {
-  _$CategoryImpl(
-      {@JsonKey(name: 'ID') required this.id,
-      @JsonKey(name: 'CategoryType') required this.categoryType,
-      @JsonKey(name: 'Name') required this.name});
-
-  factory _$CategoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CategoryImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'ID')
-  final String id;
-  @override
-  @JsonKey(name: 'CategoryType')
-  final String categoryType;
-  @override
-  @JsonKey(name: 'Name')
-  final String name;
-
-  @override
-  String toString() {
-    return 'Category(id: $id, categoryType: $categoryType, name: $name)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CategoryImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.categoryType, categoryType) ||
-                other.categoryType == categoryType) &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, categoryType, name);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
-      __$$CategoryImplCopyWithImpl<_$CategoryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CategoryImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Category implements Category {
-  factory _Category(
-      {@JsonKey(name: 'ID') required final String id,
-      @JsonKey(name: 'CategoryType') required final String categoryType,
-      @JsonKey(name: 'Name') required final String name}) = _$CategoryImpl;
-
-  factory _Category.fromJson(Map<String, dynamic> json) =
-      _$CategoryImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'ID')
-  String get id;
-  @override
-  @JsonKey(name: 'CategoryType')
-  String get categoryType;
-  @override
-  @JsonKey(name: 'Name')
-  String get name;
-  @override
-  @JsonKey(ignore: true)
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Currency _$CurrencyFromJson(Map<String, dynamic> json) {
-  return _Currency.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Currency {
-  @JsonKey(name: 'Code')
-  String get code => throw _privateConstructorUsedError;
-  @JsonKey(name: 'Symbol')
-  String get symbol => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CurrencyCopyWith<Currency> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CurrencyCopyWith<$Res> {
-  factory $CurrencyCopyWith(Currency value, $Res Function(Currency) then) =
-      _$CurrencyCopyWithImpl<$Res, Currency>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'Code') String code,
-      @JsonKey(name: 'Symbol') String symbol});
-}
-
-/// @nodoc
-class _$CurrencyCopyWithImpl<$Res, $Val extends Currency>
-    implements $CurrencyCopyWith<$Res> {
-  _$CurrencyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? code = null,
-    Object? symbol = null,
-  }) {
-    return _then(_value.copyWith(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      symbol: null == symbol
-          ? _value.symbol
-          : symbol // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CurrencyImplCopyWith<$Res>
-    implements $CurrencyCopyWith<$Res> {
-  factory _$$CurrencyImplCopyWith(
-          _$CurrencyImpl value, $Res Function(_$CurrencyImpl) then) =
-      __$$CurrencyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'Code') String code,
-      @JsonKey(name: 'Symbol') String symbol});
-}
-
-/// @nodoc
-class __$$CurrencyImplCopyWithImpl<$Res>
-    extends _$CurrencyCopyWithImpl<$Res, _$CurrencyImpl>
-    implements _$$CurrencyImplCopyWith<$Res> {
-  __$$CurrencyImplCopyWithImpl(
-      _$CurrencyImpl _value, $Res Function(_$CurrencyImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? code = null,
-    Object? symbol = null,
-  }) {
-    return _then(_$CurrencyImpl(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      symbol: null == symbol
-          ? _value.symbol
-          : symbol // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$CurrencyImpl implements _Currency {
-  _$CurrencyImpl(
-      {@JsonKey(name: 'Code') required this.code,
-      @JsonKey(name: 'Symbol') required this.symbol});
-
-  factory _$CurrencyImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CurrencyImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'Code')
-  final String code;
-  @override
-  @JsonKey(name: 'Symbol')
-  final String symbol;
-
-  @override
-  String toString() {
-    return 'Currency(code: $code, symbol: $symbol)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CurrencyImpl &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.symbol, symbol) || other.symbol == symbol));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, code, symbol);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CurrencyImplCopyWith<_$CurrencyImpl> get copyWith =>
-      __$$CurrencyImplCopyWithImpl<_$CurrencyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CurrencyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Currency implements Currency {
-  factory _Currency(
-      {@JsonKey(name: 'Code') required final String code,
-      @JsonKey(name: 'Symbol') required final String symbol}) = _$CurrencyImpl;
-
-  factory _Currency.fromJson(Map<String, dynamic> json) =
-      _$CurrencyImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'Code')
-  String get code;
-  @override
-  @JsonKey(name: 'Symbol')
-  String get symbol;
-  @override
-  @JsonKey(ignore: true)
-  _$$CurrencyImplCopyWith<_$CurrencyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-BeverageInfo _$BeverageInfoFromJson(Map<String, dynamic> json) {
-  return _BeverageInfo.fromJson(json);
-}
-
-/// @nodoc
-mixin _$BeverageInfo {
-  @JsonKey(name: 'BeverageType')
-  String get beverageType => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BeverageInfoCopyWith<BeverageInfo> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BeverageInfoCopyWith<$Res> {
-  factory $BeverageInfoCopyWith(
-          BeverageInfo value, $Res Function(BeverageInfo) then) =
-      _$BeverageInfoCopyWithImpl<$Res, BeverageInfo>;
-  @useResult
-  $Res call({@JsonKey(name: 'BeverageType') String beverageType});
-}
-
-/// @nodoc
-class _$BeverageInfoCopyWithImpl<$Res, $Val extends BeverageInfo>
-    implements $BeverageInfoCopyWith<$Res> {
-  _$BeverageInfoCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? beverageType = null,
-  }) {
-    return _then(_value.copyWith(
-      beverageType: null == beverageType
-          ? _value.beverageType
-          : beverageType // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$BeverageInfoImplCopyWith<$Res>
-    implements $BeverageInfoCopyWith<$Res> {
-  factory _$$BeverageInfoImplCopyWith(
-          _$BeverageInfoImpl value, $Res Function(_$BeverageInfoImpl) then) =
-      __$$BeverageInfoImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'BeverageType') String beverageType});
-}
-
-/// @nodoc
-class __$$BeverageInfoImplCopyWithImpl<$Res>
-    extends _$BeverageInfoCopyWithImpl<$Res, _$BeverageInfoImpl>
-    implements _$$BeverageInfoImplCopyWith<$Res> {
-  __$$BeverageInfoImplCopyWithImpl(
-      _$BeverageInfoImpl _value, $Res Function(_$BeverageInfoImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? beverageType = null,
-  }) {
-    return _then(_$BeverageInfoImpl(
-      beverageType: null == beverageType
-          ? _value.beverageType
-          : beverageType // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$BeverageInfoImpl implements _BeverageInfo {
-  _$BeverageInfoImpl(
-      {@JsonKey(name: 'BeverageType') required this.beverageType});
-
-  factory _$BeverageInfoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BeverageInfoImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'BeverageType')
-  final String beverageType;
-
-  @override
-  String toString() {
-    return 'BeverageInfo(beverageType: $beverageType)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BeverageInfoImpl &&
-            (identical(other.beverageType, beverageType) ||
-                other.beverageType == beverageType));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, beverageType);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BeverageInfoImplCopyWith<_$BeverageInfoImpl> get copyWith =>
-      __$$BeverageInfoImplCopyWithImpl<_$BeverageInfoImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BeverageInfoImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _BeverageInfo implements BeverageInfo {
-  factory _BeverageInfo(
-          {@JsonKey(name: 'BeverageType') required final String beverageType}) =
-      _$BeverageInfoImpl;
-
-  factory _BeverageInfo.fromJson(Map<String, dynamic> json) =
-      _$BeverageInfoImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'BeverageType')
-  String get beverageType;
-  @override
-  @JsonKey(ignore: true)
-  _$$BeverageInfoImplCopyWith<_$BeverageInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
